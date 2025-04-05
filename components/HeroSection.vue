@@ -11,39 +11,46 @@
             {{ $t(`hero.${pageType}.subtitle`) }}
           </p>
           <div class="flex flex-wrap gap-4">
-            <AppButton 
-              color="primary" 
-              size="lg"
-              @click="navigateTo('/jobseekers')"
-              v-if="pageType === 'home'"
-            >
-              {{ $t('hero.home.jobSeekerCta') }}
-            </AppButton>
-            <AppButton 
-              color="secondary" 
-              size="lg"
-              @click="navigateTo('/employers')"
-              v-if="pageType === 'home'"
-            >
-              {{ $t('hero.home.employerCta') }}
-            </AppButton>
-            <AppButton 
-              color="primary" 
-              size="lg"
-              @click="navigateTo(primaryCtaLink)"
-              v-else
-            >
-              {{ $t(`hero.${pageType}.primaryCta`) }}
-            </AppButton>
+            <!-- Home page has two buttons -->
+            <template v-if="pageType === 'home'">
+              <AppButton 
+                color="primary" 
+                size="lg"
+                to="/jobseekers"
+              >
+                {{ $t('hero.home.jobSeekerCta') }}
+              </AppButton>
+              <AppButton 
+                color="secondary" 
+                size="lg"
+                to="/employers"
+              >
+                {{ $t('hero.home.employerCta') }}
+              </AppButton>
+            </template>
+            
+            <!-- Other pages have one primary button -->
+            <template v-else>
+                         <AppButton 
+                color="primary" 
+                size="lg"
+                text="test"
+                :to="primaryCtaLink"
+              ></AppButton>
+            </template>
           </div>
         </div>
         
         <!-- Hero Image -->
         <div class="order-first lg:order-last">
-          <img 
-            :src="`/img/heroes/${pageType}-hero.jpg`" 
+          <NuxtImg 
+            :src="`/images/heroes/${pageType}-hero.jpg`" 
             :alt="$t(`hero.${pageType}.imageAlt`)"
             class="rounded-lg shadow-lg w-full h-auto object-cover"
+            width="600"
+            height="400"
+            placeholder
+            fallback="https://placehold.co/600x400/e9f5ff/0057b8?text=Ukraine2Work"
           />
         </div>
       </div>
@@ -64,13 +71,11 @@ const props = defineProps({
   pageType: {
     type: String,
     default: 'home',
-    validator: (value) => ['home', 'employers', 'jobseekers'].includes(value)
+    validator: (value) => ['home', 'employers', 'jobseekers', 'about'].includes(value)
   },
   primaryCtaLink: {
     type: String,
     default: '#'
   }
 });
-
-const { navigateTo } = useRouter();
 </script>

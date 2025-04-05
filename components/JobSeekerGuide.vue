@@ -33,21 +33,23 @@
             </AppButton>
           </div>
           <div v-else class="mt-8">
-            <AppButton 
-              color="primary" 
-              size="lg"
-              @click="navigateTo('/register?type=jobseeker')"
-              class="mr-4"
-            >
-              {{ $t('jobseekers.guide.createAccount') }}
-            </AppButton>
-            <AppButton 
-              color="outline" 
-              size="lg"
-              @click="navigateTo('/login')"
-            >
-              {{ $t('jobseekers.guide.login') }}
-            </AppButton>
+            <a :href="`${authUrl}&authState=register`" target="_blank">
+              <AppButton 
+                color="primary" 
+                size="lg"
+                class="mr-4"
+              >
+                {{ $t('jobseekers.guide.createAccount') }}
+              </AppButton>
+            </a>
+            <a :href="`${authUrl}&authState=login`" target="_blank">
+              <AppButton 
+                color="outline" 
+                size="lg"
+              >
+                {{ $t('jobseekers.guide.login') }}
+              </AppButton>
+            </a>
           </div>
         </div>
         
@@ -104,13 +106,14 @@
             </svg>
             <h3 class="text-lg font-medium mb-2">{{ $t('jobseekers.guide.profileCompletion.notLoggedIn.title') }}</h3>
             <p class="text-gray-500 mb-6">{{ $t('jobseekers.guide.profileCompletion.notLoggedIn.description') }}</p>
-            <AppButton 
-              color="secondary" 
-              size="md"
-              @click="navigateTo('/register?type=jobseeker')"
-            >
-              {{ $t('jobseekers.guide.createAccount') }}
-            </AppButton>
+            <a :href="`${authUrl}&authState=register`" target="_blank">
+              <AppButton 
+                color="secondary" 
+                size="md"
+              >
+                {{ $t('jobseekers.guide.createAccount') }}
+              </AppButton>
+            </a>
           </div>
         </div>
       </div>
@@ -119,10 +122,18 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
+import { useI18n } from 'vue-i18n';
+
+const { t, locale } = useI18n();
 
 // In a real app, authentication state would come from a store/API
 const isAuthenticated = ref(false);
+
+// External auth URL
+const authUrl = computed(() => {
+  return `https://nederland-werkt.8vance.com/?language=${locale.value}`;
+});
 
 // Mock profile progress data
 const profileProgress = ref(70);

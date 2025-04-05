@@ -23,7 +23,7 @@
       </div>
     </div>
     
-    <SectionsHeroSection pageType="home" />
+    <HeroSection pageType="home" />
     
     <HowItWorksSection userType="jobseekers" />
     

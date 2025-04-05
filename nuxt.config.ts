@@ -8,23 +8,26 @@ export default defineNuxtConfig({
     '@nuxt/fonts',
     '@nuxt/icon',
     '@nuxt/image',
-    '@nuxtjs/i18n'
+    '@nuxtjs/i18n',
+    '@pinia/nuxt'
   ],
 
   i18n: {
     langDir: 'i18n/lang/',
     defaultLocale: 'nl',
     locales: [
-      { code: 'nl', iso: 'nl-NL', file: 'nl.json' },
-      { code: 'en', iso: 'en-GB', file: 'en.json' },
-      { code: 'uk', iso: 'uk-UA', file: 'uk.json' }
+      { code: 'nl', iso: 'nl-NL', file: 'nl.json', name: "Nederlands", },
+      { code: 'en', iso: 'en-GB', file: 'en.json', name: "English", },
+      { code: 'uk', iso: 'uk-UA', file: 'uk.json', name: "Українська", }
     ],
     strategy: 'prefix_except_default',
+    lazy: true,
     detectBrowserLanguage: {
       useCookie: true,
-      cookieKey: 'ukraine2work_locale',
-      redirectOn: 'root'
-    }
+      cookieKey: 'i18n_redirected',
+      redirectOn: 'root',
+      alwaysRedirect: true,
+    },
   },
 
   css: [

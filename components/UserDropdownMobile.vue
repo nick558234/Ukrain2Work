@@ -13,8 +13,12 @@
         <button @click="logout" class="w-full text-left py-3 border-b border-gray-100">Logout</button>
       </template>
       <template v-else>
-        <NuxtLink to="/login" class="block py-3 border-b border-gray-100" @click="isOpen = false">{{ $t('auth.login') || 'Login' }}</NuxtLink>
-        <NuxtLink to="/register" class="block py-3 border-b border-gray-100" @click="isOpen = false">{{ $t('auth.register') || 'Register' }}</NuxtLink>
+        <a :href="languageHandler.getAuthUrl('login')" target="_blank" class="block py-3 border-b border-gray-100" @click="isOpen = false">
+          {{ $t('auth.login') || 'Login' }}
+        </a>
+        <a :href="languageHandler.getAuthUrl('register')" target="_blank" class="block py-3 border-b border-gray-100" @click="isOpen = false">
+          {{ $t('auth.register') || 'Register' }}
+        </a>
       </template>
       
       <!-- Navigation Links -->
@@ -30,13 +34,20 @@
 </template>
 
 <script setup lang="ts">
-const isOpen = ref(false)
+import { ref } from 'vue';
+import { useI18n } from 'vue-i18n';
+import { useLanguageHandler } from '~/composables/useLanguageHandler';
+
+const { t } = useI18n();
+const languageHandler = useLanguageHandler();
+const isOpen = ref(false);
+
 // Mock user state - replace with your actual auth system
-const user = ref(null)
+const user = ref(null);
 
 function logout() {
   // Implement logout functionality
-  user.value = null
-  isOpen.value = false
+  user.value = null;
+  isOpen.value = false;
 }
 </script>

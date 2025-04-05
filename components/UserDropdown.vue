@@ -13,42 +13,49 @@
         <button @click="logout" class="w-full text-left py-2 px-3 hover:bg-gray-100 rounded">Logout</button>
       </template>
       <template v-else>
-        <NuxtLink to="/login" class="block py-2 px-3 hover:bg-gray-100 rounded" @click="isOpen = false">{{ $t('auth.login') || 'Login' }}</NuxtLink>
-        <NuxtLink to="/register" class="block py-2 px-3 hover:bg-gray-100 rounded" @click="isOpen = false">{{ $t('auth.register') || 'Register' }}</NuxtLink>
+        <a :href="languageHandler.getAuthUrl('login')" target="_blank" class="block py-2 px-3 hover:bg-gray-100 rounded" @click="isOpen = false">
+          {{ $t('auth.login') || 'Login' }}
+        </a>
+        <a :href="languageHandler.getAuthUrl('register')" target="_blank" class="block py-2 px-3 hover:bg-gray-100 rounded" @click="isOpen = false">
+          {{ $t('auth.register') || 'Register' }}
+        </a>
       </template>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-const isOpen = ref(false)
+import { ref, onMounted, onUnmounted } from 'vue';
+import { useI18n } from 'vue-i18n';
+import { useLanguageHandler } from '~/composables/useLanguageHandler';
+
+// All composables must be called at the top level
+const { t } = useI18n();
+const languageHandler = useLanguageHandler();
+const isOpen = ref(false);
+
 // Mock user state - replace with your actual auth system
-const user = ref(null)
+const user = ref(null);
 
 function logout() {
   // Implement logout functionality
-  user.value = null
-  isOpen.value = false
+  user.value = null;
+  isOpen.value = false;
 }
 
-// Close dropdown when clicking outside
-onClickOutside(isOpen, () => {
-  isOpen.value = false
-})
-
-function onClickOutside(target: Ref<boolean>, callback: () => void) {
-  const listener = (event: Event) => {
-    if (target.value) {
-      callback()
-    }
+// Define the click outside handler
+function handleClickOutside(event: Event) {
+  if (isOpen.value) {
+    isOpen.value = false;
   }
-  
-  onMounted(() => {
-    window.addEventListener('click', listener)
-  })
-  
-  onUnmounted(() => {
-    window.removeEventListener('click', listener)
-  })
 }
+
+// Use lifecycle hooks at the top level
+onMounted(() => {
+  window.addEventListener('click', handleClickOutside);
+});
+
+onUnmounted(() => {
+  window.removeEventListener('click', handleClickOutside);
+});
 </script>
