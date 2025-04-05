@@ -236,7 +236,7 @@
                 <AppButton 
                   color="primary" 
                   size="sm"
-                  @click="viewJobDetails(job.id)"
+                  :href="`/job-details/${job.id}`"
                   class="mr-3"
                 >
                   {{ $t('jobseekers.search.viewDetails') }}
@@ -244,7 +244,8 @@
                 <AppButton 
                   color="outline" 
                   size="sm"
-                  @click="applyToJob(job.id)"
+                  :href="`https://nederland-werkt.8vance.com/job/${job.id}?language=${$i18n.locale}`"
+                  target="_blank"
                 >
                   {{ $t('jobseekers.search.applyNow') }}
                 </AppButton>
@@ -384,7 +385,7 @@ const viewJobDetails = (jobId) => {
 };
 
 const applyToJob = (jobId) => {
-  // In a real app, this would open the job application form
-  console.log('Applying to job ID:', jobId);
+  // Redirect to external application URL
+  window.open(`https://nederland-werkt.8vance.com/job/${jobId}?language=${$i18n.locale}`, '_blank');
 };
 </script>

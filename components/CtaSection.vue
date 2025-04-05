@@ -9,7 +9,9 @@
           <AppButton 
             color="secondary" 
             size="lg"
-            @click="navigateTo(primaryLink)"
+            :href="primaryLink.startsWith('http') ? primaryLink : null"
+            :to="!primaryLink.startsWith('http') ? primaryLink : null"
+            :target="primaryLink.startsWith('http') ? '_blank' : '_self'"
           >
             {{ $t(`cta.${type}.primaryCta`) }}
           </AppButton>
@@ -17,7 +19,9 @@
           <AppButton 
             color="outline" 
             size="lg"
-            @click="navigateTo(secondaryLink)"
+            :href="secondaryLink.startsWith('http') ? secondaryLink : null"
+            :to="!secondaryLink.startsWith('http') ? secondaryLink : null"
+            :target="secondaryLink.startsWith('http') ? '_blank' : '_self'"
             v-if="showSecondary"
           >
             {{ $t(`cta.${type}.secondaryCta`) }}
@@ -32,12 +36,12 @@
 const props = defineProps({
   type: {
     type: String,
-    default: 'general',
-    validator: (value) => ['general', 'employers', 'jobseekers'].includes(value)
+    default: 'jobseeker',
+    validator: (value) => ['jobseeker', 'employer'].includes(value)
   },
   primaryLink: {
     type: String,
-    default: '/register'
+    default: `https://nederland-werkt.8vance.com/?authState=register&language=en`
   },
   secondaryLink: {
     type: String,
@@ -49,5 +53,5 @@ const props = defineProps({
   }
 });
 
-const { navigateTo } = useRouter();
+// No need for the navigateTo function - using AppButton's to/href props directly
 </script>

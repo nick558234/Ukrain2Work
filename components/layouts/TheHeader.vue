@@ -21,23 +21,22 @@
           
           <!-- Auth buttons -->
           <div class="flex items-center space-x-4 ml-4">
-            <NuxtLink
-              v-if="!isLoggedIn"
-              to="/login"
-              class="text-ukraine-blue hover:underline font-medium transition-colors"
+            <AppButton 
+              :href="`https://nederland-werkt.8vance.com/?authState=login&language=${$i18n.locale}`"
+              target="_blank"
+              color="outline"
+              size="sm"
             >
               {{ $t('auth.login') }}
-            </NuxtLink>
-            <NuxtLink
-              v-if="!isLoggedIn"
-              to="/register"
-              class="bg-ukraine-blue text-white px-4 py-2 rounded-md hover:bg-opacity-90 transition-colors"
+            </AppButton>
+            <AppButton 
+              :href="`https://nederland-werkt.8vance.com/?authState=register&language=${$i18n.locale}`"
+              target="_blank"
+              color="primary"
+              size="sm"
             >
               {{ $t('auth.register') }}
-            </NuxtLink>
-            
-            <!-- User dropdown (if logged in) -->
-            <UserDropdown v-if="isLoggedIn" />
+            </AppButton>
           </div>
           
           <!-- Language switcher -->
@@ -110,27 +109,24 @@
           </div>
 
           <div class="mt-6 pt-4 border-t border-gray-200 flex flex-col space-y-4">
-            <template v-if="!isLoggedIn">
-              <NuxtLink
-                to="/login"
-                class="text-ukraine-blue hover:underline px-2 py-1"
-                @click="mobileMenuOpen = false"
-              >
-                {{ $t('auth.login') }}
-              </NuxtLink>
-              <NuxtLink
-                to="/register"
-                class="bg-ukraine-blue text-white px-4 py-2 rounded-md hover:bg-opacity-90 text-center"
-                @click="mobileMenuOpen = false"
-              >
-                {{ $t('auth.register') }}
-              </NuxtLink>
-            </template>
-            
-            <div v-else class="px-2">
-              <!-- Mobile user menu (if logged in) -->
-              <UserDropdownMobile @click="mobileMenuOpen = false" />
-            </div>
+            <AppButton 
+              :href="`https://nederland-werkt.8vance.com/?authState=login&language=${$i18n.locale}`"
+              target="_blank"
+              color="outline"
+              size="sm"
+              class="w-full"
+            >
+              {{ $t('auth.login') }}
+            </AppButton>
+            <AppButton 
+              :href="`https://nederland-werkt.8vance.com/?authState=register&language=${$i18n.locale}`"
+              target="_blank"
+              color="primary"
+              size="sm"
+              class="w-full"
+            >
+              {{ $t('auth.register') }}
+            </AppButton>
           </div>
 
           <div class="mt-6 pt-4 border-t border-gray-200">
@@ -169,9 +165,6 @@ const isActive = (path) => {
   }
   return route.path.startsWith(path);
 };
-
-// In a real app, this would come from an auth store/composable
-const isLoggedIn = ref(false);
 </script>
 
 <style scoped>
