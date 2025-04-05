@@ -27,29 +27,27 @@
             <AppButton 
               color="primary" 
               size="lg"
-              @click="navigateTo('/profile/edit')"
+              to="/profile/edit"
             >
               {{ $t('jobseekers.guide.editProfile') }}
             </AppButton>
           </div>
           <div v-else class="mt-8">
-            <a :href="`${authUrl}&authState=register`" target="_blank">
-              <AppButton 
-                color="primary" 
-                size="lg"
-                class="mr-4"
-              >
-                {{ $t('jobseekers.guide.createAccount') }}
-              </AppButton>
-            </a>
-            <a :href="`${authUrl}&authState=login`" target="_blank">
-              <AppButton 
-                color="outline" 
-                size="lg"
-              >
-                {{ $t('jobseekers.guide.login') }}
-              </AppButton>
-            </a>
+            <AppButton 
+              color="primary" 
+              size="lg"
+              to="/register?type=jobseeker"
+              class="mr-4"
+            >
+              {{ $t('jobseekers.guide.createAccount') }}
+            </AppButton>
+            <AppButton 
+              color="outline" 
+              size="lg"
+              to="/login"
+            >
+              {{ $t('jobseekers.guide.login') }}
+            </AppButton>
           </div>
         </div>
         

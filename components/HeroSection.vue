@@ -31,12 +31,13 @@
             
             <!-- Other pages have one primary button -->
             <template v-else>
-                         <AppButton 
+              <AppButton 
                 color="primary" 
                 size="lg"
-                text="test"
                 :to="primaryCtaLink"
-              ></AppButton>
+              >
+                {{ $t(`hero.${pageType}.primaryCta`) }}
+              </AppButton>
             </template>
           </div>
         </div>
