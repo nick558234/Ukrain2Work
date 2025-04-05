@@ -24,6 +24,9 @@
 
 <script setup>
 import { computed } from 'vue';
+import { useI18n } from 'vue-i18n';
+
+const { t } = useI18n();
 
 const props = defineProps({
   userType: {
@@ -37,30 +40,30 @@ const steps = computed(() => {
   return props.userType === 'employers'
     ? [
         { 
-          title: $t('howItWorks.steps.employers.0.title'),
-          description: $t('howItWorks.steps.employers.0.description')
+          title: t('howItWorks.steps.employers.0.title'),
+          description: t('howItWorks.steps.employers.0.description')
         },
         { 
-          title: $t('howItWorks.steps.employers.1.title'),
-          description: $t('howItWorks.steps.employers.1.description')
+          title: t('howItWorks.steps.employers.1.title'),
+          description: t('howItWorks.steps.employers.1.description')
         },
         { 
-          title: $t('howItWorks.steps.employers.2.title'),
-          description: $t('howItWorks.steps.employers.2.description')
+          title: t('howItWorks.steps.employers.2.title'),
+          description: t('howItWorks.steps.employers.2.description')
         }
       ]
     : [
         { 
-          title: $t('howItWorks.steps.jobseekers.0.title'),
-          description: $t('howItWorks.steps.jobseekers.0.description')
+          title: t('howItWorks.steps.jobseekers.0.title'),
+          description: t('howItWorks.steps.jobseekers.0.description')
         },
         { 
-          title: $t('howItWorks.steps.jobseekers.1.title'),
-          description: $t('howItWorks.steps.jobseekers.1.description')
+          title: t('howItWorks.steps.jobseekers.1.title'),
+          description: t('howItWorks.steps.jobseekers.1.description')
         },
         { 
-          title: $t('howItWorks.steps.jobseekers.2.title'),
-          description: $t('howItWorks.steps.jobseekers.2.description')
+          title: t('howItWorks.steps.jobseekers.2.title'),
+          description: t('howItWorks.steps.jobseekers.2.description')
         }
       ];
 });
