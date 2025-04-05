@@ -1,0 +1,179 @@
+<template>
+  <header class="bg-white shadow-md">
+    <div class="container mx-auto px-4 py-4">
+      <div class="flex justify-between items-center">
+        <!-- Logo -->
+        <NuxtLink to="/" class="flex items-center">
+          <!-- <img src="/img/logo.svg" alt="Ukraine2Work" class="h-10" /> -->logo
+        </NuxtLink>
+
+        <!-- Desktop navigation -->
+        <nav class="hidden md:flex items-center space-x-6">
+          <NuxtLink
+            v-for="item in navigationItems"
+            :key="item.route"
+            :to="item.route"
+            class="text-gray-700 hover:text-ukraine-blue font-medium transition-colors"
+            :class="{ 'text-ukraine-blue': isActive(item.route) }"
+          >
+            {{ $t(`nav.${item.key}`) }}
+          </NuxtLink>
+          
+          <!-- Auth buttons -->
+          <div class="flex items-center space-x-4 ml-4">
+            <NuxtLink
+              v-if="!isLoggedIn"
+              to="/login"
+              class="text-ukraine-blue hover:underline font-medium transition-colors"
+            >
+              {{ $t('auth.login') }}
+            </NuxtLink>
+            <NuxtLink
+              v-if="!isLoggedIn"
+              to="/register"
+              class="bg-ukraine-blue text-white px-4 py-2 rounded-md hover:bg-opacity-90 transition-colors"
+            >
+              {{ $t('auth.register') }}
+            </NuxtLink>
+            
+            <!-- User dropdown (if logged in) -->
+            <UserDropdown v-if="isLoggedIn" />
+          </div>
+          
+          <!-- Language switcher -->
+          <div class="ml-4">
+            <LanguageSwitcher />
+          </div>
+        </nav>
+
+        <!-- Mobile menu button -->
+        <button
+          @click="mobileMenuOpen = !mobileMenuOpen"
+          class="md:hidden text-gray-700 hover:text-ukraine-blue"
+          aria-label="Toggle menu"
+        >
+          <svg
+            v-if="!mobileMenuOpen"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16m-7 6h7"
+            />
+          </svg>
+          <svg
+            v-else
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile menu -->
+      <transition
+        enter-active-class="transition duration-200 ease-out"
+        enter-from-class="transform -translate-y-4 opacity-0"
+        enter-to-class="transform translate-y-0 opacity-100"
+        leave-active-class="transition duration-150 ease-in"
+        leave-from-class="transform translate-y-0 opacity-100"
+        leave-to-class="transform -translate-y-4 opacity-0"
+      >
+        <nav
+          v-if="mobileMenuOpen"
+          class="md:hidden mt-4 py-4 border-t border-gray-200"
+        >
+          <div class="flex flex-col space-y-4">
+            <NuxtLink
+              v-for="item in navigationItems"
+              :key="item.route"
+              :to="item.route"
+              class="text-gray-700 hover:text-ukraine-blue px-2 py-1 rounded-md transition-colors"
+              :class="{ 'text-ukraine-blue': isActive(item.route) }"
+              @click="mobileMenuOpen = false"
+            >
+              {{ $t(`nav.${item.key}`) }}
+            </NuxtLink>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-gray-200 flex flex-col space-y-4">
+            <template v-if="!isLoggedIn">
+              <NuxtLink
+                to="/login"
+                class="text-ukraine-blue hover:underline px-2 py-1"
+                @click="mobileMenuOpen = false"
+              >
+                {{ $t('auth.login') }}
+              </NuxtLink>
+              <NuxtLink
+                to="/register"
+                class="bg-ukraine-blue text-white px-4 py-2 rounded-md hover:bg-opacity-90 text-center"
+                @click="mobileMenuOpen = false"
+              >
+                {{ $t('auth.register') }}
+              </NuxtLink>
+            </template>
+            
+            <div v-else class="px-2">
+              <!-- Mobile user menu (if logged in) -->
+              <UserDropdownMobile @click="mobileMenuOpen = false" />
+            </div>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-gray-200">
+            <LanguageSwitcher />
+          </div>
+        </nav>
+      </transition>
+    </div>
+  </header>
+</template>
+
+<script setup>
+import { ref, computed } from 'vue';
+import { useRoute } from 'vue-router';
+
+// Navigation data
+const navigationItems = [
+  { key: 'home', route: '/' },
+  { key: 'employers', route: '/employers' },
+  { key: 'jobseekers', route: '/job-seekers' },
+  { key: 'blog', route: '/blog' },
+  { key: 'about', route: '/about' },
+  { key: 'contact', route: '/contact' },
+];
+
+// Mobile menu state
+const mobileMenuOpen = ref(false);
+
+// Get current route
+const route = useRoute();
+
+// Check if navigation item is active
+const isActive = (path) => {
+  if (path === '/') {
+    return route.path === '/';
+  }
+  return route.path.startsWith(path);
+};
+
+// In a real app, this would come from an auth store/composable
+const isLoggedIn = ref(false);
+</script>
+
+<style scoped>
+/* Add any component-specific styles here */
+</style>

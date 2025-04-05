@@ -1,0 +1,355 @@
+{
+  "nav": {
+    "home": "Home",
+    "employers": "For Employers",
+    "jobseekers": "For Job Seekers",
+    "blog": "Blog",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "footer": {
+    "tagline": "Connecting Ukrainian talent with Dutch employers",
+    "quickLinks": "Quick links",
+    "about": "About us",
+    "contact": "Contact",
+    "blog": "Blog",
+    "successStories": "Success Stories",
+    "donate": "Donate",
+    "newsletter": {
+      "title": "Newsletter",
+      "description": "Stay updated with new opportunities and updates",
+      "placeholder": "Email address",
+      "submit": "Subscribe"
+    },
+    "copyright": "© {year} Ukraine2Work. All rights reserved."
+  },
+  "hero": {
+    "home": {
+      "title": "Connecting Ukrainian talent with Dutch employers",
+      "subtitle": "Ukraine2Work connects Ukrainian refugees with employment in the Netherlands, without work permit barriers.",
+      "jobSeekerCta": "I'm looking for work",
+      "employerCta": "I'm looking for staff",
+      "imageAlt": "Ukrainian job seeker and Dutch employer"
+    },
+    "employers": {
+      "title": "Find Ukrainian talent for your business",
+      "subtitle": "Ukrainian refugees can work in the Netherlands immediately without a work permit.",
+      "primaryCta": "Register for free",
+      "imageAlt": "Diverse employees in a Dutch company"
+    },
+    "jobseekers": {
+      "title": "Find work in the Netherlands",
+      "subtitle": "Discover opportunities at Dutch companies that welcome Ukrainian professionals.",
+      "primaryCta": "View job openings",
+      "imageAlt": "Ukrainian professional working in the Netherlands"
+    },
+    "about": {
+      "title": "About Ukraine2Work",
+      "subtitle": "We're a non-profit organization connecting Ukrainian talent with Dutch employers.",
+      "primaryCta": "Contact us",
+      "imageAlt": "Ukraine2Work team"
+    },
+    "contact": {
+      "title": "Get in touch with us",
+      "subtitle": "Have questions or need more information? We're here to help.",
+      "primaryCta": "Send a message",
+      "imageAlt": "Ukraine2Work office"
+    }
+  },
+  "howItWorks": {
+    "title": "How it works",
+    "steps": {
+      "employers": [
+        {
+          "title": "Create an account",
+          "description": "Register as an employer and set up your company profile."
+        },
+        {
+          "title": "Post a job",
+          "description": "Add your open positions with clear requirements and information."
+        },
+        {
+          "title": "Find your match",
+          "description": "Browse candidates and connect directly with suitable profiles."
+        }
+      ],
+      "jobseekers": [
+        {
+          "title": "Create a profile",
+          "description": "Register and fill in your CV and work experience."
+        },
+        {
+          "title": "Discover jobs",
+          "description": "Search through available positions that match your skills."
+        },
+        {
+          "title": "Apply directly",
+          "description": "Connect with employers and start your new career in the Netherlands."
+        }
+      ]
+    }
+  },
+  "testimonials": {
+    "title": "What people are saying",
+    "tabs": {
+      "employers": "Employers",
+      "jobseekers": "Job Seekers"
+    }
+  },
+  "employers": {
+    "benefits": {
+      "title": "Benefits for employers",
+      "description": "Why you should consider Ukrainian professionals for your business."
+    },
+    "postJob": {
+      "title": "Post a job",
+      "subtitle": "Reach thousands of qualified Ukrainian job seekers with your job posting.",
+      "form": {
+        "jobTitle": "Job title",
+        "location": "Location",
+        "jobType": "Job type",
+        "types": {
+          "fullTime": "Full-time",
+          "partTime": "Part-time",
+          "temporary": "Temporary",
+          "contract": "Contract",
+          "internship": "Internship"
+        },
+        "description": "Job description",
+        "requirements": "Requirements",
+        "englishSufficient": "English only is sufficient for this position",
+        "submit": "Post job"
+      },
+      "preview": {
+        "title": "Preview",
+        "placeholder": "Your job posting will appear here as you fill out the form.",
+        "locationPlaceholder": "Work location"
+      },
+      "tips": {
+        "title": "Tips for effective job posting",
+        "tip1": "Be specific about skills and qualifications you're looking for.",
+        "tip2": "Clearly mention language requirements (Dutch, English, etc.).",
+        "tip3": "Add support you provide for new employees from Ukraine.",
+        "tip4": "Share information about your company culture and work environment."
+      }
+    }
+  },
+  "jobseekers": {
+    "search": {
+      "title": "Search jobs",
+      "subtitle": "Discover available positions at Dutch companies that welcome Ukrainian professionals.",
+      "searchPlaceholder": "Search by job title or keyword",
+      "locationPlaceholder": "Location",
+      "searchButton": "Search",
+      "advancedFilters": "Advanced filters",
+      "activeFilters": "{count} active filters",
+      "clearFilters": "Clear filters",
+      "filters": {
+        "jobType": "Job type",
+        "experience": "Experience level",
+        "language": "Language",
+        "date": "Posted date",
+        "all": "All",
+        "fullTime": "Full-time",
+        "partTime": "Part-time",
+        "temporary": "Temporary",
+        "contract": "Contract",
+        "internship": "Internship",
+        "entry": "Entry level",
+        "mid": "Mid level",
+        "senior": "Senior level",
+        "english": "English",
+        "dutch": "Dutch",
+        "bothLanguages": "Both languages",
+        "today": "Today",
+        "week": "This week",
+        "month": "This month"
+      },
+      "noResults": "No results found",
+      "tryAgain": "Try different search terms or filters.",
+      "resultsCount": "{count} results found",
+      "postedDate": "Posted: {date}",
+      "viewDetails": "View details",
+      "applyNow": "Apply now",
+      "loadMore": "Load more"
+    },
+    "categories": {
+      "title": "Explore jobs by category",
+      "jobs": "jobs",
+      "viewJob": "View job",
+      "browseMore": "Browse more jobs in this category"
+    },
+    "guide": {
+      "title": "Your guide to working in the Netherlands",
+      "paragraph1": "We help you through every step of your job search journey in the Netherlands.",
+      "createAccount": "Create account",
+      "login": "Log in",
+      "editProfile": "Edit profile",
+      "profileCompletion": {
+        "title": "Profile completion",
+        "notLoggedIn": {
+          "title": "Create an account to get started",
+          "description": "Register to complete your profile and apply for jobs."
+        }
+      }
+    },
+    "safety": {
+      "free": "100% Free service",
+      "verified": "Verified employers",
+      "support": "Support in 3 languages"
+    }
+  },
+  "about": {
+    "mission": {
+      "title": "Our mission",
+      "paragraph1": "Ukraine2Work was founded with a clear purpose: to connect Ukrainian refugees with meaningful employment in the Netherlands, allowing them to utilize their professional skills and build economic independence.",
+      "paragraph2": "We believe that access to employment is essential for successful integration and rebuilding lives. By removing barriers between qualified Ukrainian professionals and Dutch employers, we create opportunities that benefit both parties.",
+      "paragraph3": "As a non-profit organization, all our services are free for Ukrainian job seekers, focusing on providing practical support, resources, and guidance throughout the entire job search process.",
+      "values": {
+        "free": "Completely free for job seekers",
+        "accessible": "Accessible in three languages",
+        "supportive": "Supportive network"
+      },
+      "stats": {
+        "jobSeekers": "Job seekers",
+        "employers": "Employers",
+        "jobsPosted": "Jobs posted",
+        "successfulHires": "Successful hires"
+      }
+    },
+    "timeline": {
+      "title": "Our history",
+      "events": {
+        "invasion": {
+          "title": "Russian invasion of Ukraine",
+          "description": "Following Russia's invasion of Ukraine, millions of Ukrainians were forced to flee their homes, creating the largest refugee crisis in Europe since World War II."
+        },
+        "foundation": {
+          "title": "Founding of Ukraine2Work",
+          "description": "Ukraine2Work was founded by Anna Kovalenko, who recognized the urgent need to help Ukrainian refugees rebuild their lives through meaningful employment in the Netherlands."
+        }
+      }
+    },
+    "team": {
+      "title": "Our team",
+      "description": "Meet the dedicated professionals making Ukraine2Work possible. Our diverse team includes both Dutch and Ukrainian experts with a shared mission to build bridges and create opportunities.",
+      "ukrainian": "Ukrainian",
+      "meetFullTeam": "Meet the full team"
+    }
+  },
+  "contact": {
+    "form": {
+      "title": "Get in touch",
+      "description": "Have questions or need more information? Fill out the form below and we'll get back to you as soon as possible.",
+      "name": "Name",
+      "email": "Email",
+      "subject": "Subject",
+      "message": "Message",
+      "agreeToTerms": "I agree to the ",
+      "privacyPolicy": "privacy policy",
+      "sending": "Sending...",
+      "submit": "Submit",
+      "selectSubject": "Select a subject",
+      "subjects": {
+        "employer": "Employer inquiry",
+        "jobseeker": "Job seeker inquiry",
+        "partnership": "Partnership proposal",
+        "technical": "Technical issue",
+        "other": "Other"
+      },
+      "validation": {
+        "nameRequired": "Name is required",
+        "emailRequired": "Email is required",
+        "emailValid": "Please enter a valid email",
+        "subjectRequired": "Subject is required",
+        "messageRequired": "Message is required",
+        "agreeRequired": "You must agree to our privacy policy"
+      },
+      "success": {
+        "title": "Message sent!",
+        "message": "Thank you for your message. We'll get back to you as soon as possible."
+      }
+    },
+    "info": {
+      "title": "Contact information",
+      "email": {
+        "title": "Email",
+        "description": "Send us an email for general inquiries or support."
+      },
+      "phone": {
+        "title": "Phone",
+        "description": "Call us during business hours."
+      },
+      "address": {
+        "title": "Address",
+        "description": "Our office in Amsterdam."
+      },
+      "hours": {
+        "title": "Office hours",
+        "description": "When you can reach us.",
+        "weekdays": "Monday - Friday",
+        "weekend": "Weekend",
+        "closed": "Closed"
+      },
+      "followUs": "Follow us"
+    },
+    "faq": {
+      "title": "Frequently asked questions",
+      "usefulLinks": "Useful links",
+      "stillHaveQuestions": "Still have questions?",
+      "contactUs": "Contact us"
+    }
+  },
+  "profile": {
+    "completion": {
+      "title": "Profile completion",
+      "low": "Complete your profile to increase visibility to employers.",
+      "medium": "Good progress! Add more information to enhance your profile.",
+      "high": "Your profile is almost complete!",
+      "complete": "Your profile is complete!"
+    }
+  },
+  "cta": {
+    "general": {
+      "title": "Ready to get started?",
+      "description": "Register today and start connecting Ukrainian talent with Dutch employers.",
+      "primaryCta": "Register",
+      "secondaryCta": "Learn more"
+    },
+    "employers": {
+      "title": "Ready to hire Ukrainian talent?",
+      "description": "Register today and start finding qualified Ukrainian professionals for your business.",
+      "primaryCta": "Post a job",
+      "secondaryCta": "Learn more"
+    },
+    "jobseekers": {
+      "title": "Ready to start your career in the Netherlands?",
+      "description": "Create an account today and start applying to Dutch employers.",
+      "primaryCta": "Create account",
+      "secondaryCta": "Browse jobs"
+    }
+  },
+  "permitInfo": {
+    "title": "No work permit required",
+    "description": "Since March 2022, Ukrainian refugees can work in the Netherlands immediately without a work permit.",
+    "points": [
+      "Ukrainians with temporary protection status can start work immediately",
+      "No bureaucratic delays for employers",
+      "Equal employment conditions as Dutch employees"
+    ],
+    "learnMore": "Learn more",
+    "contact": "Questions? Contact us"
+  },
+  "blog": {
+    "latestPosts": "Latest articles",
+    "viewAll": "View all articles",
+    "readMore": "Read more",
+    "relatedPosts": "Related posts",
+    "categories": "Categories",
+    "postedOn": "Posted on {date}",
+    "by": "by"
+  },
+  "partners": {
+    "title": "Our partners"
+  }
+}

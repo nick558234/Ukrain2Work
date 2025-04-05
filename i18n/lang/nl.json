@@ -1,0 +1,372 @@
+{
+  "app": {
+    "title": "Ukraine2Work"
+  },
+  "nav": {
+    "home": "Home",
+    "employers": "Voor werkgevers",
+    "jobseekers": "Voor werkzoekenden",
+    "blog": "Blog",
+    "about": "Over ons",
+    "contact": "Contact",
+    "job_seekers": "Werkzoekenden",
+    "success_stories": "Succesverhalen",
+    "donate": "Doneren"
+  },
+  "auth": {
+    "login": "Inloggen",
+    "register": "Registreren",
+    "no_account": "Nog geen account?",
+    "already_have_account": "Heb je al een account?",
+    "logout": "Uitloggen",
+    "profile": "Profiel"
+  },
+  "footer": {
+    "tagline": "Oekraïens talent verbinden met Nederlandse werkgevers",
+    "quickLinks": "Snelle links",
+    "about": "Over ons",
+    "contact": "Contact",
+    "blog": "Blog",
+    "successStories": "Succesverhalen",
+    "donate": "Doneren",
+    "newsletter": {
+      "title": "Nieuwsbrief",
+      "description": "Blijf op de hoogte van nieuwe mogelijkheden en updates",
+      "placeholder": "E-mailadres",
+      "submit": "Abonneren"
+    },
+    "copyright": "© {year} Ukraine2Work. Alle rechten voorbehouden.",
+    "privacy": "Privacybeleid",
+    "terms": "Servicevoorwaarden",
+    "sitemap": "Sitemap"
+  },
+  "hero": {
+    "home": {
+      "title": "Oekraïens talent verbinden met Nederlandse werkgevers",
+      "subtitle": "Ukraine2Work verbindt Oekraïense vluchtelingen met werkgelegenheid in Nederland, zonder barrières van werkvergunningen.",
+      "jobSeekerCta": "Ik zoek werk",
+      "employerCta": "Ik zoek personeel",
+      "imageAlt": "Oekraïense werkzoekende en Nederlandse werkgever"
+    },
+    "employers": {
+      "title": "Vind Oekraïens talent voor uw bedrijf",
+      "subtitle": "Oekraïense vluchtelingen kunnen direct in Nederland werken zonder werkvergunning.",
+      "primaryCta": "Gratis registreren",
+      "imageAlt": "Diverse werknemers in een Nederlands bedrijf"
+    },
+    "jobseekers": {
+      "title": "Vind werk in Nederland",
+      "subtitle": "Ontdek mogelijkheden bij Nederlandse bedrijven die openstaan voor Oekraïense professionals.",
+      "primaryCta": "Bekijk vacatures",
+      "imageAlt": "Oekraïense professional werkzaam in Nederland"
+    },
+    "about": {
+      "title": "Over Ukraine2Work",
+      "subtitle": "Wij zijn een non-profit organisatie die Oekraïens talent verbindt met Nederlandse werkgevers.",
+      "primaryCta": "Neem contact op",
+      "imageAlt": "Ukraine2Work team"
+    },
+    "contact": {
+      "title": "Neem contact met ons op",
+      "subtitle": "Heeft u vragen of wilt u meer informatie? We helpen u graag.",
+      "primaryCta": "Stuur een bericht",
+      "imageAlt": "Ukraine2Work kantoor"
+    }
+  },
+  "howItWorks": {
+    "title": "Hoe het werkt",
+    "steps": {
+      "employers": [
+        {
+          "title": "Maak een account aan",
+          "description": "Registreer als werkgever en stel uw bedrijfsprofiel in."
+        },
+        {
+          "title": "Plaats een vacature",
+          "description": "Voeg uw openstaande posities toe met duidelijke eisen en informatie."
+        },
+        {
+          "title": "Vind uw match",
+          "description": "Bekijk kandidaten en maak direct contact met geschikte profielen."
+        }
+      ],
+      "jobseekers": [
+        {
+          "title": "Maak een profiel aan",
+          "description": "Registreer en vul uw cv en werkervaring in."
+        },
+        {
+          "title": "Ontdek vacatures",
+          "description": "Zoek door beschikbare posities die bij uw vaardigheden passen."
+        },
+        {
+          "title": "Solliciteer direct",
+          "description": "Maak contact met werkgevers en start uw nieuwe carrière in Nederland."
+        }
+      ]
+    }
+  },
+  "testimonials": {
+    "title": "Wat mensen zeggen",
+    "tabs": {
+      "employers": "Werkgevers",
+      "jobseekers": "Werkzoekenden"
+    }
+  },
+  "employers": {
+    "benefits": {
+      "title": "Voordelen voor werkgevers",
+      "description": "Waarom u Oekraïense professionals zou moeten overwegen voor uw bedrijf."
+    },
+    "postJob": {
+      "title": "Plaats een vacature",
+      "subtitle": "Bereik duizenden gekwalificeerde Oekraïense werkzoekenden met uw vacature.",
+      "form": {
+        "jobTitle": "Functietitel",
+        "location": "Locatie",
+        "jobType": "Type werk",
+        "types": {
+          "fullTime": "Fulltime",
+          "partTime": "Parttime",
+          "temporary": "Tijdelijk",
+          "contract": "Contract",
+          "internship": "Stage"
+        },
+        "description": "Functieomschrijving",
+        "requirements": "Vereisten",
+        "englishSufficient": "Alleen Engels is voldoende voor deze positie",
+        "submit": "Plaats vacature"
+      },
+      "preview": {
+        "title": "Voorbeeld",
+        "placeholder": "Uw vacature verschijnt hier zodra u het formulier invult.",
+        "locationPlaceholder": "Werklocatie"
+      },
+      "tips": {
+        "title": "Tips voor een effectieve vacatureplaatsing",
+        "tip1": "Wees specifiek over de vaardigheden en kwalificaties die u zoekt.",
+        "tip2": "Vermeld duidelijk de taalvereisten (Nederlands, Engels, enz.).",
+        "tip3": "Voeg ondersteuning toe die u biedt voor nieuwe werknemers uit Oekraïne.",
+        "tip4": "Deel informatie over uw bedrijfscultuur en werkomgeving."
+      }
+    }
+  },
+  "jobseekers": {
+    "search": {
+      "title": "Zoek vacatures",
+      "subtitle": "Ontdek beschikbare posities bij Nederlandse bedrijven die openstaan voor Oekraïense professionals.",
+      "searchPlaceholder": "Zoek op functietitel of trefwoord",
+      "locationPlaceholder": "Locatie",
+      "searchButton": "Zoeken",
+      "advancedFilters": "Geavanceerde filters",
+      "activeFilters": "{count} actieve filters",
+      "clearFilters": "Filters wissen",
+      "filters": {
+        "jobType": "Type werk",
+        "experience": "Ervaringsniveau",
+        "language": "Taal",
+        "date": "Geplaatst op",
+        "all": "Alle",
+        "fullTime": "Fulltime",
+        "partTime": "Parttime",
+        "temporary": "Tijdelijk",
+        "contract": "Contract",
+        "internship": "Stage",
+        "entry": "Startersniveau",
+        "mid": "Gemiddeld niveau",
+        "senior": "Senior niveau",
+        "english": "Engels",
+        "dutch": "Nederlands",
+        "bothLanguages": "Beide talen",
+        "today": "Vandaag",
+        "week": "Deze week",
+        "month": "Deze maand"
+      },
+      "noResults": "Geen resultaten gevonden",
+      "tryAgain": "Probeer andere zoektermen of filters.",
+      "resultsCount": "{count} resultaten gevonden",
+      "postedDate": "Geplaatst: {date}",
+      "viewDetails": "Details bekijken",
+      "applyNow": "Nu solliciteren",
+      "loadMore": "Meer laden"
+    },
+    "categories": {
+      "title": "Verken vacatures per categorie",
+      "jobs": "vacatures",
+      "viewJob": "Bekijk vacature",
+      "browseMore": "Bekijk meer vacatures in deze categorie"
+    },
+    "guide": {
+      "title": "Uw gids voor werken in Nederland",
+      "paragraph1": "We helpen u bij elke stap van uw zoektocht naar werk in Nederland.",
+      "createAccount": "Account aanmaken",
+      "login": "Inloggen",
+      "editProfile": "Profiel bewerken",
+      "profileCompletion": {
+        "title": "Profiel voltooiing",
+        "notLoggedIn": {
+          "title": "Maak een account aan om te beginnen",
+          "description": "Registreer om uw profiel te voltooien en te solliciteren."
+        }
+      }
+    },
+    "safety": {
+      "free": "100% Gratis service",
+      "verified": "Geverifieerde werkgevers",
+      "support": "Ondersteuning in 3 talen"
+    }
+  },
+  "about": {
+    "mission": {
+      "title": "Onze missie",
+      "paragraph1": "Ukraine2Work is opgericht met een duidelijk doel: Oekraïense vluchtelingen verbinden met betekenisvol werk in Nederland, zodat zij hun professionele vaardigheden kunnen benutten en economische onafhankelijkheid kunnen opbouwen.",
+      "paragraph2": "Wij geloven dat toegang tot werk essentieel is voor succesvolle integratie en heropbouw van levens. Door barrières tussen gekwalificeerde Oekraïense professionals en Nederlandse werkgevers weg te nemen, creëren we kansen die voor beide partijen voordelig zijn.",
+      "paragraph3": "Als non-profitorganisatie zijn al onze diensten gratis voor Oekraïense werkzoekenden, waarbij we focussen op het bieden van praktische ondersteuning, middelen en begeleiding gedurende het hele werkzoekproces.",
+      "values": {
+        "free": "Volledig gratis voor werkzoekenden",
+        "accessible": "Toegankelijk in drie talen",
+        "supportive": "Ondersteunend netwerk"
+      },
+      "stats": {
+        "jobSeekers": "Werkzoekenden",
+        "employers": "Werkgevers",
+        "jobsPosted": "Geplaatste vacatures",
+        "successfulHires": "Succesvolle aannames"
+      }
+    },
+    "timeline": {
+      "title": "Onze geschiedenis",
+      "events": {
+        "invasion": {
+          "title": "Russische invasie van Oekraïne",
+          "description": "Na de Russische invasie van Oekraïne werden miljoenen Oekraïners gedwongen hun huizen te ontvluchten, wat de grootste vluchtelingencrisis in Europa sinds de Tweede Wereldoorlog veroorzaakte."
+        },
+        "foundation": {
+          "title": "Oprichting van Ukraine2Work",
+          "description": "Ukraine2Work werd opgericht door Anna Kovalenko, die de urgente behoefte erkende om Oekraïense vluchtelingen te helpen hun leven weer op te bouwen door middel van betekenisvol werk in Nederland."
+        }
+      }
+    },
+    "team": {
+      "title": "Ons team",
+      "description": "Maak kennis met de toegewijde professionals die Ukraine2Work mogelijk maken. Ons diverse team bestaat uit zowel Nederlandse als Oekraïense experts met een gedeelde missie om bruggen te bouwen en kansen te creëren.",
+      "ukrainian": "Oekraïens",
+      "meetFullTeam": "Ontmoet het hele team"
+    }
+  },
+  "contact": {
+    "form": {
+      "title": "Neem contact op",
+      "description": "Heeft u vragen of wilt u meer informatie? Vul het formulier hieronder in en we nemen zo snel mogelijk contact met u op.",
+      "name": "Naam",
+      "email": "E-mail",
+      "subject": "Onderwerp",
+      "message": "Bericht",
+      "agreeToTerms": "Ik ga akkoord met het ",
+      "privacyPolicy": "privacybeleid",
+      "sending": "Verzenden...",
+      "submit": "Versturen",
+      "selectSubject": "Selecteer een onderwerp",
+      "subjects": {
+        "employer": "Vraag werkgever",
+        "jobseeker": "Vraag werkzoekende",
+        "partnership": "Partnerschapsvoorstel",
+        "technical": "Technisch probleem",
+        "other": "Anders"
+      },
+      "validation": {
+        "nameRequired": "Naam is vereist",
+        "emailRequired": "E-mail is vereist",
+        "emailValid": "Voer een geldig e-mailadres in",
+        "subjectRequired": "Onderwerp is vereist",
+        "messageRequired": "Bericht is vereist",
+        "agreeRequired": "U moet akkoord gaan met ons privacybeleid"
+      },
+      "success": {
+        "title": "Bericht verzonden!",
+        "message": "Bedankt voor uw bericht. We nemen zo snel mogelijk contact met u op."
+      }
+    },
+    "info": {
+      "title": "Contactgegevens",
+      "email": {
+        "title": "E-mail",
+        "description": "Stuur ons een e-mail voor algemene vragen of ondersteuning."
+      },
+      "phone": {
+        "title": "Telefoon",
+        "description": "Bel ons tijdens kantooruren."
+      },
+      "address": {
+        "title": "Adres",
+        "description": "Ons kantoor in Amsterdam."
+      },
+      "hours": {
+        "title": "Kantooruren",
+        "description": "Wanneer u ons kunt bereiken.",
+        "weekdays": "Maandag - Vrijdag",
+        "weekend": "Weekend",
+        "closed": "Gesloten"
+      },
+      "followUs": "Volg ons"
+    },
+    "faq": {
+      "title": "Veelgestelde vragen",
+      "usefulLinks": "Nuttige links",
+      "stillHaveQuestions": "Heeft u nog vragen?",
+      "contactUs": "Neem contact met ons op"
+    }
+  },
+  "profile": {
+    "completion": {
+      "title": "Profiel voltooiing",
+      "low": "Voltooi uw profiel om zichtbaarheid voor werkgevers te verhogen.",
+      "medium": "Goede voortgang! Voeg meer informatie toe om uw profiel te verbeteren.",
+      "high": "Uw profiel is bijna compleet!",
+      "complete": "Uw profiel is compleet!"
+    }
+  },
+  "cta": {
+    "general": {
+      "title": "Klaar om te beginnen?",
+      "description": "Registreer vandaag nog en begin met het verbinden van Oekraïens talent met Nederlandse werkgevers.",
+      "primaryCta": "Registreren",
+      "secondaryCta": "Meer informatie"
+    },
+    "employers": {
+      "title": "Klaar om Oekraïens talent aan te nemen?",
+      "description": "Registreer vandaag nog en begin met het vinden van gekwalificeerde Oekraïense professionals voor uw bedrijf.",
+      "primaryCta": "Plaats een vacature",
+      "secondaryCta": "Meer informatie"
+    },
+    "jobseekers": {
+      "title": "Klaar om uw carrière in Nederland te starten?",
+      "description": "Maak vandaag nog een account aan en begin met solliciteren bij Nederlandse werkgevers.",
+      "primaryCta": "Account aanmaken",
+      "secondaryCta": "Bekijk vacatures"
+    }
+  },
+  "permitInfo": {
+    "title": "Geen werkvergunning nodig",
+    "description": "Sinds maart 2022 kunnen Oekraïense vluchtelingen direct in Nederland werken zonder werkvergunning.",
+    "points": [
+      "Oekraïners met tijdelijke beschermingsstatus kunnen direct aan het werk",
+      "Geen bureaucratische vertragingen voor werkgevers",
+      "Gelijke arbeidsvoorwaarden als Nederlandse werknemers"
+    ],
+    "learnMore": "Meer informatie",
+    "contact": "Vragen? Neem contact op"
+  },
+  "blog": {
+    "latestPosts": "Laatste artikelen",
+    "viewAll": "Bekijk alle artikelen",
+    "readMore": "Lees meer",
+    "relatedPosts": "Gerelateerde artikelen",
+    "categories": "Categorieën",
+    "postedOn": "Geplaatst op {date}",
+    "by": "door"
+  },
+  "partners": {
+    "title": "Onze partners"
+  }
+}
