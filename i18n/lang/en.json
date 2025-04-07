@@ -182,6 +182,58 @@
         "tip3": "Add support you provide for new employees from Ukraine.",
         "tip4": "Share information about your company culture and work environment."
       }
+    },
+    "hero": {
+      "title": "For Employers - Find the Right Candidates with Ukraine2Work",
+      "subtitle": "Ukraine2Work offers you the opportunity to match Ukrainian refugees with your vacancies based on soft skills, hard skills, and work experience. Our platform looks beyond just a CV and takes into account personal qualities such as teamwork, adaptability, and problem-solving abilities. This ensures an accurate and sustainable match between candidates and your company."
+    },
+    "matchmaking": {
+      "title": "How Does Our Matchmaking Work?",
+      "softSkills": {
+        "title": "Soft Skills",
+        "description": "We focus on communication skills, flexibility, and problem-solving abilities. These qualities help integrate well into your team."
+      },
+      "hardSkills": {
+        "title": "Hard Skills",
+        "description": "Our database contains candidates with technical expertise in various sectors, from production to IT."
+      },
+      "workExperience": {
+        "title": "Work Experience",
+        "description": "Candidates have valuable work experience from Ukraine and other European countries, making them quickly deployable."
+      }
+    },
+    "importantInfo": {
+      "title": "Important Information for Employers",
+      "description": "Ukrainian refugees with temporary protection status have access to the Dutch labor market without a work permit. Employers only need to report to the UWV. Here are some points to consider:",
+      "noWorkPermit": {
+        "title": "No Work Permit Needed",
+        "description": "Ukrainian refugees can work without additional permits. However, a report must be made to the UWV, where you specify the position, location, and working hours. After this report, they can start working within two business days."
+      },
+      "languageSupport": {
+        "title": "Language and Integration Support",
+        "description": "Take advantage of schemes such as subsidies for language support and workplace guidance."
+      },
+      "employmentTerms": {
+        "title": "Employment Terms",
+        "description": "Ukrainian workers are entitled to the same employment terms as other employees, including fair wages, safe working conditions, and an employment contract."
+      },
+      "temporaryProtection": {
+        "title": "Temporary Protection Extended",
+        "description": "The temporary protection for Ukrainian refugees has been extended until March 4, 2026, meaning they can continue working in the Netherlands without concerns during this period."
+      }
+    },
+    "costs": {
+      "title": "Costs and Collaboration",
+      "description": "The use of our platform is completely free for Ukrainian refugees. For employers, a fee is charged depending on your specific requirements and the number of candidates you are looking for. This fee is flexible and can be tailored to your needs. Contact us to discuss which options best suit your company and to receive a quote tailored to your situation."
+    },
+    "contact": {
+      "title": "Contact Us",
+      "description": "Want to learn more about how you can incorporate Ukrainian refugees into your company? Contact Ukraine2Work to discuss how we can support you in finding the right candidates.",
+      "cta": "Contact us"
+    },
+    "video": {
+      "title": "Watch Our Video",
+      "description": "Watch the video below to see how our platform works and how we help Ukrainian refugees find work in the Netherlands."
     }
   },
   "jobseekers": {

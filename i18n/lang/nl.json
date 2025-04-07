@@ -151,6 +151,58 @@
         "tip3": "Voeg ondersteuning toe die u biedt voor nieuwe werknemers uit Oekraïne.",
         "tip4": "Deel informatie over uw bedrijfscultuur en werkomgeving."
       }
+    },
+    "hero": {
+      "title": "Voor Werkgevers - Vind de Juiste Kandidaten met Ukraine2Work",
+      "subtitle": "Ukraine2Work biedt u de mogelijkheid om Oekraïense vluchtelingen te matchen met uw vacatures op basis van soft skills, hard skills, en werkervaring. Ons platform kijkt verder dan alleen een CV en houdt rekening met persoonlijke eigenschappen zoals teamwerk, aanpassingsvermogen en probleemoplossend vermogen. Dit zorgt voor een nauwkeurige en duurzame match tussen kandidaten en uw bedrijf."
+    },
+    "matchmaking": {
+      "title": "Hoe Werkt Onze Matchmaking?",
+      "softSkills": {
+        "title": "Soft Skills",
+        "description": "We letten op communicatieve vaardigheden, flexibiliteit en probleemoplossend vermogen. Deze eigenschappen helpen om goed in uw team te integreren."
+      },
+      "hardSkills": {
+        "title": "Hard Skills",
+        "description": "Onze database bevat kandidaten met technische expertise in verschillende sectoren, van productie tot IT."
+      },
+      "workExperience": {
+        "title": "Werkervaring",
+        "description": "Kandidaten hebben waardevolle werkervaring uit Oekraïne en andere Europese landen, waardoor ze snel inzetbaar zijn."
+      }
+    },
+    "importantInfo": {
+      "title": "Belangrijke Informatie voor Werkgevers",
+      "description": "Oekraïense vluchtelingen met een tijdelijke beschermingsstatus hebben toegang tot de Nederlandse arbeidsmarkt zonder werkvergunning. Werkgevers moeten enkel melding maken bij het UWV. Hier zijn enkele aandachtspunten:",
+      "noWorkPermit": {
+        "title": "Geen Werkvergunning Nodig",
+        "description": "Oekraïense vluchtelingen kunnen werken zonder extra vergunningen. Wel moet er melding worden gedaan bij het UWV, waarin u de functie, locatie en werktijden aangeeft. Na deze melding kunnen ze binnen twee werkdagen aan de slag."
+      },
+      "languageSupport": {
+        "title": "Taal- en Integratieondersteuning",
+        "description": "Profiteer van regelingen zoals subsidies voor taalondersteuning en begeleiding op de werkvloer."
+      },
+      "employmentTerms": {
+        "title": "Arbeidsvoorwaarden",
+        "description": "Oekraïense werknemers hebben recht op dezelfde arbeidsvoorwaarden als andere medewerkers, inclusief een eerlijk loon, veilige werkomstandigheden en een arbeidsovereenkomst."
+      },
+      "temporaryProtection": {
+        "title": "Tijdelijke Bescherming Verlengd",
+        "description": "De tijdelijke bescherming voor Oekraïense vluchtelingen is verlengd tot 4 maart 2026, wat betekent dat zij in die periode zonder zorgen in Nederland kunnen blijven werken."
+      }
+    },
+    "costs": {
+      "title": "Kosten en Samenwerking",
+      "description": "Voor Oekraïense vluchtelingen is het gebruik van ons platform geheel gratis. Voor werkgevers wordt er een vergoeding in rekening gebracht, afhankelijk van de specifieke wensen en het aantal kandidaten dat u zoekt. Deze vergoeding is flexibel en kan worden afgestemd op uw behoeften. Neem contact met ons op om te bespreken welke opties het beste passen bij uw bedrijf en om een offerte te ontvangen die is afgestemd op uw situatie."
+    },
+    "contact": {
+      "title": "Neem Contact Op",
+      "description": "Wilt u meer weten over hoe u Oekraïense vluchtelingen in uw bedrijf kunt opnemen? Neem contact op met Ukraine2Work om te bespreken hoe wij u kunnen ondersteunen bij het vinden van de juiste kandidaten.",
+      "cta": "Neem contact met ons op"
+    },
+    "video": {
+      "title": "Bekijk Onze Video",
+      "description": "Bekijk de video hieronder om te zien hoe ons platform werkt en hoe we Oekraïense vluchtelingen helpen om werk te vinden in Nederland."
     }
   },
   "jobseekers": {
