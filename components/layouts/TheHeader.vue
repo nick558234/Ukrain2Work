@@ -146,7 +146,7 @@ import { useRoute } from 'vue-router';
 const navigationItems = [
   { key: 'home', route: '/' },
   { key: 'employers', route: '/employers' },
-  { key: 'jobseekers', route: '/job-seekers' },
+  { key: 'jobseekers', route: '/refugees' },
   { key: 'blog', route: '/blog' },
   { key: 'about', route: '/about' },
   { key: 'contact', route: '/contact' },

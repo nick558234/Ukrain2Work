@@ -5,9 +5,9 @@
     
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
       <div class="bg-blue-50 p-6 rounded-lg shadow">
-        <h2 class="text-xl font-semibold mb-3">For Job Seekers</h2>
+        <h2 class="text-xl font-semibold mb-3">For refugees</h2>
         <p class="mb-4">Find job opportunities across Europe that match your skills and experience.</p>
-        <NuxtLink to="/job-seekers" class="text-blue-600 font-medium">Learn More →</NuxtLink>
+        <NuxtLink to="/refugees" class="text-blue-600 font-medium">Learn More →</NuxtLink>
       </div>
       
       <div class="bg-blue-50 p-6 rounded-lg shadow">

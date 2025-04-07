@@ -16,7 +16,7 @@
               <AppButton 
                 color="primary" 
                 size="lg"
-                to="/jobseekers"
+                to="/refugees"
               >
                 {{ $t('hero.home.jobSeekerCta') }}
               </AppButton>
