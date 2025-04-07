@@ -11,11 +11,19 @@
           class="bg-white rounded-lg shadow-md overflow-hidden"
         >
           <div class="relative h-64">
-            <img 
-              :src="member.photo" 
-              :alt="member.name"
-              class="w-full h-full object-cover"
-            />
+            <div class="mb-6">
+              <div class="aspect-w-1 aspect-h-1 rounded-full overflow-hidden mb-4">
+                <NuxtImg 
+                  :src="`/images/team/${member.slug}.jpg`" 
+                  :alt="member.name"
+                  class="w-full h-full object-cover"
+                  width="300"
+                  height="300"
+                  placeholder
+                  :fallback="`https://placehold.co/300x300/e9f5ff/0057b8?text=${member.name.split(' ').map(n => n[0]).join('')}`"
+                />
+              </div>
+            </div>
             <div 
               v-if="member.ukrainian" 
               class="absolute top-3 right-3 bg-ukraine-yellow rounded-full px-3 py-1 text-xs font-medium"
@@ -189,3 +197,7 @@ const displayedMembers = computed(() => {
   return props.showAll ? teamMembers : teamMembers.slice(0, props.previewCount);
 });
 </script>
+
+<style scoped>
+/* Component styles */
+</style>

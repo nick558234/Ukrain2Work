@@ -20,7 +20,15 @@
             <p class="text-gray-600 mb-4">{{ event.description }}</p>
             
             <div v-if="event.image" class="rounded-lg overflow-hidden shadow-md my-4">
-              <img :src="event.image" :alt="event.title" class="w-full">
+              <NuxtImg 
+                :src="event.image" 
+                :alt="event.title"
+                class="w-full"
+                width="600"
+                height="300"
+                placeholder
+                :fallback="`https://placehold.co/600x300/e9f5ff/0057b8?text=${encodeURIComponent(event.title)}`"
+              />
             </div>
             
             <div v-if="event.highlights && event.highlights.length" class="bg-white p-4 rounded-lg border border-gray-100">

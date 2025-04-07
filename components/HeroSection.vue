@@ -7,43 +7,49 @@
           <h1 class="text-ukraine-blue mb-6">
             {{ $t(`hero.${pageType}.title`) }}
           </h1>
-          <p class="text-xl mb-8">
+          <p class="text-xl mb-8 text-ukraine-blue">
             {{ $t(`hero.${pageType}.subtitle`) }}
           </p>
           <div class="flex flex-wrap gap-4">
-            <AppButton 
-              color="primary" 
-              size="lg"
-              @click="navigateTo('/jobseekers')"
-              v-if="pageType === 'home'"
-            >
-              {{ $t('hero.home.jobSeekerCta') }}
-            </AppButton>
-            <AppButton 
-              color="secondary" 
-              size="lg"
-              @click="navigateTo('/employers')"
-              v-if="pageType === 'home'"
-            >
-              {{ $t('hero.home.employerCta') }}
-            </AppButton>
-            <AppButton 
-              color="primary" 
-              size="lg"
-              @click="navigateTo(primaryCtaLink)"
-              v-else
-            >
-              {{ $t(`hero.${pageType}.primaryCta`) }}
-            </AppButton>
+            <!-- Home page has two buttons -->
+            <template v-if="pageType === 'home'">
+              <AppButton 
+                color="primary" 
+                size="lg"
+                to="/jobseekers"
+              >
+                {{ $t('hero.home.jobSeekerCta') }}
+              </AppButton>
+              <AppButton 
+                color="secondary" 
+                size="lg"
+                to="/employers"
+              >
+                {{ $t('hero.home.employerCta') }}
+              </AppButton>
+            </template>
+            
+            <!-- Other pages have one primary button -->
+            <template v-else>
+              <AppButton 
+                color="primary" 
+                size="lg"
+                :to="primaryCtaLink"
+              >
+                {{ $t(`hero.${pageType}.primaryCta`) }}
+              </AppButton>
+            </template>
           </div>
         </div>
         
         <!-- Hero Image -->
         <div class="order-first lg:order-last">
           <img 
-            :src="`/img/heroes/${pageType}-hero.jpg`" 
+            :src="fallbackImage" 
             :alt="$t(`hero.${pageType}.imageAlt`)"
             class="rounded-lg shadow-lg w-full h-auto object-cover"
+            width="600"
+            height="400"
           />
         </div>
       </div>
@@ -64,7 +70,7 @@ const props = defineProps({
   pageType: {
     type: String,
     default: 'home',
-    validator: (value) => ['home', 'employers', 'jobseekers'].includes(value)
+    validator: (value) => ['home', 'employers', 'jobseekers', 'about'].includes(value)
   },
   primaryCtaLink: {
     type: String,
@@ -72,5 +78,8 @@ const props = defineProps({
   }
 });
 
-const { navigateTo } = useRouter();
+// Use a fallback image instead of the missing image
+const fallbackImage = computed(() => {
+  return 'https://placehold.co/600x400/e9f5ff/0057b8?text=Ukraine2Work';
+});
 </script>

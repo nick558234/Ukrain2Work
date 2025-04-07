@@ -26,19 +26,47 @@
       <!-- Testimonials -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <div v-for="(testimonial, index) in filteredTestimonials" :key="index" class="bg-white rounded-lg shadow-md p-6">
-          <div class="flex items-center mb-4">
-            <img 
-              :src="testimonial.imageSrc" 
-              :alt="testimonial.name"
-              class="w-12 h-12 rounded-full object-cover"
-            />
-            <div class="ml-4">
-              <h4 class="font-bold">{{ testimonial.name }}</h4>
-              <p class="text-sm text-gray-600">{{ testimonial.role }}</p>
+          <div class="flex items-center space-x-4">
+            <div class="flex-shrink-0">
+              <NuxtImg
+                :src="`/images/testimonials/${testimonial.type}-${testimonial.id}.jpg`"
+                :alt="testimonial.name"
+                class="h-14 w-14 rounded-full object-cover border-2 border-white"
+                width="56"
+                height="56"
+                placeholder
+                :fallback="`https://placehold.co/56x56/e9f5ff/0057b8?text=${testimonial.name.charAt(0)}`"
+              />
+            </div>
+            <div>
+              <div class="text-base font-medium text-gray-900">{{ testimonial.name }}</div>
+              <div class="text-sm text-gray-500">{{ testimonial.role }}</div>
             </div>
           </div>
           <div class="bg-ukraine-yellow bg-opacity-10 p-4 rounded-md italic">
             <p>{{ testimonial.quote }}</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonial content with profile image -->
+      <div class="max-w-3xl mx-auto text-center pt-8">
+        <div 
+          v-for="(testimonial, i) in filteredTestimonials" 
+          :key="i"
+          class="space-y-6"
+          v-show="i === activeTestimonial"
+        >
+          <div class="mx-auto w-24 h-24 rounded-full overflow-hidden border-2 border-ukraine-yellow">
+            <NuxtImg 
+              :src="`/images/testimonials/${testimonial.userType}-${testimonial.id}.jpg`" 
+              :alt="`${testimonial.name} portrait`"
+              class="w-full h-full object-cover"
+              width="96"
+              height="96"
+              placeholder
+              :fallback="`https://placehold.co/96x96/e9f5ff/0057b8?text=${testimonial.name.split(' ').map(n => n[0]).join('')}`"
+            />
           </div>
         </div>
       </div>
@@ -48,6 +76,7 @@
 
 <script setup>
 import { ref, computed } from 'vue';
+import { useI18n } from 'vue-i18n';
 
 const props = defineProps({
   defaultTab: {
@@ -59,49 +88,61 @@ const props = defineProps({
 
 const activeTab = ref(props.defaultTab);
 
-// Mock testimonials data
+// Generate placeholder images for Alex Spaan (the business owner)
+const getTestimonialImageSrc = (testimonial) => {
+  try {
+    return `/images/testimonials/${testimonial.type}-${testimonial.id}.jpg`;
+  } catch (e) {
+    // Return placeholder for each testimonial type with colored backgrounds
+    const bgColor = testimonial.type === 'employers' ? '0057b8' : 'ffd700';
+    const textColor = testimonial.type === 'employers' ? 'ffffff' : '000000';
+    return `https://placehold.co/96x96/${bgColor}/${textColor}?text=${testimonial.name.charAt(0)}`;
+  }
+};
+
+// Mock testimonials data with added ID field
 // In a real application, this would come from an API or CMS
 const testimonials = [
   {
+    id: 1,
     type: 'employers',
     name: 'Jan De Vries',
     role: 'HR Manager, Tech Solutions NL',
-    imageSrc: '/img/testimonials/employer-1.jpg',
     quote: 'Ukraine2Work made it incredibly easy to find qualified Ukrainian professionals. The process was smooth and we found a perfect match for our development team.'
   },
   {
+    id: 2,
     type: 'employers',
     name: 'Maria Jansen',
     role: 'CEO, Amsterdam Retail Group',
-    imageSrc: '/img/testimonials/employer-2.jpg',
     quote: 'We were able to welcome three Ukrainian team members within weeks. Their skills and work ethic have been outstanding, and the integration was seamless.'
   },
   {
+    id: 3,
     type: 'employers',
-    name: 'Peter Bakker',
-    role: 'Owner, Bakker Construction',
-    imageSrc: '/img/testimonials/employer-3.jpg',
-    quote: 'The clarity around work permits and legal requirements was very helpful. We found skilled workers who have become invaluable to our projects.'
+    name: 'Alex Spaan',
+    role: 'Owner, Ukraine2Work',
+    quote: 'Our mission is to connect talented Ukrainian professionals with Dutch employers. I\'ve seen firsthand how these connections transform lives and businesses.'
   },
   {
+    id: 1,
     type: 'jobseekers',
     name: 'Olena Kovalenko',
     role: 'Software Developer',
-    imageSrc: '/img/testimonials/jobseeker-1.jpg',
     quote: 'Within two weeks of creating my profile, I had three interviews and a job offer. Ukraine2Work helped me start my new life in the Netherlands.'
   },
   {
+    id: 2,
     type: 'jobseekers',
     name: 'Andriy Shevchenko',
     role: 'Logistics Specialist',
-    imageSrc: '/img/testimonials/jobseeker-2.jpg',
     quote: 'I was concerned about the language barrier, but found many opportunities where English was sufficient. My new employer even offers Dutch lessons.'
   },
   {
+    id: 3,
     type: 'jobseekers',
     name: 'Natalia Ivanenko',
     role: 'Accountant',
-    imageSrc: '/img/testimonials/jobseeker-3.jpg',
     quote: 'The platform made it easy to showcase my qualifications to Dutch employers. The process was straightforward and I found a welcoming workplace.'
   }
 ];

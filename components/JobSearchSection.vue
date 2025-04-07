@@ -52,7 +52,7 @@
           <div>
             <button 
               type="button" 
-              @click="searchJobs"
+              @click="handleSearch"
               class="w-full md:w-auto px-6 py-3 bg-ukraine-blue text-white font-medium rounded-md hover:bg-opacity-90 transition-colors"
             >
               {{ $t('jobseekers.search.searchButton') }}
@@ -236,7 +236,7 @@
                 <AppButton 
                   color="primary" 
                   size="sm"
-                  @click="viewJobDetails(job.id)"
+                  :href="`/job-details/${job.id}`"
                   class="mr-3"
                 >
                   {{ $t('jobseekers.search.viewDetails') }}
@@ -244,7 +244,8 @@
                 <AppButton 
                   color="outline" 
                   size="sm"
-                  @click="applyToJob(job.id)"
+                  :href="`https://nederland-werkt.8vance.com/job/${job.id}?language=${$i18n.locale}`"
+                  target="_blank"
                 >
                   {{ $t('jobseekers.search.applyNow') }}
                 </AppButton>
@@ -255,7 +256,7 @@
           <div v-if="jobs.length > 0" class="mt-8 flex justify-center">
             <button 
               type="button" 
-              @click="loadMoreJobs"
+              @click="loadMore"
               class="px-6 py-2 border border-ukraine-blue text-ukraine-blue rounded-md hover:bg-ukraine-blue hover:text-white transition-colors"
             >
               {{ $t('jobseekers.search.loadMore') }}
@@ -378,13 +379,35 @@ const loadMoreJobs = () => {
   console.log('Loading more jobs...');
 };
 
-const viewJobDetails = (jobId) => {
-  // In a real app, this would navigate to the job details page
-  console.log('Viewing job details for ID:', jobId);
+const handleSearch = async () => {
+  try {
+    // Perform search
+    await searchJobs();
+  } catch (error) {
+    // Handle error appropriately
+  }
+};
+
+const loadMore = async () => {
+  try {
+    // Load more jobs
+    await loadMoreJobs();
+  } catch (error) {
+    // Handle error appropriately
+  }
+};
+
+const viewJobDetails = async (jobId) => {
+  try {
+    // View job details
+    await fetchJobDetails(jobId);
+  } catch (error) {
+    // Handle error appropriately
+  }
 };
 
 const applyToJob = (jobId) => {
-  // In a real app, this would open the job application form
-  console.log('Applying to job ID:', jobId);
+  // Redirect to external application URL
+  window.open(`https://nederland-werkt.8vance.com/job/${jobId}?language=${$i18n.locale}`, '_blank');
 };
 </script>

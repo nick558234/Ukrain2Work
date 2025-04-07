@@ -48,6 +48,20 @@
               </svg>
               <span>{{ job.location }}</span>
             </div>
+            <div class="mt-3 flex items-center">
+              <div class="h-8 w-8 bg-gray-100 rounded-full overflow-hidden mr-2">
+                <NuxtImg
+                  :src="`/images/companies/${job.company.toLowerCase().replace(/\s+/g, '-')}.jpg`"
+                  :alt="`${job.company} logo`"
+                  class="h-full w-full object-contain"
+                  width="32"
+                  height="32"
+                  placeholder
+                  :fallback="`https://placehold.co/32x32/e9f5ff/0057b8?text=${job.company.charAt(0)}`"
+                />
+              </div>
+              <span class="text-sm text-gray-600">{{ job.company }}</span>
+            </div>
             <div class="mt-4">
               <AppButton color="outline" size="sm" @click="viewJobDetails(job.id)">
                 {{ $t('jobseekers.categories.viewJob') }}

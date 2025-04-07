@@ -5,7 +5,17 @@
     "jobseekers": "For Job Seekers",
     "blog": "Blog",
     "about": "About",
-    "contact": "Contact"
+    "contact": "Contact",
+    "refugees": "For Refugees"
+  },
+  "auth": {
+    "login": "Login",
+    "register": "Register",
+    "no_account": "Don't have an account?",
+    "already_have_account": "Already have an account?",
+    "logout": "Logout",
+    "profile": "Profile",
+    "redirect_message": "You will be redirected to the authentication page."
   },
   "footer": {
     "tagline": "Connecting Ukrainian talent with Dutch employers",
@@ -94,7 +104,47 @@
     "tabs": {
       "employers": "Employers",
       "jobseekers": "Job Seekers"
-    }
+    },
+    "employers": [
+      {
+        "id": 1,
+        "name": "Jan De Vries",
+        "role": "HR Manager, Tech Solutions NL",
+        "quote": "Ukraine2Work made it incredibly easy to find qualified Ukrainian professionals. The process was smooth and we found a perfect match for our development team."
+      },
+      {
+        "id": 2,
+        "name": "Maria Jansen",
+        "role": "CEO, Amsterdam Retail Group",
+        "quote": "We were able to welcome three Ukrainian team members within weeks. Their skills and work ethic have been outstanding, and the integration was seamless."
+      },
+      {
+        "id": 3,
+        "name": "Alex Spaan",
+        "role": "Owner, Ukraine2Work",
+        "quote": "Our mission is to connect talented Ukrainian professionals with Dutch employers. I've seen firsthand how these connections transform lives and businesses."
+      }
+    ],
+    "jobseekers": [
+      {
+        "id": 1,
+        "name": "Olena Kovalenko",
+        "role": "Software Developer",
+        "quote": "Thanks to Ukraine2Work, I found a job that matches my skills within two weeks of arriving in the Netherlands. The support throughout the process was invaluable."
+      },
+      {
+        "id": 2,
+        "name": "Mykhailo Shevchenko",
+        "role": "Marketing Specialist",
+        "quote": "The platform made it easy to connect with Dutch employers. I appreciate how they verify companies and ensure safe job opportunities."
+      },
+      {
+        "id": 3,
+        "name": "Natalia Bondar",
+        "role": "Financial Analyst",
+        "quote": "Ukraine2Work helped me restart my career in the Netherlands. Their guidance on CV preparation and interview tips was extremely helpful."
+      }
+    ]
   },
   "employers": {
     "benefits": {
@@ -132,6 +182,58 @@
         "tip3": "Add support you provide for new employees from Ukraine.",
         "tip4": "Share information about your company culture and work environment."
       }
+    },
+    "hero": {
+      "title": "For Employers - Find the Right Candidates with Ukraine2Work",
+      "subtitle": "Ukraine2Work offers you the opportunity to match Ukrainian refugees with your vacancies based on soft skills, hard skills, and work experience. Our platform looks beyond just a CV and takes into account personal qualities such as teamwork, adaptability, and problem-solving abilities. This ensures an accurate and sustainable match between candidates and your company."
+    },
+    "matchmaking": {
+      "title": "How Does Our Matchmaking Work?",
+      "softSkills": {
+        "title": "Soft Skills",
+        "description": "We focus on communication skills, flexibility, and problem-solving abilities. These qualities help integrate well into your team."
+      },
+      "hardSkills": {
+        "title": "Hard Skills",
+        "description": "Our database contains candidates with technical expertise in various sectors, from production to IT."
+      },
+      "workExperience": {
+        "title": "Work Experience",
+        "description": "Candidates have valuable work experience from Ukraine and other European countries, making them quickly deployable."
+      }
+    },
+    "importantInfo": {
+      "title": "Important Information for Employers",
+      "description": "Ukrainian refugees with temporary protection status have access to the Dutch labor market without a work permit. Employers only need to report to the UWV. Here are some points to consider:",
+      "noWorkPermit": {
+        "title": "No Work Permit Needed",
+        "description": "Ukrainian refugees can work without additional permits. However, a report must be made to the UWV, where you specify the position, location, and working hours. After this report, they can start working within two business days."
+      },
+      "languageSupport": {
+        "title": "Language and Integration Support",
+        "description": "Take advantage of schemes such as subsidies for language support and workplace guidance."
+      },
+      "employmentTerms": {
+        "title": "Employment Terms",
+        "description": "Ukrainian workers are entitled to the same employment terms as other employees, including fair wages, safe working conditions, and an employment contract."
+      },
+      "temporaryProtection": {
+        "title": "Temporary Protection Extended",
+        "description": "The temporary protection for Ukrainian refugees has been extended until March 4, 2026, meaning they can continue working in the Netherlands without concerns during this period."
+      }
+    },
+    "costs": {
+      "title": "Costs and Collaboration",
+      "description": "The use of our platform is completely free for Ukrainian refugees. For employers, a fee is charged depending on your specific requirements and the number of candidates you are looking for. This fee is flexible and can be tailored to your needs. Contact us to discuss which options best suit your company and to receive a quote tailored to your situation."
+    },
+    "contact": {
+      "title": "Contact Us",
+      "description": "Want to learn more about how you can incorporate Ukrainian refugees into your company? Contact Ukraine2Work to discuss how we can support you in finding the right candidates.",
+      "cta": "Contact us"
+    },
+    "video": {
+      "title": "Watch Our Video",
+      "description": "Watch the video below to see how our platform works and how we help Ukrainian refugees find work in the Netherlands."
     }
   },
   "jobseekers": {
@@ -191,12 +293,73 @@
           "title": "Create an account to get started",
           "description": "Register to complete your profile and apply for jobs."
         }
+      },
+      "steps": {
+        "createAccount": {
+          "title": "Create Your Account",
+          "description": "Sign up with your email or social media accounts to get started. It only takes a few minutes.",
+          "tips": {
+            "email": "Use a professional email address",
+            "password": "Choose a secure password",
+            "security": "Enable two-factor authentication for extra security"
+          }
+        },
+        "completeProfile": {
+          "title": "Complete Your Profile",
+          "description": "Add your work experience, education, and skills. A complete profile increases your chance of being noticed by employers.",
+          "tips": {
+            "photo": "Upload a professional profile photo",
+            "experience": "List all relevant work experience, even from Ukraine",
+            "education": "Add your education credentials"
+          }
+        },
+        "uploadCV": {
+          "title": "Upload Your CV",
+          "description": "Upload your existing CV or create one using our templates designed for the Dutch job market.",
+          "tips": {
+            "format": "Format your CV according to Dutch standards",
+            "skills": "Highlight transferable skills",
+            "language": "Include language proficiency levels"
+          }
+        },
+        "browseJobs": {
+          "title": "Browse Available Jobs",
+          "description": "Search through available positions that match your skills and experience.",
+          "tips": {
+            "filters": "Use filters to narrow down your search",
+            "save": "Save jobs that interest you",
+            "alerts": "Set up job alerts for new opportunities"
+          }
+        },
+        "applyConnect": {
+          "title": "Apply and Connect",
+          "description": "Apply directly to jobs and connect with employers who are open to hiring Ukrainian professionals.",
+          "tips": {
+            "customize": "Customize your application for each position",
+            "followup": "Follow up after applying",
+            "prepare": "Prepare for interviews, including potential language requirements"
+          }
+        }
       }
     },
     "safety": {
       "free": "100% Free service",
       "verified": "Verified employers",
-      "support": "Support in 3 languages"
+      "support": "Support in 3 languages",
+      "badges": {
+        "free": {
+          "title": "100% Free Service",
+          "description": "Our platform is completely free for Ukrainian job seekers. No hidden fees or charges, ever."
+        },
+        "verified": {
+          "title": "Verified Employers",
+          "description": "All employers on our platform are verified to ensure a safe job search experience."
+        },
+        "language": {
+          "title": "Language Support",
+          "description": "Get assistance in Ukrainian, English, and Dutch throughout your job search process."
+        }
+      }
     }
   },
   "about": {
@@ -327,6 +490,12 @@
       "description": "Create an account today and start applying to Dutch employers.",
       "primaryCta": "Create account",
       "secondaryCta": "Browse jobs"
+    },
+    "jobseeker": {
+      "title": "Ready to start your career in the Netherlands?",
+      "description": "Create your profile and start applying for jobs today.",
+      "primaryCta": "View job openings",
+      "secondaryCta": "Learn more"
     }
   },
   "permitInfo": {
@@ -350,6 +519,126 @@
     "by": "by"
   },
   "partners": {
-    "title": "Our partners"
+    "title": "Our partners",
+    "list": [
+      {
+        "name": "Dutch Ministry of Labor",
+        "logo": "/img/partners/ministry.svg"
+      }
+    ]
+  },
+  "refugees": {
+    "hero": {
+      "title": "For Ukrainian Refugees - Find Work in the Netherlands with Ukraine2Work",
+      "subtitle": "Welcome to Ukraine2Work! We help Ukrainian refugees find suitable work in the Netherlands based on your skills, work experience, and ambitions. Our platform uses advanced technology to find a match that suits your unique qualities.",
+      "cta": "Register now",
+      "contact": "Contact us"
+    },
+    "whiteVsBlack": {
+      "title": "LEGAL VS ILLEGAL WORK",
+      "white": {
+        "title": "LEGAL",
+        "socialSecurity": "Social security:",
+        "pension": "Pension",
+        "paidLeave": "Paid leave",
+        "paidAccident": "Paid in case of accident",
+        "safety": "Safety:",
+        "accidentInsurance": "Insured for accidents",
+        "unemploymentBenefit": "Unemployment benefit",
+        "collectiveAgreement": "Collective agreement",
+        "bonuses": "Bonuses:",
+        "thirteenthMonth": "13th month",
+        "holidayAllowance": "Holiday allowance",
+        "salaryIncrease": "Salary increase",
+        "contract": "Contract:",
+        "noticePeriod": "Cannot be fired without reason",
+        "noticeTime": "Notice period",
+        "reference": "Reference on CV"
+      },
+      "black": {
+        "title": "ILLEGAL",
+        "socialSecurity": "Social assistance:",
+        "noPension": "NO pension",
+        "noPaidLeave": "NO paid leave",
+        "payAccidentYourself": "Pay for work accidents yourself",
+        "risks": "Risks:",
+        "noInsurance": "NO insurance",
+        "noUnemploymentBenefit": "NO right to unemployment benefit",
+        "noCollectiveAgreement": "NO collective agreement protection",
+        "fines": "Fines:",
+        "taxFine": "300% of the wage tax to be paid",
+        "fineAmount": "Fine of €4,500",
+        "contractless": "Contractless:",
+        "noNoticePeriod": "NO notice period",
+        "noReference": "NO reference on CV",
+        "immediateDismissal": "Immediate dismissal"
+      },
+      "statistics": {
+        "fine": "of workers who get caught have to pay €4,500+ in fines, plus any additional assessments.",
+        "undeclared": "of workers in the Netherlands have income that is not declared to the tax authorities."
+      }
+    },
+    "video": {
+      "title": "Watch Our Video",
+      "description": "Watch the video below to see how our platform works and how we help Ukrainian refugees find work in the Netherlands."
+    },
+    "information": {
+      "title": "Information for Ukrainian Refugees",
+      "matchmaking": {
+        "title": "How Does Our Matchmaking Work?",
+        "softSkills": {
+          "title": "Soft skills",
+          "description": "Such as adaptability, teamwork, and problem-solving abilities."
+        },
+        "hardSkills": {
+          "title": "Hard skills",
+          "description": "Such as technical skills and specific work experience."
+        },
+        "workExperience": {
+          "title": "Work experience",
+          "description": "We use your previous work experience to ensure you are placed at the right level."
+        }
+      },
+      "legal": {
+        "title": "What You Need to Know as a Ukrainian Refugee in the Netherlands",
+        "description": "Under the EU Temporary Protection Directive, Ukrainian refugees can work in the Netherlands without a work permit. This means that after registering with the municipality and obtaining an O-document (proof of residence), you can immediately start looking for a job. It is important that you register with the IND (Immigration and Naturalization Service) within four weeks to legalize your stay and work status.",
+        "rules": {
+          "title": "Important Rules and Conditions",
+          "workPermit": {
+            "title": "Work permit",
+            "description": "Ukrainian refugees do not need a work permit to do paid work in the Netherlands. Employers are required to register you with the UWV before you start working."
+          },
+          "equalRights": {
+            "title": "Equal rights",
+            "description": "As a Ukrainian refugee, you have the same rights as Dutch workers, such as fair wages, safe working conditions, and access to health insurance."
+          },
+          "temporaryProtection": {
+            "title": "Temporary protection",
+            "description": "The temporary protection for Ukrainian refugees has been extended until March 4, 2026. This means you can continue working in the Netherlands until then."
+          }
+        }
+      },
+      "howToFindWork": {
+        "title": "How to Find Work?",
+        "description": "At Ukraine2Work, we help you step by step. You just need to create your profile on our platform, where we ask about your skills, work experience, and ambitions. Our system ensures that you are quickly matched with the right employers in various sectors.",
+        "cta": "Create your profile"
+      },
+      "contact": {
+        "title": "Contact Us",
+        "description": "Do you have questions about working in the Netherlands or need support in finding work? Contact us, and we'll be happy to help you further.",
+        "cta": "Get in touch"
+      }
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "residencePermit": {
+        "question": "What if I don't have proof of residence yet?",
+        "answer": "Make sure to register with the municipality where you are staying and make an appointment with the IND to collect your O-document. Without this proof, you are not allowed to work."
+      },
+      "volunteer": {
+        "question": "Can I work as a volunteer?",
+        "answer": "Yes, Ukrainian refugees can do volunteer work without a work permit."
+      }
+    }
   }
 }

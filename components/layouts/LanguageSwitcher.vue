@@ -1,13 +1,13 @@
 <template>
   <div class="relative">
     <button 
-      @click="toggleDropdown"
+      @click.stop="toggleDropdown"
       class="flex items-center space-x-2 px-3 py-2 rounded-md hover:bg-gray-100 transition-colors"
       :aria-expanded="isOpen"
       aria-haspopup="true"
     >
-      <span class="fi" :class="`fi-${currentLocaleObj.flag}`"></span>
-      <span class="hidden sm:inline text-sm font-medium">{{ currentLocaleObj.name }}</span>
+      <span class="fi" :class="`fi-${languageStore.currentLocaleObj.flag}`"></span>
+      <span class="hidden sm:inline text-sm font-medium">{{ languageStore.currentLocaleObj.name }}</span>
       <svg class="h-4 w-4 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
       </svg>
@@ -21,76 +21,102 @@
       leave-from-class="transform scale-100 opacity-100"
       leave-to-class="transform scale-95 opacity-0"
     >
-      <div
+      <div 
         v-if="isOpen"
-        class="absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 py-1 z-50"
+        class="absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none z-10"
+        role="menu"
+        ref="dropdownRef"
       >
-        <a
-          v-for="locale in availableLocales"
-          :key="locale.code"
-          :href="switchLocalePath(locale.code)"
-          class="flex items-center space-x-2 px-4 py-2 text-sm text-gray-700 hover:bg-ukraine-blue hover:text-white"
-          :class="{ 'bg-ukraine-light': locale.code === $i18n.locale }"
-          @click="closeDropdown"
-        >
-          <span class="fi" :class="`fi-${locale.flag}`"></span>
-          <span>{{ locale.name }}</span>
-        </a>
+        <div class="py-1" role="none">
+          <button
+            v-for="locale in languageStore.availableLocales"
+            :key="locale.code"
+            class="flex items-center w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+            :class="{ 'bg-gray-50': locale.code === languageStore.currentLocale }"
+            role="menuitem"
+            @click.stop="selectLanguage(locale.code)"
+          >
+            <span class="fi mr-3" :class="`fi-${locale.flag}`"></span>
+            {{ locale.name }}
+          </button>
+        </div>
       </div>
     </transition>
   </div>
 </template>
 
-<script setup>
-import { ref, computed, onMounted, onBeforeUnmount } from 'vue';
+<script setup lang="ts">
+import { ref, onMounted, onBeforeUnmount, watch } from 'vue';
+import { useLanguageStore } from '~/stores/language';
 import { useI18n } from 'vue-i18n';
 import { useRouter } from 'vue-router';
 
+const languageStore = useLanguageStore();
 const { locale } = useI18n();
 const router = useRouter();
 const isOpen = ref(false);
+const dropdownRef = ref(null);
 
-// Get available locales from i18n configuration
-const availableLocales = computed(() => {
-  return router.app.i18n.locales;
+// Sync the language store with the current i18n locale
+onMounted(() => {
+  // Set the initial locale in the store based on the current i18n locale
+  languageStore.currentLocale = locale.value;
+  
+  // Watch for changes in the i18n locale and update the store
+  watch(locale, (newLocale) => {
+    languageStore.currentLocale = newLocale;
+  });
 });
 
-// Get current locale object
-const currentLocaleObj = computed(() => {
-  return availableLocales.value.find(l => l.code === locale.value);
-});
-
-const toggleDropdown = () => {
+function toggleDropdown() {
   isOpen.value = !isOpen.value;
-};
+}
 
-const closeDropdown = () => {
-  isOpen.value = false;
-};
+async function selectLanguage(localeCode: string) {
+  // Update both the i18n locale and the store
+  locale.value = localeCode;
+  
+  // Get current route
+  const currentRoute = router.currentRoute.value;
+  
+  if (currentRoute && currentRoute.fullPath) {
+    // Create language path prefix
+    let prefix = '';
+    if (localeCode !== 'nl') { // assuming nl is the default locale
+      prefix = `/${localeCode}`;
+    }
+    
+    // Remove existing locale prefix if present
+    let pathWithoutLocale = currentRoute.fullPath;
+    const locales = languageStore.availableLocales.map(l => l.code);
+    
+    for (const locale of locales) {
+      if (pathWithoutLocale === `/${locale}` || pathWithoutLocale.startsWith(`/${locale}/`)) {
+        pathWithoutLocale = pathWithoutLocale.substring(locale.length + 1) || '/';
+        break;
+      }
+    }
+    
+    // Build new path with language prefix
+    const newPath = prefix + (pathWithoutLocale === '/' ? '' : pathWithoutLocale);
+    
+    // Navigate to the new path
+    await router.push(newPath || '/');
+  } else {
+    // If route is not available, just navigate to the root with the locale prefix
+    const newPath = localeCode === 'nl' ? '/' : `/${localeCode}`;
+    await router.push(newPath);
+  }
+  
+  // Force a page reload to ensure all translations are applied
+  window.location.reload();
+}
 
-// Close dropdown when clicking outside
-const handleClickOutside = (event) => {
-  if (isOpen.value && !event.target.closest('.language-switcher')) {
+function handleClickOutside(event: MouseEvent) {
+  if (dropdownRef.value && !dropdownRef.value.contains(event.target)) {
     isOpen.value = false;
   }
-};
-
-// Generate path for language switching
-const switchLocalePath = (localeCode) => {
-  // Create the path to switch to the new locale
-  // This is a simplified version. In real implementation, 
-  // use the NuxtLink component or nuxt-i18n's switchLocalePath method
-  const currentRoute = router.currentRoute.value;
-  const { path, query, hash } = currentRoute;
-  
-  // For the default locale, don't add prefix
-  if (localeCode === router.app.i18n.defaultLocale) {
-    return path;
-  }
-  
-  // For other locales, add the prefix
-  return `/${localeCode}${path}`;
-};
+}
 
 onMounted(() => {
   document.addEventListener('click', handleClickOutside);
@@ -102,22 +128,5 @@ onBeforeUnmount(() => {
 </script>
 
 <style scoped>
-/* Flag icons would typically be imported from a library like flag-icons-css */
-.fi {
-  width: 1.25em;
-  height: 1em;
-  display: inline-block;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-.fi-nl {
-  background-image: url('/img/flags/nl.svg');
-}
-.fi-gb {
-  background-image: url('/img/flags/gb.svg');
-}
-.fi-ua {
-  background-image: url('/img/flags/ua.svg');
-}
+/* Component-specific styles */
 </style>
