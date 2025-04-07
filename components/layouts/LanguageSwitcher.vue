@@ -1,7 +1,7 @@
 <template>
   <div class="relative">
     <button 
-      @click="toggleDropdown"
+      @click.stop="toggleDropdown"
       class="flex items-center space-x-2 px-3 py-2 rounded-md hover:bg-gray-100 transition-colors"
       :aria-expanded="isOpen"
       aria-haspopup="true"
@@ -34,7 +34,7 @@
             class="flex items-center w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
             :class="{ 'bg-gray-50': locale.code === languageStore.currentLocale }"
             role="menuitem"
-            @click="selectLanguage(locale.code)"
+            @click.stop="selectLanguage(locale.code)"
           >
             <span class="fi mr-3" :class="`fi-${locale.flag}`"></span>
             {{ locale.name }}
@@ -46,20 +46,70 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onBeforeUnmount } from 'vue';
+import { ref, onMounted, onBeforeUnmount, watch } from 'vue';
 import { useLanguageStore } from '~/stores/language';
+import { useI18n } from 'vue-i18n';
+import { useRouter } from 'vue-router';
 
 const languageStore = useLanguageStore();
+const { locale } = useI18n();
+const router = useRouter();
 const isOpen = ref(false);
 const dropdownRef = ref(null);
+
+// Sync the language store with the current i18n locale
+onMounted(() => {
+  // Set the initial locale in the store based on the current i18n locale
+  languageStore.currentLocale = locale.value;
+  
+  // Watch for changes in the i18n locale and update the store
+  watch(locale, (newLocale) => {
+    languageStore.currentLocale = newLocale;
+  });
+});
 
 function toggleDropdown() {
   isOpen.value = !isOpen.value;
 }
 
-function selectLanguage(localeCode: string) {
-  languageStore.switchLanguage(localeCode);
-  isOpen.value = false;
+async function selectLanguage(localeCode: string) {
+  // Update both the i18n locale and the store
+  locale.value = localeCode;
+  
+  // Get current route
+  const currentRoute = router.currentRoute.value;
+  
+  if (currentRoute && currentRoute.fullPath) {
+    // Create language path prefix
+    let prefix = '';
+    if (localeCode !== 'nl') { // assuming nl is the default locale
+      prefix = `/${localeCode}`;
+    }
+    
+    // Remove existing locale prefix if present
+    let pathWithoutLocale = currentRoute.fullPath;
+    const locales = languageStore.availableLocales.map(l => l.code);
+    
+    for (const locale of locales) {
+      if (pathWithoutLocale === `/${locale}` || pathWithoutLocale.startsWith(`/${locale}/`)) {
+        pathWithoutLocale = pathWithoutLocale.substring(locale.length + 1) || '/';
+        break;
+      }
+    }
+    
+    // Build new path with language prefix
+    const newPath = prefix + (pathWithoutLocale === '/' ? '' : pathWithoutLocale);
+    
+    // Navigate to the new path
+    await router.push(newPath || '/');
+  } else {
+    // If route is not available, just navigate to the root with the locale prefix
+    const newPath = localeCode === 'nl' ? '/' : `/${localeCode}`;
+    await router.push(newPath);
+  }
+  
+  // Force a page reload to ensure all translations are applied
+  window.location.reload();
 }
 
 function handleClickOutside(event: MouseEvent) {
@@ -78,22 +128,5 @@ onBeforeUnmount(() => {
 </script>
 
 <style scoped>
-/* Flag icons would typically be imported from a library like flag-icons-css */
-.fi {
-  width: 1.25em;
-  height: 1em;
-  display: inline-block;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-.fi-nl {
-  background-image: url('/images/flags/nl.svg');
-}
-.fi-gb {
-  background-image: url('/images/flags/gb.svg');
-}
-.fi-ua {
-  background-image: url('/images/flags/ua.svg');
-}
+/* Component-specific styles */
 </style>

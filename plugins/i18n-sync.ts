@@ -1,4 +1,5 @@
 import { useLanguageStore } from '~/stores/language'
+import { watch } from 'vue'
 
 export default defineNuxtPlugin(nuxtApp => {
   // Get the Pinia store

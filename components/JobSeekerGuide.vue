@@ -83,48 +83,48 @@ const authUrl = computed(() => {
 // Guide steps
 const guideSteps = [
   {
-    title: 'Create Your Account',
-    description: 'Sign up with your email or social media accounts to get started. It only takes a few minutes.',
+    title: $t('jobseekers.guide.steps.createAccount.title'),
+    description: $t('jobseekers.guide.steps.createAccount.description'),
     tips: [
-      'Use a professional email address',
-      'Choose a secure password',
-      'Enable two-factor authentication for extra security'
+      $t('jobseekers.guide.steps.createAccount.tips.email'),
+      $t('jobseekers.guide.steps.createAccount.tips.password'),
+      $t('jobseekers.guide.steps.createAccount.tips.security')
     ]
   },
   {
-    title: 'Complete Your Profile',
-    description: 'Add your work experience, education, and skills. A complete profile increases your chance of being noticed by employers.',
+    title: $t('jobseekers.guide.steps.completeProfile.title'),
+    description: $t('jobseekers.guide.steps.completeProfile.description'),
     tips: [
-      'Upload a professional profile photo',
-      'List all relevant work experience, even from Ukraine',
-      'Add your education credentials'
+      $t('jobseekers.guide.steps.completeProfile.tips.photo'),
+      $t('jobseekers.guide.steps.completeProfile.tips.experience'),
+      $t('jobseekers.guide.steps.completeProfile.tips.education')
     ]
   },
   {
-    title: 'Upload Your CV',
-    description: 'Upload your existing CV or create one using our templates designed for the Dutch job market.',
+    title: $t('jobseekers.guide.steps.uploadCV.title'),
+    description: $t('jobseekers.guide.steps.uploadCV.description'),
     tips: [
-      'Format your CV according to Dutch standards',
-      'Highlight transferable skills',
-      'Include language proficiency levels'
+      $t('jobseekers.guide.steps.uploadCV.tips.format'),
+      $t('jobseekers.guide.steps.uploadCV.tips.skills'),
+      $t('jobseekers.guide.steps.uploadCV.tips.language')
     ]
   },
   {
-    title: 'Browse Available Jobs',
-    description: 'Search through available positions that match your skills and experience.',
+    title: $t('jobseekers.guide.steps.browseJobs.title'),
+    description: $t('jobseekers.guide.steps.browseJobs.description'),
     tips: [
-      'Use filters to narrow down your search',
-      'Save jobs that interest you',
-      'Set up job alerts for new opportunities'
+      $t('jobseekers.guide.steps.browseJobs.tips.filters'),
+      $t('jobseekers.guide.steps.browseJobs.tips.save'),
+      $t('jobseekers.guide.steps.browseJobs.tips.alerts')
     ]
   },
   {
-    title: 'Apply and Connect',
-    description: 'Apply directly to jobs and connect with employers who are open to hiring Ukrainian professionals.',
+    title: $t('jobseekers.guide.steps.applyConnect.title'),
+    description: $t('jobseekers.guide.steps.applyConnect.description'),
     tips: [
-      'Customize your application for each position',
-      'Follow up after applying',
-      'Prepare for interviews, including potential language requirements'
+      $t('jobseekers.guide.steps.applyConnect.tips.customize'),
+      $t('jobseekers.guide.steps.applyConnect.tips.followup'),
+      $t('jobseekers.guide.steps.applyConnect.tips.prepare')
     ]
   }
 ];

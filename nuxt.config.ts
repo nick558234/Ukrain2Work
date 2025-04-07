@@ -1,43 +1,53 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
 
   modules: [
-    '@nuxt/content',
-    '@nuxt/fonts',
-    '@nuxt/icon',
-    '@nuxt/image',
+    '@nuxtjs/tailwindcss',
+    '@pinia/nuxt',
     '@nuxtjs/i18n',
-    '@pinia/nuxt'
+    '@nuxt/image',
   ],
 
   i18n: {
-    langDir: 'i18n/lang/',
-    defaultLocale: 'nl',
     locales: [
-      { code: 'nl', iso: 'nl-NL', file: 'nl.json', name: "Nederlands", },
-      { code: 'en', iso: 'en-GB', file: 'en.json', name: "English", },
-      { code: 'uk', iso: 'uk-UA', file: 'uk.json', name: "Українська", }
+      { code: 'nl', iso: 'nl-NL', name: 'Nederlands', file: 'nl.json' },
+      { code: 'en', iso: 'en-US', name: 'English', file: 'en.json' },
+      { code: 'uk', iso: 'uk-UA', name: 'Українська', file: 'uk.json' }
     ],
+    defaultLocale: 'nl',
     strategy: 'prefix_except_default',
-    lazy: true,
     detectBrowserLanguage: {
       useCookie: true,
       cookieKey: 'i18n_redirected',
-      redirectOn: 'root',
-      alwaysRedirect: true,
+      redirectOn: 'root'
     },
+    langDir: 'i18n/lang/',
+    lazy: true
+  },
+
+  app: {
+    head: {
+      title: 'Ukraine2Work',
+      meta: [
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        { name: 'description', content: 'Connecting Ukrainian talent with Dutch businesses' }
+      ],
+      link: [
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      ]
+    }
   },
 
   css: [
     '~/assets/css/main.css',
+    'flag-icons/css/flag-icons.min.css'
   ],
 
-  postcss: {
-    plugins: {
-      tailwindcss: {},
-      autoprefixer: {}
-    }
-  }
+  build: {
+    transpile: ['flag-icons']
+  },
+
+  compatibilityDate: '2025-04-07'
 })

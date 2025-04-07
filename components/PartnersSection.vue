@@ -17,31 +17,11 @@
 </template>
 
 <script setup>
-// Mock partners data - in a real application, this would come from an API or CMS
-const partners = [
-  {
-    name: 'Dutch Ministry of Labor',
-    logo: '/img/partners/ministry.svg'
-  },
-  {
-    name: 'Amsterdam Business Association',
-    logo: '/img/partners/amsterdam.svg'
-  },
-  {
-    name: 'Rotterdam Chamber of Commerce',
-    logo: '/img/partners/rotterdam.svg'
-  },
-  {
-    name: 'Utrecht University',
-    logo: '/img/partners/utrecht.svg'
-  },
-  {
-    name: 'Ukrainian Embassy in the Netherlands',
-    logo: '/img/partners/embassy.svg'
-  },
-  {
-    name: 'Dutch Refugee Council',
-    logo: '/img/partners/refugee.svg'
-  }
-];
+import { computed } from 'vue';
+import { useI18n } from 'vue-i18n';
+
+const { t } = useI18n();
+
+// Partners data from translations
+const partners = computed(() => t('partners.list'));
 </script>

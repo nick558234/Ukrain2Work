@@ -197,3 +197,7 @@ const displayedMembers = computed(() => {
   return props.showAll ? teamMembers : teamMembers.slice(0, props.previewCount);
 });
 </script>
+
+<style scoped>
+/* Component styles */
+</style>

@@ -41,7 +41,7 @@
           
           <!-- Language switcher -->
           <div class="ml-4">
-            <LanguageSwitcher />
+            <LayoutsLanguageSwitcher />
           </div>
         </nav>
 
@@ -130,7 +130,7 @@
           </div>
 
           <div class="mt-6 pt-4 border-t border-gray-200">
-            <LanguageSwitcher />
+            <LayoutsLanguageSwitcher />
           </div>
         </nav>
       </transition>

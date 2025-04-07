@@ -94,7 +94,47 @@
     "tabs": {
       "employers": "Employers",
       "jobseekers": "Job Seekers"
-    }
+    },
+    "employers": [
+      {
+        "id": 1,
+        "name": "Jan De Vries",
+        "role": "HR Manager, Tech Solutions NL",
+        "quote": "Ukraine2Work made it incredibly easy to find qualified Ukrainian professionals. The process was smooth and we found a perfect match for our development team."
+      },
+      {
+        "id": 2,
+        "name": "Maria Jansen",
+        "role": "CEO, Amsterdam Retail Group",
+        "quote": "We were able to welcome three Ukrainian team members within weeks. Their skills and work ethic have been outstanding, and the integration was seamless."
+      },
+      {
+        "id": 3,
+        "name": "Alex Spaan",
+        "role": "Owner, Ukraine2Work",
+        "quote": "Our mission is to connect talented Ukrainian professionals with Dutch employers. I've seen firsthand how these connections transform lives and businesses."
+      }
+    ],
+    "jobseekers": [
+      {
+        "id": 1,
+        "name": "Olena Kovalenko",
+        "role": "Software Developer",
+        "quote": "Thanks to Ukraine2Work, I found a job that matches my skills within two weeks of arriving in the Netherlands. The support throughout the process was invaluable."
+      },
+      {
+        "id": 2,
+        "name": "Mykhailo Shevchenko",
+        "role": "Marketing Specialist",
+        "quote": "The platform made it easy to connect with Dutch employers. I appreciate how they verify companies and ensure safe job opportunities."
+      },
+      {
+        "id": 3,
+        "name": "Natalia Bondar",
+        "role": "Financial Analyst",
+        "quote": "Ukraine2Work helped me restart my career in the Netherlands. Their guidance on CV preparation and interview tips was extremely helpful."
+      }
+    ]
   },
   "employers": {
     "benefits": {
@@ -191,12 +231,73 @@
           "title": "Create an account to get started",
           "description": "Register to complete your profile and apply for jobs."
         }
+      },
+      "steps": {
+        "createAccount": {
+          "title": "Create Your Account",
+          "description": "Sign up with your email or social media accounts to get started. It only takes a few minutes.",
+          "tips": {
+            "email": "Use a professional email address",
+            "password": "Choose a secure password",
+            "security": "Enable two-factor authentication for extra security"
+          }
+        },
+        "completeProfile": {
+          "title": "Complete Your Profile",
+          "description": "Add your work experience, education, and skills. A complete profile increases your chance of being noticed by employers.",
+          "tips": {
+            "photo": "Upload a professional profile photo",
+            "experience": "List all relevant work experience, even from Ukraine",
+            "education": "Add your education credentials"
+          }
+        },
+        "uploadCV": {
+          "title": "Upload Your CV",
+          "description": "Upload your existing CV or create one using our templates designed for the Dutch job market.",
+          "tips": {
+            "format": "Format your CV according to Dutch standards",
+            "skills": "Highlight transferable skills",
+            "language": "Include language proficiency levels"
+          }
+        },
+        "browseJobs": {
+          "title": "Browse Available Jobs",
+          "description": "Search through available positions that match your skills and experience.",
+          "tips": {
+            "filters": "Use filters to narrow down your search",
+            "save": "Save jobs that interest you",
+            "alerts": "Set up job alerts for new opportunities"
+          }
+        },
+        "applyConnect": {
+          "title": "Apply and Connect",
+          "description": "Apply directly to jobs and connect with employers who are open to hiring Ukrainian professionals.",
+          "tips": {
+            "customize": "Customize your application for each position",
+            "followup": "Follow up after applying",
+            "prepare": "Prepare for interviews, including potential language requirements"
+          }
+        }
       }
     },
     "safety": {
       "free": "100% Free service",
       "verified": "Verified employers",
-      "support": "Support in 3 languages"
+      "support": "Support in 3 languages",
+      "badges": {
+        "free": {
+          "title": "100% Free Service",
+          "description": "Our platform is completely free for Ukrainian job seekers. No hidden fees or charges, ever."
+        },
+        "verified": {
+          "title": "Verified Employers",
+          "description": "All employers on our platform are verified to ensure a safe job search experience."
+        },
+        "language": {
+          "title": "Language Support",
+          "description": "Get assistance in Ukrainian, English, and Dutch throughout your job search process."
+        }
+      }
     }
   },
   "about": {
@@ -327,6 +428,12 @@
       "description": "Create an account today and start applying to Dutch employers.",
       "primaryCta": "Create account",
       "secondaryCta": "Browse jobs"
+    },
+    "jobseeker": {
+      "title": "Ready to start your career in the Netherlands?",
+      "description": "Create your profile and start applying for jobs today.",
+      "primaryCta": "View job openings",
+      "secondaryCta": "Learn more"
     }
   },
   "permitInfo": {
@@ -350,6 +457,12 @@
     "by": "by"
   },
   "partners": {
-    "title": "Our partners"
+    "title": "Our partners",
+    "list": [
+      {
+        "name": "Dutch Ministry of Labor",
+        "logo": "/img/partners/ministry.svg"
+      }
+    ]
   }
 }

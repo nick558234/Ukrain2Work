@@ -44,14 +44,12 @@
         
         <!-- Hero Image -->
         <div class="order-first lg:order-last">
-          <NuxtImg 
-            :src="`/images/heroes/${pageType}-hero.jpg`" 
+          <img 
+            :src="fallbackImage" 
             :alt="$t(`hero.${pageType}.imageAlt`)"
             class="rounded-lg shadow-lg w-full h-auto object-cover"
             width="600"
             height="400"
-            placeholder
-            fallback="https://placehold.co/600x400/e9f5ff/0057b8?text=Ukraine2Work"
           />
         </div>
       </div>
@@ -78,5 +76,10 @@ const props = defineProps({
     type: String,
     default: '#'
   }
+});
+
+// Use a fallback image instead of the missing image
+const fallbackImage = computed(() => {
+  return 'https://placehold.co/600x400/e9f5ff/0057b8?text=Ukraine2Work';
 });
 </script>
