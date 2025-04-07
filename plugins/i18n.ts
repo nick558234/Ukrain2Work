@@ -1,13 +1,15 @@
 import { defineNuxtPlugin } from '#app'
 import { useLanguageStore } from '~/stores/language'
+import type { RouteLocationNormalized, Router } from 'vue-router'
 
 export default defineNuxtPlugin((nuxtApp) => {
   const languageStore = useLanguageStore()
   
   // Initialize the language store with the current route locale
-  if (process.client) {
+  if (typeof window !== 'undefined') {
     // Only run this code on the client side
-    const route = nuxtApp.$route
+    const route = nuxtApp.$route as RouteLocationNormalized
+    const router = nuxtApp.$router as Router
     
     if (route && route.fullPath) {
       const path = route.fullPath
@@ -25,7 +27,7 @@ export default defineNuxtPlugin((nuxtApp) => {
     }
     
     // Watch for route changes to update the language store
-    nuxtApp.$router.afterEach((to) => {
+    router.afterEach((to: RouteLocationNormalized) => {
       const pathParts = to.fullPath.split('/').filter(Boolean)
       if (pathParts.length > 0) {
         const possibleLocale = pathParts[0]
