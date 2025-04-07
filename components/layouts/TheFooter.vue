@@ -61,18 +61,18 @@
               </NuxtLink>
             </li>
             <li>
-              <NuxtLink to="/blog" class="text-gray-200 hover:text-white transition-colors">
-                {{ $t('footer.blog') }}
+              <NuxtLink to="/terms-of-service" class="text-gray-200 hover:text-white transition-colors">
+                Algemene Voorwaarden
               </NuxtLink>
             </li>
             <li>
-              <NuxtLink to="/success-stories" class="text-gray-200 hover:text-white transition-colors">
-                {{ $t('footer.successStories') }}
+              <NuxtLink to="/privacy-policy" class="text-gray-200 hover:text-white transition-colors">
+                Privacy Policy
               </NuxtLink>
             </li>
             <li>
-              <NuxtLink to="/donate" class="text-gray-200 hover:text-white transition-colors">
-                {{ $t('footer.donate') }}
+              <NuxtLink to="/faq" class="text-gray-200 hover:text-white transition-colors">
+                FAQ
               </NuxtLink>
             </li>
           </ul>
@@ -87,9 +87,9 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
               <div>
-                <p class="font-medium">{{ $t('contact.info.email.title') }}</p>
-                <a href="mailto:info@ukraine2work.nl" class="text-gray-200 hover:text-white">
-                  info@ukraine2work.nl
+                <p class="font-medium">Email</p>
+                <a href="mailto:Alex@ukraine2work.com" class="text-gray-200 hover:text-white">
+                  Alex@ukraine2work.com
                 </a>
               </div>
             </div>
@@ -98,25 +98,10 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
               </svg>
               <div>
-                <p class="font-medium">{{ $t('contact.info.phone.title') }}</p>
-                <a href="tel:+31201234567" class="text-gray-200 hover:text-white">
-                  +31 20 123 4567
+                <p class="font-medium">Phone</p>
+                <a href="tel:+31638473157" class="text-gray-200 hover:text-white">
+                  +31 6 38473157
                 </a>
-              </div>
-            </div>
-            <div class="flex items-start">
-              <svg class="h-5 w-5 mt-1 mr-3 text-ukraine-yellow" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-              </svg>
-              <div>
-                <p class="font-medium">{{ $t('contact.info.address.title') }}</p>
-                <address class="text-gray-200 not-italic">
-                  Ukraine2Work<br />
-                  Herengracht 504<br />
-                  1017 CB Amsterdam<br />
-                  Netherlands
-                </address>
               </div>
             </div>
           </div>
@@ -130,7 +115,7 @@
             <input 
               type="email" 
               v-model="email"
-              :placeholder="$t('footer.newsletter.placeholder')"
+              placeholder="Vul je e-mailadres in"
               class="px-4 py-2 rounded-md flex-grow text-gray-800 focus:outline-none focus:ring-2 focus:ring-ukraine-yellow"
               required
             />
@@ -139,7 +124,7 @@
               class="bg-ukraine-yellow text-ukraine-blue px-4 py-2 rounded-md font-medium hover:bg-opacity-90 transition-colors"
               :disabled="isSubscribing"
             >
-              {{ isSubscribing ? '...' : $t('footer.newsletter.submit') }}
+              {{ isSubscribing ? '...' : 'Abonneer' }}
             </button>
           </form>
           <p v-if="subscriptionMessage" class="mt-2 text-sm" :class="subscriptionSuccess ? 'text-green-300' : 'text-red-300'">
@@ -152,17 +137,17 @@
       <div class="border-t border-blue-700 pt-8">
         <div class="flex flex-col md:flex-row justify-between items-center">
           <p class="text-gray-300 text-sm mb-4 md:mb-0">
-            {{ $t('footer.copyright', { year: new Date().getFullYear() }) }}
+            © 2025 Ukraine2Work. All Rights Reserved.
           </p>
           <div class="flex space-x-6">
             <NuxtLink to="/privacy-policy" class="text-gray-300 text-sm hover:text-white transition-colors">
               Privacy Policy
             </NuxtLink>
             <NuxtLink to="/terms-of-service" class="text-gray-300 text-sm hover:text-white transition-colors">
-              Terms of Service
+              Algemene Voorwaarden
             </NuxtLink>
-            <NuxtLink to="/sitemap" class="text-gray-300 text-sm hover:text-white transition-colors">
-              Sitemap
+            <NuxtLink to="/faq" class="text-gray-300 text-sm hover:text-white transition-colors">
+              FAQ
             </NuxtLink>
           </div>
         </div>
@@ -179,7 +164,7 @@ const isSubscribing = ref(false);
 const subscriptionMessage = ref('');
 const subscriptionSuccess = ref(false);
 
-// In a real app, this would connect to a newsletter API
+// Simulate API call for newsletter subscription
 const subscribeToNewsletter = async () => {
   if (!email.value) return;
   
@@ -190,7 +175,7 @@ const subscribeToNewsletter = async () => {
     await new Promise(resolve => setTimeout(resolve, 1000));
     
     subscriptionSuccess.value = true;
-    subscriptionMessage.value = 'Thank you for subscribing!';
+    subscriptionMessage.value = 'Bedankt voor je inschrijving!';
     email.value = '';
     
     // Clear success message after 5 seconds
@@ -201,7 +186,7 @@ const subscribeToNewsletter = async () => {
     }, 5000);
   } catch (error) {
     subscriptionSuccess.value = false;
-    subscriptionMessage.value = 'Failed to subscribe. Please try again.';
+    subscriptionMessage.value = 'Inschrijving mislukt. Probeer het opnieuw.';
   } finally {
     isSubscribing.value = false;
   }

@@ -33,7 +33,7 @@
     
     <LatestBlogPosts />
     
-    <CtaSection />
+    <CtaSection type="general" />
   </div>
 </template>
 

@@ -97,8 +97,8 @@
     
     <CtaSection 
       type="employers" 
-      primaryLink="/register?type=employer"
-      secondaryLink="/contact?subject=employer-question" 
+      primaryLink="https://nederland-werkt.8vance.com/?authState=register"
+      secondaryLink="#" 
     />
   </div>
 </template>

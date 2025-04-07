@@ -14,8 +14,8 @@
     
     <CtaSection 
       type="jobseekers" 
-      primaryLink="/register?type=jobseeker"
-      secondaryLink="/contact?subject=jobseeker-question" 
+      primaryLink="https://nederland-werkt.8vance.com/?authState=register"
+      secondaryLink="#" 
     />
   </div>
 </template>
