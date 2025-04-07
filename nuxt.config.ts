@@ -2,12 +2,7 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
 
-  modules: [
-    '@nuxtjs/tailwindcss',
-    '@pinia/nuxt',
-    '@nuxtjs/i18n',
-    '@nuxt/image',
-  ],
+  modules: ['@nuxtjs/tailwindcss', '@pinia/nuxt', '@nuxtjs/i18n', '@nuxt/image', 'nuxt-swiper'],
 
   i18n: {
     locales: [
