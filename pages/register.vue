@@ -71,12 +71,7 @@ function handleRegister() {
     return
   }
   
-  // Implement your registration logic
-  console.log('Register with:', {
-    name: name.value,
-    email: email.value,
-    password: password.value
-  })
+  // Process registration
   
   // Redirect to home page after registration
   navigateTo('/')

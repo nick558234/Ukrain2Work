@@ -42,12 +42,17 @@
 const email = ref('')
 const password = ref('')
 
-function handleLogin() {
-  // Implement your login logic
-  console.log('Login with:', email.value, password.value)
+const handleLogin = async () => {
+  // Process login
   // Redirect to home page after login
   navigateTo('/')
 }
+
+const handleSubmit = async () => {
+  if (formValid.value) {
+    // Process login
+  }
+};
 
 definePageMeta({
   title: 'Login'

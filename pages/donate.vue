@@ -106,16 +106,11 @@ const customAmount = ref('')
 const name = ref('')
 const email = ref('')
 
-function handleDonation() {
-  // Implement donation processing
-  console.log('Processing donation:', {
-    amount: selectedAmount.value,
-    name: name.value,
-    email: email.value
-  })
-  
-  alert(`Thank you for your donation of €${selectedAmount.value}!`)
-}
+const handleDonation = async () => {
+  if (formValid.value) {
+    // Process donation
+  }
+};
 
 definePageMeta({
   title: 'Donate'
