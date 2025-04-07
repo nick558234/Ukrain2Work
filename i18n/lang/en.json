@@ -5,7 +5,8 @@
     "jobseekers": "For Job Seekers",
     "blog": "Blog",
     "about": "About",
-    "contact": "Contact"
+    "contact": "Contact",
+    "refugees": "For Refugees"
   },
   "auth": {
     "login": "Login",
@@ -473,5 +474,119 @@
         "logo": "/img/partners/ministry.svg"
       }
     ]
+  },
+  "refugees": {
+    "hero": {
+      "title": "For Ukrainian Refugees - Find Work in the Netherlands with Ukraine2Work",
+      "subtitle": "Welcome to Ukraine2Work! We help Ukrainian refugees find suitable work in the Netherlands based on your skills, work experience, and ambitions. Our platform uses advanced technology to find a match that suits your unique qualities.",
+      "cta": "Register now",
+      "contact": "Contact us"
+    },
+    "whiteVsBlack": {
+      "title": "LEGAL VS ILLEGAL WORK",
+      "white": {
+        "title": "LEGAL",
+        "socialSecurity": "Social security:",
+        "pension": "Pension",
+        "paidLeave": "Paid leave",
+        "paidAccident": "Paid in case of accident",
+        "safety": "Safety:",
+        "accidentInsurance": "Insured for accidents",
+        "unemploymentBenefit": "Unemployment benefit",
+        "collectiveAgreement": "Collective agreement",
+        "bonuses": "Bonuses:",
+        "thirteenthMonth": "13th month",
+        "holidayAllowance": "Holiday allowance",
+        "salaryIncrease": "Salary increase",
+        "contract": "Contract:",
+        "noticePeriod": "Cannot be fired without reason",
+        "noticeTime": "Notice period",
+        "reference": "Reference on CV"
+      },
+      "black": {
+        "title": "ILLEGAL",
+        "socialSecurity": "Social assistance:",
+        "noPension": "NO pension",
+        "noPaidLeave": "NO paid leave",
+        "payAccidentYourself": "Pay for work accidents yourself",
+        "risks": "Risks:",
+        "noInsurance": "NO insurance",
+        "noUnemploymentBenefit": "NO right to unemployment benefit",
+        "noCollectiveAgreement": "NO collective agreement protection",
+        "fines": "Fines:",
+        "taxFine": "300% of the wage tax to be paid",
+        "fineAmount": "Fine of €4,500",
+        "contractless": "Contractless:",
+        "noNoticePeriod": "NO notice period",
+        "noReference": "NO reference on CV",
+        "immediateDismissal": "Immediate dismissal"
+      },
+      "statistics": {
+        "fine": "of workers who get caught have to pay €4,500+ in fines, plus any additional assessments.",
+        "undeclared": "of workers in the Netherlands have income that is not declared to the tax authorities."
+      }
+    },
+    "video": {
+      "title": "Watch Our Video",
+      "description": "Watch the video below to see how our platform works and how we help Ukrainian refugees find work in the Netherlands."
+    },
+    "information": {
+      "title": "Information for Ukrainian Refugees",
+      "matchmaking": {
+        "title": "How Does Our Matchmaking Work?",
+        "softSkills": {
+          "title": "Soft skills",
+          "description": "Such as adaptability, teamwork, and problem-solving abilities."
+        },
+        "hardSkills": {
+          "title": "Hard skills",
+          "description": "Such as technical skills and specific work experience."
+        },
+        "workExperience": {
+          "title": "Work experience",
+          "description": "We use your previous work experience to ensure you are placed at the right level."
+        }
+      },
+      "legal": {
+        "title": "What You Need to Know as a Ukrainian Refugee in the Netherlands",
+        "description": "Under the EU Temporary Protection Directive, Ukrainian refugees can work in the Netherlands without a work permit. This means that after registering with the municipality and obtaining an O-document (proof of residence), you can immediately start looking for a job. It is important that you register with the IND (Immigration and Naturalization Service) within four weeks to legalize your stay and work status.",
+        "rules": {
+          "title": "Important Rules and Conditions",
+          "workPermit": {
+            "title": "Work permit",
+            "description": "Ukrainian refugees do not need a work permit to do paid work in the Netherlands. Employers are required to register you with the UWV before you start working."
+          },
+          "equalRights": {
+            "title": "Equal rights",
+            "description": "As a Ukrainian refugee, you have the same rights as Dutch workers, such as fair wages, safe working conditions, and access to health insurance."
+          },
+          "temporaryProtection": {
+            "title": "Temporary protection",
+            "description": "The temporary protection for Ukrainian refugees has been extended until March 4, 2026. This means you can continue working in the Netherlands until then."
+          }
+        }
+      },
+      "howToFindWork": {
+        "title": "How to Find Work?",
+        "description": "At Ukraine2Work, we help you step by step. You just need to create your profile on our platform, where we ask about your skills, work experience, and ambitions. Our system ensures that you are quickly matched with the right employers in various sectors.",
+        "cta": "Create your profile"
+      },
+      "contact": {
+        "title": "Contact Us",
+        "description": "Do you have questions about working in the Netherlands or need support in finding work? Contact us, and we'll be happy to help you further.",
+        "cta": "Get in touch"
+      }
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "residencePermit": {
+        "question": "What if I don't have proof of residence yet?",
+        "answer": "Make sure to register with the municipality where you are staying and make an appointment with the IND to collect your O-document. Without this proof, you are not allowed to work."
+      },
+      "volunteer": {
+        "question": "Can I work as a volunteer?",
+        "answer": "Yes, Ukrainian refugees can do volunteer work without a work permit."
+      }
+    }
   }
 }

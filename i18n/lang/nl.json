@@ -11,7 +11,8 @@
     "contact": "Contact",
     "job_seekers": "Werkzoekenden",
     "success_stories": "Succesverhalen",
-    "donate": "Doneren"
+    "donate": "Doneren",
+    "refugees": "Voor vluchtelingen"
   },
   "auth": {
     "login": "Inloggen",
@@ -369,5 +370,119 @@
   },
   "partners": {
     "title": "Onze partners"
+  },
+  "refugees": {
+    "hero": {
+      "title": "Voor Oekraïense Vluchtelingen - Vind Werk in Nederland met Ukraine2Work",
+      "subtitle": "Welkom bij Ukraine2Work! Wij helpen Oekraïense vluchtelingen om passend werk te vinden in Nederland op basis van jouw vaardigheden, werkervaring en ambities. Ons platform maakt gebruik van geavanceerde technologie om een match te vinden die aansluit bij jouw unieke kwaliteiten.",
+      "cta": "Registreer nu",
+      "contact": "Neem contact op"
+    },
+    "whiteVsBlack": {
+      "title": "WIT VS ZWART WERK",
+      "white": {
+        "title": "WIT",
+        "socialSecurity": "Sociale zekerheid:",
+        "pension": "Pensioen",
+        "paidLeave": "Betaald verlof",
+        "paidAccident": "Betaald bij ongeluk",
+        "safety": "Veiligheid:",
+        "accidentInsurance": "Verzekerd voor ongevallen",
+        "unemploymentBenefit": "WW uitkering",
+        "collectiveAgreement": "CAO",
+        "bonuses": "Bonussen:",
+        "thirteenthMonth": "13e maand",
+        "holidayAllowance": "Vakantiegeld",
+        "salaryIncrease": "Loonsverhoging",
+        "contract": "Contract:",
+        "noticePeriod": "Niet zomaar ontslagen",
+        "noticeTime": "Uitwerktijd",
+        "reference": "Referentie op CV"
+      },
+      "black": {
+        "title": "ZWART",
+        "socialSecurity": "Sociale bijstand:",
+        "noPension": "GEEN pensioen",
+        "noPaidLeave": "GEEN betaald verlof",
+        "payAccidentYourself": "Werkongeval zelf betalen",
+        "risks": "Risico's:",
+        "noInsurance": "GEEN verzekering",
+        "noUnemploymentBenefit": "GEEN recht op WW-uitkering",
+        "noCollectiveAgreement": "GEEN CAO-bescherming",
+        "fines": "Boetes:",
+        "taxFine": "300% van de te betalen loonbelasting",
+        "fineAmount": "Boete van €4.500",
+        "contractless": "Contractloos:",
+        "noNoticePeriod": "GEEN opzegtermijn",
+        "noReference": "GEEN referentie op CV",
+        "immediateDismissal": "Direct ontslagen"
+      },
+      "statistics": {
+        "fine": "van de werknemers die gepakt worden, moeten €4.500+ aan boetes betalen, plus eventuele naheffingen.",
+        "undeclared": "van de werkenden in Nederland heeft inkomsten die niet worden opgegeven aan de Belastingdienst."
+      }
+    },
+    "video": {
+      "title": "Bekijk Onze Video",
+      "description": "Bekijk de video hieronder om te zien hoe ons platform werkt en hoe we Oekraïense vluchtelingen helpen om werk te vinden in Nederland."
+    },
+    "information": {
+      "title": "Informatie voor Oekraïense Vluchtelingen",
+      "matchmaking": {
+        "title": "Hoe Werkt Onze Matchmaking?",
+        "softSkills": {
+          "title": "Soft skills",
+          "description": "Zoals aanpassingsvermogen, teamwerk en probleemoplossend vermogen."
+        },
+        "hardSkills": {
+          "title": "Hard skills",
+          "description": "Zoals technische vaardigheden en specifieke werkervaring."
+        },
+        "workExperience": {
+          "title": "Werkervaring",
+          "description": "Wij gebruiken jouw eerdere werkervaring om te zorgen dat je op het juiste niveau wordt geplaatst."
+        }
+      },
+      "legal": {
+        "title": "Wat Moet Je Weten als Oekraïense Vluchteling in Nederland?",
+        "description": "Onder de EU Richtlijn Tijdelijke Bescherming (Temporary Protection Directive) mogen Oekraïense vluchtelingen in Nederland zonder werkvergunning werken. Dit betekent dat je na registratie bij de gemeente en het verkrijgen van een O-document (bewijs van verblijf) direct op zoek kunt naar een baan. Het is belangrijk dat je je binnen vier weken registreert bij de IND (Immigratie- en Naturalisatiedienst) om je verblijf en werkstatus te legaliseren.",
+        "rules": {
+          "title": "Belangrijke Regels en Voorwaarden",
+          "workPermit": {
+            "title": "Werkvergunning",
+            "description": "Oekraïense vluchtelingen hebben geen werkvergunning nodig om betaald werk te doen in Nederland. Werkgevers zijn verplicht je aan te melden bij het UWV voordat je begint met werken."
+          },
+          "equalRights": {
+            "title": "Gelijke Rechten",
+            "description": "Je hebt als Oekraïense vluchteling dezelfde rechten als Nederlandse werknemers, zoals een eerlijk salaris, veilige werkomstandigheden en toegang tot ziektekostenverzekering."
+          },
+          "temporaryProtection": {
+            "title": "Tijdelijke Bescherming",
+            "description": "De tijdelijke bescherming voor Oekraïense vluchtelingen is verlengd tot 4 maart 2026. Dit betekent dat je tot die tijd in Nederland kunt blijven werken."
+          }
+        }
+      },
+      "howToFindWork": {
+        "title": "Hoe Vind Je Werk?",
+        "description": "Bij Ukraine2Work helpen we je stap voor stap. Je hoeft alleen maar je profiel aan te maken op ons platform, waar we vragen naar je vaardigheden, werkervaring en ambities. Ons systeem zorgt ervoor dat je snel gematcht wordt met de juiste werkgevers in verschillende sectoren.",
+        "cta": "Maak je profiel aan"
+      },
+      "contact": {
+        "title": "Neem Contact Op",
+        "description": "Heb je nog vragen over werken in Nederland of wil je ondersteuning bij het vinden van werk? Neem contact met ons op, en wij helpen je graag verder.",
+        "cta": "Contact opnemen"
+      }
+    },
+    "faq": {
+      "title": "Veelgestelde Vragen",
+      "residencePermit": {
+        "question": "Wat als ik nog geen bewijs van verblijf heb?",
+        "answer": "Zorg ervoor dat je je registreert bij de gemeente waar je verblijft en maak een afspraak bij de IND om je O-document op te halen. Zonder dit bewijs mag je niet werken."
+      },
+      "volunteer": {
+        "question": "Kan ik als vrijwilliger werken?",
+        "answer": "Ja, Oekraïense vluchtelingen kunnen vrijwilligerswerk doen zonder werkvergunning."
+      }
+    }
   }
 }
