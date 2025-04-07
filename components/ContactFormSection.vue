@@ -134,8 +134,8 @@
               <div class="ml-4">
                 <h4 class="text-sm font-medium text-gray-900">{{ $t('contact.info.email.title') }}</h4>
                 <p class="mt-1 text-sm text-gray-600">{{ $t('contact.info.email.description') }}</p>
-                <a href="mailto:info@ukraine2work.nl" class="mt-2 text-ukraine-blue font-medium hover:text-ukraine-blue-dark">
-                  info@ukraine2work.nl
+                <a href="mailto:alex@ukraine2work.nl" class="mt-2 text-ukraine-blue font-medium hover:text-ukraine-blue-dark">
+                  alex@ukraine2work.nl
                 </a>
               </div>
             </div>
@@ -149,8 +149,8 @@
               <div class="ml-4">
                 <h4 class="text-sm font-medium text-gray-900">{{ $t('contact.info.phone.title') }}</h4>
                 <p class="mt-1 text-sm text-gray-600">{{ $t('contact.info.phone.description') }}</p>
-                <a href="tel:+31201234567" class="mt-2 text-ukraine-blue font-medium hover:text-ukraine-blue-dark">
-                  +31 20 123 4567
+                <a href="tel:+31638473157" class="mt-2 text-ukraine-blue font-medium hover:text-ukraine-blue-dark">
+                  +31 6 38473157
                 </a>
               </div>
             </div>
@@ -166,9 +166,7 @@
                 <h4 class="text-sm font-medium text-gray-900">{{ $t('contact.info.address.title') }}</h4>
                 <p class="mt-1 text-sm text-gray-600">{{ $t('contact.info.address.description') }}</p>
                 <address class="mt-2 not-italic text-sm">
-                  Ukraine2Work Foundation<br />
-                  Keizersgracht 123<br />
-                  1015 CJ Amsterdam<br />
+            
                   The Netherlands
                 </address>
               </div>

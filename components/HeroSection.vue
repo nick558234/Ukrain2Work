@@ -43,9 +43,9 @@
         </div>
         
         <!-- Hero Image -->
-        <div class="order-first lg:order-last">
+        <div class="order-first lg:order-last ">
           <img 
-            :src="fallbackImage" 
+            :src="img" 
             :alt="$t(`hero.${pageType}.imageAlt`)"
             class="rounded-lg shadow-lg w-full h-auto object-cover"
             width="600"
@@ -75,6 +75,10 @@ const props = defineProps({
   primaryCtaLink: {
     type: String,
     default: '#'
+  },
+  img: {
+    type: String,
+    default: '/images/team/alexSpaan_square.webp'
   }
 });
 

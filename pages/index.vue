@@ -23,7 +23,7 @@
       </div>
     </div>
     
-    <HeroSection pageType="home" />
+    <HeroSection pageType="home" img="/images/team/alexSpaan_square.webp"/>
     
     <HowItWorksSection userType="jobseekers" />
     

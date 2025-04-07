@@ -10,25 +10,25 @@
           :key="index"
           class="bg-white rounded-lg shadow-md overflow-hidden"
         >
-          <div class="relative h-64">
+          <div class="relative">
             <div class="mb-6">
-              <div class="aspect-w-1 aspect-h-1 rounded-full overflow-hidden mb-4">
+              <div class="aspect-w-1 aspect-h-1 mb-4">
                 <NuxtImg 
-                  :src="`/images/team/${member.slug}.jpg`" 
+                  :src="member.photo"
                   :alt="member.name"
                   class="w-full h-full object-cover"
                   width="300"
                   height="300"
                   placeholder
-                  :fallback="`https://placehold.co/300x300/e9f5ff/0057b8?text=${member.name.split(' ').map(n => n[0]).join('')}`"
                 />
               </div>
             </div>
+            <!-- New label display -->
             <div 
-              v-if="member.ukrainian" 
+              v-if="member.label" 
               class="absolute top-3 right-3 bg-ukraine-yellow rounded-full px-3 py-1 text-xs font-medium"
             >
-              {{ $t('about.team.ukrainian') }}
+              {{ member.label }} <!-- Display the new label -->
             </div>
           </div>
           
@@ -102,14 +102,15 @@ const props = defineProps({
 // In a real app, team data would be fetched from an API or via CMS
 const teamMembers = [
   {
-    name: 'Anna Kovalenko',
-    role: 'Founder & Executive Director',
-    bio: 'Former HR executive with 15+ years of experience. Moved from Kyiv to Amsterdam in 2020 and founded Ukraine2Work in response to the refugee crisis.',
-    photo: '/img/team/anna-kovalenko.jpg',
-    linkedin: 'https://linkedin.com/in/example',
-    email: 'anna@ukraine2work.nl',
-    phone: '+31612345678',
-    ukrainian: true
+    name: 'Alex Spaan',
+    role: 'Owner',  
+    bio: 'Owner of Ukraine2Work',  
+    photo: '/images/team/alexSpaan_square.webp',  
+    linkedin: 'https://www.linkedin.com/in/alex-spaan/',  
+    email: 'alex@ukraine2work.nl',  
+    phone: '+31638473157',  
+    label: 'Team Leader', // New label property
+    ukrainian: false  
   },
   {
     name: 'Jan de Vries',
@@ -119,6 +120,7 @@ const teamMembers = [
     linkedin: 'https://linkedin.com/in/example',
     email: 'jan@ukraine2work.nl',
     phone: null,
+    label: 'Recruitment Expert', // New label property
     ukrainian: false
   },
   {
@@ -129,68 +131,9 @@ const teamMembers = [
     linkedin: 'https://linkedin.com/in/example',
     email: 'oleksandr@ukraine2work.nl',
     phone: null,
+    label: 'Support Specialist', // New label property
     ukrainian: true
   },
-  {
-    name: 'Marieke Janssen',
-    role: 'Partnerships Manager',
-    bio: 'Builds relationships with Dutch organizations, government bodies, and NGOs to create a comprehensive support network for Ukrainian job seekers.',
-    photo: '/img/team/marieke-janssen.jpg',
-    linkedin: 'https://linkedin.com/in/example',
-    email: null,
-    phone: null,
-    ukrainian: false
-  },
-  {
-    name: 'Viktoria Bondar',
-    role: 'Career Coach',
-    bio: 'Certified career coach providing guidance on CV writing, interview skills, and career transitions specifically tailored to the Dutch work environment.',
-    photo: '/img/team/viktoria-bondar.jpg',
-    linkedin: 'https://linkedin.com/in/example',
-    email: 'viktoria@ukraine2work.nl',
-    phone: '+31623456789',
-    ukrainian: true
-  },
-  {
-    name: 'Thomas Bakker',
-    role: 'Tech Lead',
-    bio: 'Software engineer leading the development of the Ukraine2Work platform. Passionate about using technology to solve social challenges.',
-    photo: '/img/team/thomas-bakker.jpg',
-    linkedin: 'https://linkedin.com/in/example',
-    email: 'thomas@ukraine2work.nl',
-    phone: null,
-    ukrainian: false
-  },
-  {
-    name: 'Natalia Petrova',
-    role: 'Community Manager',
-    bio: 'Organizes events and maintains communication channels for the Ukrainian community in the Netherlands. Ensures job seekers feel supported throughout their journey.',
-    photo: '/img/team/natalia-petrova.jpg',
-    linkedin: 'https://linkedin.com/in/example',
-    email: 'natalia@ukraine2work.nl',
-    phone: null,
-    ukrainian: true
-  },
-  {
-    name: 'Erik Jansen',
-    role: 'Legal Advisor',
-    bio: 'Immigration attorney specializing in refugee employment rights. Provides guidance on work permits, residency, and legal matters for Ukrainian refugees.',
-    photo: '/img/team/erik-jansen.jpg',
-    linkedin: 'https://linkedin.com/in/example',
-    email: 'erik@ukraine2work.nl',
-    phone: null,
-    ukrainian: false
-  },
-  {
-    name: 'Iryna Koval',
-    role: 'Cultural Integration Specialist',
-    bio: 'Helps Ukrainian professionals adapt to Dutch work culture and social norms. Provides cultural orientation sessions and ongoing support.',
-    photo: '/img/team/iryna-koval.jpg',
-    linkedin: 'https://linkedin.com/in/example',
-    email: 'iryna@ukraine2work.nl',
-    phone: null,
-    ukrainian: true
-  }
 ];
 
 const displayedMembers = computed(() => {
@@ -200,4 +143,4 @@ const displayedMembers = computed(() => {
 
 <style scoped>
 /* Component styles */
-</style>
+</style>  

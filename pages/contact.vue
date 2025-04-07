@@ -1,6 +1,6 @@
 <template>
   <div>
-    <HeroSection pageType="contact" />
+    <HeroSection pageType="contact" img="/images/partners.webp"/>
     
     <ContactFormSection />
     
