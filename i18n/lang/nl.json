@@ -19,7 +19,8 @@
     "no_account": "Nog geen account?",
     "already_have_account": "Heb je al een account?",
     "logout": "Uitloggen",
-    "profile": "Profiel"
+    "profile": "Profiel",
+    "redirect_message": "Je wordt doorgestuurd naar de authenticatiepagina."
   },
   "footer": {
     "tagline": "Oekraïens talent verbinden met Nederlandse werkgevers",

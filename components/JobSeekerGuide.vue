@@ -73,7 +73,7 @@
 import { computed } from 'vue';
 import { useI18n } from 'vue-i18n';
 
-const { locale } = useI18n();
+const { locale, t } = useI18n();
 
 // External auth URL
 const authUrl = computed(() => {
@@ -83,48 +83,48 @@ const authUrl = computed(() => {
 // Guide steps
 const guideSteps = [
   {
-    title: $t('jobseekers.guide.steps.createAccount.title'),
-    description: $t('jobseekers.guide.steps.createAccount.description'),
+    title: t('jobseekers.guide.steps.createAccount.title'),
+    description: t('jobseekers.guide.steps.createAccount.description'),
     tips: [
-      $t('jobseekers.guide.steps.createAccount.tips.email'),
-      $t('jobseekers.guide.steps.createAccount.tips.password'),
-      $t('jobseekers.guide.steps.createAccount.tips.security')
+      t('jobseekers.guide.steps.createAccount.tips.email'),
+      t('jobseekers.guide.steps.createAccount.tips.password'),
+      t('jobseekers.guide.steps.createAccount.tips.security')
     ]
   },
   {
-    title: $t('jobseekers.guide.steps.completeProfile.title'),
-    description: $t('jobseekers.guide.steps.completeProfile.description'),
+    title: t('jobseekers.guide.steps.completeProfile.title'),
+    description: t('jobseekers.guide.steps.completeProfile.description'),
     tips: [
-      $t('jobseekers.guide.steps.completeProfile.tips.photo'),
-      $t('jobseekers.guide.steps.completeProfile.tips.experience'),
-      $t('jobseekers.guide.steps.completeProfile.tips.education')
+      t('jobseekers.guide.steps.completeProfile.tips.photo'),
+      t('jobseekers.guide.steps.completeProfile.tips.experience'),
+      t('jobseekers.guide.steps.completeProfile.tips.education')
     ]
   },
   {
-    title: $t('jobseekers.guide.steps.uploadCV.title'),
-    description: $t('jobseekers.guide.steps.uploadCV.description'),
+    title: t('jobseekers.guide.steps.uploadCV.title'),
+    description: t('jobseekers.guide.steps.uploadCV.description'),
     tips: [
-      $t('jobseekers.guide.steps.uploadCV.tips.format'),
-      $t('jobseekers.guide.steps.uploadCV.tips.skills'),
-      $t('jobseekers.guide.steps.uploadCV.tips.language')
+      t('jobseekers.guide.steps.uploadCV.tips.format'),
+      t('jobseekers.guide.steps.uploadCV.tips.skills'),
+      t('jobseekers.guide.steps.uploadCV.tips.language')
     ]
   },
   {
-    title: $t('jobseekers.guide.steps.browseJobs.title'),
-    description: $t('jobseekers.guide.steps.browseJobs.description'),
+    title: t('jobseekers.guide.steps.browseJobs.title'),
+    description: t('jobseekers.guide.steps.browseJobs.description'),
     tips: [
-      $t('jobseekers.guide.steps.browseJobs.tips.filters'),
-      $t('jobseekers.guide.steps.browseJobs.tips.save'),
-      $t('jobseekers.guide.steps.browseJobs.tips.alerts')
+      t('jobseekers.guide.steps.browseJobs.tips.filters'),
+      t('jobseekers.guide.steps.browseJobs.tips.save'),
+      t('jobseekers.guide.steps.browseJobs.tips.alerts')
     ]
   },
   {
-    title: $t('jobseekers.guide.steps.applyConnect.title'),
-    description: $t('jobseekers.guide.steps.applyConnect.description'),
+    title: t('jobseekers.guide.steps.applyConnect.title'),
+    description: t('jobseekers.guide.steps.applyConnect.description'),
     tips: [
-      $t('jobseekers.guide.steps.applyConnect.tips.customize'),
-      $t('jobseekers.guide.steps.applyConnect.tips.followup'),
-      $t('jobseekers.guide.steps.applyConnect.tips.prepare')
+      t('jobseekers.guide.steps.applyConnect.tips.customize'),
+      t('jobseekers.guide.steps.applyConnect.tips.followup'),
+      t('jobseekers.guide.steps.applyConnect.tips.prepare')
     ]
   }
 ];

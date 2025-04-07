@@ -7,6 +7,15 @@
     "about": "About",
     "contact": "Contact"
   },
+  "auth": {
+    "login": "Login",
+    "register": "Register",
+    "no_account": "Don't have an account?",
+    "already_have_account": "Already have an account?",
+    "logout": "Logout",
+    "profile": "Profile",
+    "redirect_message": "You will be redirected to the authentication page."
+  },
   "footer": {
     "tagline": "Connecting Ukrainian talent with Dutch employers",
     "quickLinks": "Quick links",
