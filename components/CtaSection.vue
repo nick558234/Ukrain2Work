@@ -2,7 +2,7 @@
   <section class="py-16 bg-ukraine-blue text-white">
     <div class="container">
       <div class="flex flex-col items-center text-center max-w-3xl mx-auto">
-        <h2 class="mb-6">{{ $t(`cta.${type}.title`) }}</h2>
+        <h2 class="mb-6 text-3xl font-bold">{{ $t(`cta.${type}.title`) }}</h2> <!-- Added font size for consistency -->
         <p class="text-xl mb-8 text-white/90">{{ $t(`cta.${type}.description`) }}</p>
         
         <div class="flex flex-wrap gap-4 justify-center">
@@ -12,6 +12,7 @@
             :href="primaryLink.startsWith('http') ? primaryLink : null"
             :to="!primaryLink.startsWith('http') ? primaryLink : null"
             :target="primaryLink.startsWith('http') ? '_blank' : '_self'"
+            class="bg-ukraine-yellow text-ukraine-blue hover:bg-ukraine-light transition-colors"
           >
             {{ $t(`cta.${type}.primaryCta`) }}
           </AppButton>
@@ -23,6 +24,7 @@
             :to="!secondaryLink.startsWith('http') ? secondaryLink : null"
             :target="secondaryLink.startsWith('http') ? '_blank' : '_self'"
             v-if="showSecondary"
+            class="border-ukraine-yellow text-ukraine-yellow hover:bg-ukraine-light transition-colors"
           >
             {{ $t(`cta.${type}.secondaryCta`) }}
           </AppButton>
@@ -31,7 +33,6 @@
     </div>
   </section>
 </template>
-
 <script setup>
 const props = defineProps({
   type: {

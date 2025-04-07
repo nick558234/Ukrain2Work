@@ -7,7 +7,7 @@
           <h1 class="text-ukraine-blue mb-6">
             {{ $t(`hero.${pageType}.title`) }}
           </h1>
-          <p class="text-xl mb-8">
+          <p class="text-xl mb-8 text-ukraine-blue">
             {{ $t(`hero.${pageType}.subtitle`) }}
           </p>
           <div class="flex flex-wrap gap-4">
