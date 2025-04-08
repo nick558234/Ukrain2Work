@@ -2,7 +2,7 @@
   <section class="py-16 bg-ukraine-light">
     <div class="container">
       <div class="flex justify-between items-center mb-12">
-        <h2 class="text-ukraine-blue">{{ $t('blog.latestPosts') }}</h2>
+        <h2 class="text-ukraine-blue text-2xl md:text-3xl lg:text-4xl">{{ $t('blog.latestPosts') }}</h2>
         <NuxtLink to="/blog" class="text-ukraine-blue font-medium hover:text-ukraine-yellow transition-colors">
           {{ $t('blog.viewAll') }} →
         </NuxtLink>

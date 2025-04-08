@@ -55,7 +55,7 @@ const languageStore = useLanguageStore();
 const { locale } = useI18n();
 const router = useRouter();
 const isOpen = ref(false);
-const dropdownRef = ref(null);
+
 
 // Sync the language store with the current i18n locale
 onMounted(() => {
@@ -75,45 +75,42 @@ function toggleDropdown() {
 async function selectLanguage(localeCode: string) {
   // Update both the i18n locale and the store
   locale.value = localeCode;
-  
+  languageStore.currentLocale = localeCode; // Ensure the store is updated
+
   // Get current route
   const currentRoute = router.currentRoute.value;
-  
-  if (currentRoute && currentRoute.fullPath) {
-    // Create language path prefix
-    let prefix = '';
-    if (localeCode !== 'nl') { // assuming nl is the default locale
-      prefix = `/${localeCode}`;
+
+  // Create language path prefix
+  let prefix = localeCode !== 'nl' ? `/${localeCode}` : '';
+
+  // Remove existing locale prefix if present
+  let pathWithoutLocale = currentRoute.fullPath;
+  const locales = languageStore.availableLocales.map(l => l.code);
+
+  for (const locale of locales) {
+    if (pathWithoutLocale.startsWith(`/${locale}`)) {
+      pathWithoutLocale = pathWithoutLocale.substring(locale.length + 1) || '/';
+      break;
     }
-    
-    // Remove existing locale prefix if present
-    let pathWithoutLocale = currentRoute.fullPath;
-    const locales = languageStore.availableLocales.map(l => l.code);
-    
-    for (const locale of locales) {
-      if (pathWithoutLocale === `/${locale}` || pathWithoutLocale.startsWith(`/${locale}/`)) {
-        pathWithoutLocale = pathWithoutLocale.substring(locale.length + 1) || '/';
-        break;
-      }
-    }
-    
-    // Build new path with language prefix
-    const newPath = prefix + (pathWithoutLocale === '/' ? '' : pathWithoutLocale);
-    
-    // Navigate to the new path
-    await router.push(newPath || '/');
-  } else {
-    // If route is not available, just navigate to the root with the locale prefix
-    const newPath = localeCode === 'nl' ? '/' : `/${localeCode}`;
-    await router.push(newPath);
   }
-  
+
+  // Build new path with language prefix
+  const newPath = prefix + (pathWithoutLocale === '/' ? '' : pathWithoutLocale);
+
+  // Ensure the new path starts with a slash
+  const finalPath = newPath.startsWith('/') ? newPath : `/${newPath}`;
+
+  // Navigate to the new path
+  await router.push(finalPath);
+
   // Force a page reload to ensure all translations are applied
   window.location.reload();
 }
 
+const dropdownRef = ref<HTMLElement | null>(null); // Explicitly define the type
+
 function handleClickOutside(event: MouseEvent) {
-  if (dropdownRef.value && !dropdownRef.value.contains(event.target)) {
+  if (dropdownRef.value && !dropdownRef.value.contains(event.target as Node)) { // Cast event.target to Node
     isOpen.value = false;
   }
 }

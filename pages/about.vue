@@ -1,6 +1,6 @@
 <template>
   <div>
-    <HeroSection pageType="about" primaryCtaLink="/contact" />
+    <HeroSection pageType="about" primaryCtaLink="contact" />
     
     <MissionSection />
     
@@ -13,7 +13,7 @@
     <CtaSection 
       type="general" 
       primaryLink="/contact"
-      secondaryLink="/donate" 
+      secondaryLink="donate" 
     />
   </div>
 </template>

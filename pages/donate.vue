@@ -94,7 +94,13 @@
     <div class="text-center">
       <h3 class="text-xl font-semibold mb-4">Other Ways to Support</h3>
       <p>For corporate donations or other forms of support, please contact us at:</p>
-      <p class="font-medium text-lg mt-2">donate@ukraine2work.org</p>
+
+      <a 
+        href="mailto:alex@ukraine2work.org" 
+        class="mt-4 inline-block bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition duration-200"
+      >
+        Contact Us
+      </a>
     </div>
   </div>
 </template>

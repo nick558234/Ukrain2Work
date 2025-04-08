@@ -17,7 +17,7 @@
                 {{ $t('refugees.hero.cta') }}
               </AppButton>
               <AppButton 
-                to="/contact"
+                to="contact"
                 color="outline-white"
                 size="lg"
               >
@@ -321,7 +321,7 @@
               <p class="mb-6">{{ $t('refugees.information.contact.description') }}</p>
               <div class="flex justify-center">
                 <AppButton 
-                  to="/contact"
+                  to="contact"
                   color="outline"
                   size="lg"
                 >

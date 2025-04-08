@@ -1,8 +1,9 @@
 <template>
-  <div class="container mx-auto px-4">
-    <h1 class="text-3xl font-bold mb-6">Welcome to Ukraine2Work</h1>
-    <p class="mb-8">Platform connecting Ukrainian refugees with job opportunities across Europe.</p>
-    
+  <div class="mx-auto">
+  <div class=container>
+    <h1 class="text-4xl font-bold mb-6">Welcome to Ukraine2Work(moet nog vertaald worden)</h1> <!-- Increased font size -->
+    <p class="mb-8 text-lg">Platform connecting Ukrainian refugees with job opportunities across Europe.</p> <!-- Increased font size -->
+ 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
       <div class="bg-blue-50 p-6 rounded-lg shadow">
         <h2 class="text-xl font-semibold mb-3">For refugees</h2>
@@ -22,7 +23,7 @@
         <NuxtLink to="/success-stories" class="text-blue-600 font-medium">Read Stories →</NuxtLink>
       </div>
     </div>
-    
+  </div>
     <HeroSection pageType="home" img="/images/team/alexSpaan_square.webp"/>
     
     <HowItWorksSection userType="jobseekers" />

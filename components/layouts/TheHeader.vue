@@ -145,11 +145,11 @@ import { useRoute } from 'vue-router';
 // Navigation data
 const navigationItems = [
   { key: 'home', route: '/' },
-  { key: 'employers', route: '/employers' },
-  { key: 'jobseekers', route: '/refugees' },
-  { key: 'blog', route: '/blog' },
-  { key: 'about', route: '/about' },
-  { key: 'contact', route: '/contact' },
+  { key: 'employers', route: 'employers' },
+  { key: 'jobseekers', route: 'refugees' },
+  { key: 'blog', route: 'blog' },
+  { key: 'about', route: 'about' },
+  { key: 'contact', route: 'contact' },
 ];
 
 // Mobile menu state

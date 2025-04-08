@@ -1,7 +1,7 @@
 <template>
   <section class="py-16 bg-ukraine-light">
     <div class="container">
-      <h2 class="text-center text-ukraine-blue mb-12">
+      <h2 class="text-center text-ukraine-blue text-2xl md:text-3xl lg:text-4xl mb-12">
         {{ $t('testimonials.title') }}
       </h2>
       

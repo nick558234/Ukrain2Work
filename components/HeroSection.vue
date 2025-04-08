@@ -4,7 +4,7 @@
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
         <!-- Hero Content -->
         <div class="flex flex-col justify-center">
-          <h1 class="text-ukraine-blue mb-6">
+          <h1 class="text-ukraine-blue mb-6 text-2xl md:text-3xl lg:text-4xl">
             {{ $t(`hero.${pageType}.title`) }}
           </h1>
           <p class="text-xl mb-8 text-ukraine-blue">
@@ -16,14 +16,14 @@
               <AppButton 
                 color="primary" 
                 size="lg"
-                to="/refugees"
+                to="refugees"
               >
                 {{ $t('hero.home.jobSeekerCta') }}
               </AppButton>
               <AppButton 
                 color="secondary" 
                 size="lg"
-                to="/employers"
+                to="employers"
               >
                 {{ $t('hero.home.employerCta') }}
               </AppButton>
