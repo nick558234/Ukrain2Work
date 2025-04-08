@@ -29,18 +29,18 @@ const { t } = useI18n();
 // Safety badges displayed to job seekers to build trust
 const badges = [
   {
-    title: t('jobseekers.safety.badges.free.title'),
-    description: t('jobseekers.safety.badges.free.description'),
+    title: t('refugees.safety.badges.free.title'),
+    description: t('refugees.safety.badges.free.description'),
     icon: 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z' // Checkmark icon
   },
   {
-    title: t('jobseekers.safety.badges.verified.title'),
-    description: t('jobseekers.safety.badges.verified.description'),
+    title: t('refugees.safety.badges.verified.title'),
+    description: t('refugees.safety.badges.verified.description'),
     icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z' // Shield icon
   },
   {
-    title: t('jobseekers.safety.badges.language.title'),
-    description: t('jobseekers.safety.badges.language.description'),
+    title: t('refugees.safety.badges.language.title'),
+    description: t('refugees.safety.badges.language.description'),
     icon: 'M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129' // Language icon
   }
 ];

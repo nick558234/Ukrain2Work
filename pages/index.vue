@@ -26,7 +26,7 @@
   </div>
     <HeroSection pageType="home" img="/images/team/alexSpaan_square.webp"/>
     
-    <HowItWorksSection userType="jobseekers" />
+    <HowItWorksSection userType="refugees" />
     
     <TestimonialsSection defaultTab="employers" />
     

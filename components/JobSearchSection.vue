@@ -2,8 +2,8 @@
   <section class="py-16 bg-ukraine-light">
     <div class="container">
       <div class="mb-10">
-        <h2 class="text-ukraine-blue mb-6">{{ $t('jobseekers.search.title') }}</h2>
-        <p class="max-w-3xl">{{ $t('jobseekers.search.subtitle') }}</p>
+        <h2 class="text-ukraine-blue mb-6">{{ $t('refugees.search.title') }}</h2>
+        <p class="max-w-3xl">{{ $t('refugees.search.subtitle') }}</p>
       </div>
       
       <!-- Search bar and filters -->
@@ -11,7 +11,7 @@
         <div class="flex flex-col md:flex-row gap-4">
           <!-- Main search input -->
           <div class="flex-grow">
-            <label for="searchQuery" class="sr-only">{{ $t('jobseekers.search.searchPlaceholder') }}</label>
+            <label for="searchQuery" class="sr-only">{{ $t('refugees.search.searchPlaceholder') }}</label>
             <div class="relative">
               <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                 <svg class="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -23,14 +23,14 @@
                 v-model="searchQuery"
                 type="text"
                 class="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-md leading-5 bg-white placeholder-gray-500 focus:outline-none focus:border-ukraine-blue"
-                :placeholder="$t('jobseekers.search.searchPlaceholder')"
+                :placeholder="$t('refugees.search.searchPlaceholder')"
               />
             </div>
           </div>
           
           <!-- Location filter -->
           <div class="w-full md:w-64">
-            <label for="locationFilter" class="sr-only">{{ $t('jobseekers.search.locationPlaceholder') }}</label>
+            <label for="locationFilter" class="sr-only">{{ $t('refugees.search.locationPlaceholder') }}</label>
             <div class="relative">
               <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                 <svg class="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -43,7 +43,7 @@
                 v-model="location"
                 type="text"
                 class="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-md leading-5 bg-white placeholder-gray-500 focus:outline-none focus:border-ukraine-blue"
-                :placeholder="$t('jobseekers.search.locationPlaceholder')"
+                :placeholder="$t('refugees.search.locationPlaceholder')"
               />
             </div>
           </div>
@@ -55,7 +55,7 @@
               @click="handleSearch"
               class="w-full md:w-auto px-6 py-3 bg-ukraine-blue text-white font-medium rounded-md hover:bg-opacity-90 transition-colors"
             >
-              {{ $t('jobseekers.search.searchButton') }}
+              {{ $t('refugees.search.searchButton') }}
             </button>
           </div>
         </div>
@@ -68,7 +68,7 @@
               @click="showFilters = !showFilters"
               class="flex items-center text-ukraine-blue font-medium focus:outline-none"
             >
-              <span>{{ $t('jobseekers.search.advancedFilters') }}</span>
+              <span>{{ $t('refugees.search.advancedFilters') }}</span>
               <svg 
                 class="ml-2 h-5 w-5 transform transition-transform"
                 :class="{ 'rotate-180': showFilters }"
@@ -82,14 +82,14 @@
             
             <div v-if="hasActiveFilters" class="flex items-center">
               <span class="text-sm text-gray-500 mr-2">
-                {{ $t('jobseekers.search.activeFilters', { count: activeFilterCount }) }}
+                {{ $t('refugees.search.activeFilters', { count: activeFilterCount }) }}
               </span>
               <button 
                 type="button" 
                 @click="clearFilters"
                 class="text-sm text-ukraine-blue hover:underline focus:outline-none"
               >
-                {{ $t('jobseekers.search.clearFilters') }}
+                {{ $t('refugees.search.clearFilters') }}
               </button>
             </div>
           </div>
@@ -98,70 +98,70 @@
             <!-- Job type filter -->
             <div>
               <label for="jobTypeFilter" class="block text-sm font-medium text-gray-700 mb-1">
-                {{ $t('jobseekers.search.filters.jobType') }}
+                {{ $t('refugees.search.filters.jobType') }}
               </label>
               <select 
                 id="jobTypeFilter" 
                 v-model="filters.jobType"
                 class="block w-full px-3 py-2 border border-gray-300 rounded-md focus:border-ukraine-blue focus:outline-none"
               >
-                <option value="">{{ $t('jobseekers.search.filters.all') }}</option>
-                <option value="full-time">{{ $t('jobseekers.search.filters.fullTime') }}</option>
-                <option value="part-time">{{ $t('jobseekers.search.filters.partTime') }}</option>
-                <option value="temporary">{{ $t('jobseekers.search.filters.temporary') }}</option>
-                <option value="internship">{{ $t('jobseekers.search.filters.internship') }}</option>
-                <option value="contract">{{ $t('jobseekers.search.filters.contract') }}</option>
+                <option value="">{{ $t('refugees.search.filters.all') }}</option>
+                <option value="full-time">{{ $t('refugees.search.filters.fullTime') }}</option>
+                <option value="part-time">{{ $t('refugees.search.filters.partTime') }}</option>
+                <option value="temporary">{{ $t('refugees.search.filters.temporary') }}</option>
+                <option value="internship">{{ $t('refugees.search.filters.internship') }}</option>
+                <option value="contract">{{ $t('refugees.search.filters.contract') }}</option>
               </select>
             </div>
             
             <!-- Experience level filter -->
             <div>
               <label for="experienceFilter" class="block text-sm font-medium text-gray-700 mb-1">
-                {{ $t('jobseekers.search.filters.experience') }}
+                {{ $t('refugees.search.filters.experience') }}
               </label>
               <select 
                 id="experienceFilter" 
                 v-model="filters.experience"
                 class="block w-full px-3 py-2 border border-gray-300 rounded-md focus:border-ukraine-blue focus:outline-none"
               >
-                <option value="">{{ $t('jobseekers.search.filters.all') }}</option>
-                <option value="entry">{{ $t('jobseekers.search.filters.entry') }}</option>
-                <option value="mid">{{ $t('jobseekers.search.filters.mid') }}</option>
-                <option value="senior">{{ $t('jobseekers.search.filters.senior') }}</option>
+                <option value="">{{ $t('refugees.search.filters.all') }}</option>
+                <option value="entry">{{ $t('refugees.search.filters.entry') }}</option>
+                <option value="mid">{{ $t('refugees.search.filters.mid') }}</option>
+                <option value="senior">{{ $t('refugees.search.filters.senior') }}</option>
               </select>
             </div>
             
             <!-- Language filter -->
             <div>
               <label for="languageFilter" class="block text-sm font-medium text-gray-700 mb-1">
-                {{ $t('jobseekers.search.filters.language') }}
+                {{ $t('refugees.search.filters.language') }}
               </label>
               <select 
                 id="languageFilter" 
                 v-model="filters.language"
                 class="block w-full px-3 py-2 border border-gray-300 rounded-md focus:border-ukraine-blue focus:outline-none"
               >
-                <option value="">{{ $t('jobseekers.search.filters.all') }}</option>
-                <option value="english">{{ $t('jobseekers.search.filters.english') }}</option>
-                <option value="dutch">{{ $t('jobseekers.search.filters.dutch') }}</option>
-                <option value="both">{{ $t('jobseekers.search.filters.bothLanguages') }}</option>
+                <option value="">{{ $t('refugees.search.filters.all') }}</option>
+                <option value="english">{{ $t('refugees.search.filters.english') }}</option>
+                <option value="dutch">{{ $t('refugees.search.filters.dutch') }}</option>
+                <option value="both">{{ $t('refugees.search.filters.bothLanguages') }}</option>
               </select>
             </div>
             
             <!-- Posted date filter -->
             <div>
               <label for="dateFilter" class="block text-sm font-medium text-gray-700 mb-1">
-                {{ $t('jobseekers.search.filters.date') }}
+                {{ $t('refugees.search.filters.date') }}
               </label>
               <select 
                 id="dateFilter" 
                 v-model="filters.date"
                 class="block w-full px-3 py-2 border border-gray-300 rounded-md focus:border-ukraine-blue focus:outline-none"
               >
-                <option value="">{{ $t('jobseekers.search.filters.all') }}</option>
-                <option value="today">{{ $t('jobseekers.search.filters.today') }}</option>
-                <option value="week">{{ $t('jobseekers.search.filters.week') }}</option>
-                <option value="month">{{ $t('jobseekers.search.filters.month') }}</option>
+                <option value="">{{ $t('refugees.search.filters.all') }}</option>
+                <option value="today">{{ $t('refugees.search.filters.today') }}</option>
+                <option value="week">{{ $t('refugees.search.filters.week') }}</option>
+                <option value="month">{{ $t('refugees.search.filters.month') }}</option>
               </select>
             </div>
           </div>
@@ -178,13 +178,13 @@
           <svg class="mx-auto h-12 w-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
           </svg>
-          <h3 class="mt-4 text-lg font-medium text-gray-900">{{ $t('jobseekers.search.noResults') }}</h3>
-          <p class="mt-2 text-gray-500">{{ $t('jobseekers.search.tryAgain') }}</p>
+          <h3 class="mt-4 text-lg font-medium text-gray-900">{{ $t('refugees.search.noResults') }}</h3>
+          <p class="mt-2 text-gray-500">{{ $t('refugees.search.tryAgain') }}</p>
         </div>
         
         <div v-else>
           <p class="mb-4 font-medium">
-            {{ $t('jobseekers.search.resultsCount', { count: jobs.length }) }}
+            {{ $t('refugees.search.resultsCount', { count: jobs.length }) }}
           </p>
           
           <div class="grid grid-cols-1 gap-6">
@@ -228,7 +228,7 @@
                   <svg class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
-                  <span>{{ $t('jobseekers.search.postedDate', { date: job.postedDate }) }}</span>
+                  <span>{{ $t('refugees.search.postedDate', { date: job.postedDate }) }}</span>
                 </div>
               </div>
               
@@ -239,7 +239,7 @@
                   :href="`/job-details/${job.id}`"
                   class="mr-3"
                 >
-                  {{ $t('jobseekers.search.viewDetails') }}
+                  {{ $t('refugees.search.viewDetails') }}
                 </AppButton>
                 <AppButton 
                   color="outline" 
@@ -247,7 +247,7 @@
                   :href="`https://nederland-werkt.8vance.com/job/${job.id}?language=${$i18n.locale}`"
                   target="_blank"
                 >
-                  {{ $t('jobseekers.search.applyNow') }}
+                  {{ $t('refugees.search.applyNow') }}
                 </AppButton>
               </div>
             </div>
@@ -259,7 +259,7 @@
               @click="loadMore"
               class="px-6 py-2 border border-ukraine-blue text-ukraine-blue rounded-md hover:bg-ukraine-blue hover:text-white transition-colors"
             >
-              {{ $t('jobseekers.search.loadMore') }}
+              {{ $t('refugees.search.loadMore') }}
             </button>
           </div>
         </div>

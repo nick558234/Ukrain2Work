@@ -2,7 +2,7 @@
   <section class="py-16 bg-white">
     <div class="container">
       <h2 class="text-ukraine-blue text-center mb-12">
-        {{ $t('jobseekers.categories.title') }}
+        {{ $t('refugees.categories.title') }}
       </h2>
       
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
@@ -19,7 +19,7 @@
             </svg>
           </div>
           <h3 class="font-bold mb-1">{{ category.name }}</h3>
-          <p class="text-sm text-gray-500">{{ category.jobCount }} {{ $t('jobseekers.categories.jobs') }}</p>
+          <p class="text-sm text-gray-500">{{ category.jobCount }} {{ $t('refugees.categories.jobs') }}</p>
         </div>
       </div>
       
@@ -64,7 +64,7 @@
             </div>
             <div class="mt-4">
               <AppButton color="outline" size="sm" @click="viewJobDetails(job.id)">
-                {{ $t('jobseekers.categories.viewJob') }}
+                {{ $t('refugees.categories.viewJob') }}
               </AppButton>
             </div>
           </div>
@@ -72,7 +72,7 @@
         
         <div class="mt-6 text-center">
           <NuxtLink :to="`/jobs?category=${selectedCategory}`" class="text-ukraine-blue font-medium hover:text-ukraine-blue-dark">
-            {{ $t('jobseekers.categories.browseMore') }} →
+            {{ $t('refugees.categories.browseMore') }} →
           </NuxtLink>
         </div>
       </div>

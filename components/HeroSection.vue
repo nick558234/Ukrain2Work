@@ -70,7 +70,7 @@ const props = defineProps({
   pageType: {
     type: String,
     default: 'home',
-    validator: (value) => ['home', 'employers', 'jobseekers', 'about'].includes(value)
+    validator: (value) => ['home', 'employers', 'refugees', 'about'].includes(value)
   },
   primaryCtaLink: {
     type: String,

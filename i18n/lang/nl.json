@@ -5,7 +5,7 @@
   "nav": {
     "home": "Home",
     "employers": "Voor werkgevers",
-    "jobseekers": "Voor werkzoekenden",
+    "refugees": "Voor werkzoekenden",
     "blog": "Blog",
     "about": "Over ons",
     "contact": "Contact",
@@ -56,7 +56,7 @@
       "primaryCta": "Gratis registreren",
       "imageAlt": "Diverse werknemers in een Nederlands bedrijf"
     },
-    "jobseekers": {
+    "refugees": {
       "title": "Vind werk in Nederland",
       "subtitle": "Ontdek mogelijkheden bij Nederlandse bedrijven die openstaan voor Oekraïense professionals.",
       "primaryCta": "Bekijk vacatures",
@@ -92,7 +92,7 @@
           "description": "Bekijk kandidaten en maak direct contact met geschikte profielen."
         }
       ],
-      "jobseekers": [
+      "refugees": [
         {
           "title": "Maak een profiel aan",
           "description": "Registreer en vul uw cv en werkervaring in."
@@ -112,7 +112,7 @@
     "title": "Wat mensen zeggen",
     "tabs": {
       "employers": "Werkgevers",
-      "jobseekers": "Werkzoekenden"
+      "refugees": "Werkzoekenden"
     }
   },
   "employers": {
@@ -205,7 +205,7 @@
       "description": "Bekijk de video hieronder om te zien hoe ons platform werkt en hoe we Oekraïense vluchtelingen helpen om werk te vinden in Nederland."
     }
   },
-  "jobseekers": {
+  "refugees": {
     "search": {
       "title": "Zoek vacatures",
       "subtitle": "Ontdek beschikbare posities bij Nederlandse bedrijven die openstaan voor Oekraïense professionals.",
@@ -282,7 +282,7 @@
         "supportive": "Ondersteunend netwerk"
       },
       "stats": {
-        "jobSeekers": "Werkzoekenden",
+        "refugees": "Werkzoekenden",
         "employers": "Werkgevers",
         "jobsPosted": "Geplaatste vacatures",
         "successfulHires": "Succesvolle aannames"
@@ -393,7 +393,7 @@
       "primaryCta": "Plaats een vacature",
       "secondaryCta": "Meer informatie"
     },
-    "jobseekers": {
+    "refugees": {
       "title": "Klaar om uw carrière in Nederland te starten?",
       "description": "Maak vandaag nog een account aan en begin met solliciteren bij Nederlandse werkgevers.",
       "primaryCta": "Account aanmaken",

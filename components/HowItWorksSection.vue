@@ -31,8 +31,8 @@ const { t } = useI18n();
 const props = defineProps({
   userType: {
     type: String,
-    default: 'jobseekers',
-    validator: (value) => ['employers', 'jobseekers'].includes(value)
+    default: 'refugees',
+    validator: (value) => ['employers', 'refugees'].includes(value)
   }
 });
 
@@ -54,16 +54,16 @@ const steps = computed(() => {
       ]
     : [
         { 
-          title: t('howItWorks.steps.jobseekers.0.title'),
-          description: t('howItWorks.steps.jobseekers.0.description')
+          title: t('howItWorks.steps.refugees.0.title'),
+          description: t('howItWorks.steps.refugees.0.description')
         },
         { 
-          title: t('howItWorks.steps.jobseekers.1.title'),
-          description: t('howItWorks.steps.jobseekers.1.description')
+          title: t('howItWorks.steps.refugees.1.title'),
+          description: t('howItWorks.steps.refugees.1.description')
         },
         { 
-          title: t('howItWorks.steps.jobseekers.2.title'),
-          description: t('howItWorks.steps.jobseekers.2.description')
+          title: t('howItWorks.steps.refugees.2.title'),
+          description: t('howItWorks.steps.refugees.2.description')
         }
       ];
 });

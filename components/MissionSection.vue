@@ -53,8 +53,8 @@
       <!-- Impact statistics -->
       <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8">
         <div class="text-center">
-          <div class="text-4xl font-bold text-ukraine-blue mb-2">{{ impactStats.jobSeekers }}+</div>
-          <div class="text-gray-600">{{ $t('about.mission.stats.jobSeekers') }}</div>
+          <div class="text-4xl font-bold text-ukraine-blue mb-2">{{ impactStats.refugees }}+</div>
+          <div class="text-gray-600">{{ $t('about.mission.stats.refugees') }}</div>
         </div>
         <div class="text-center">
           <div class="text-4xl font-bold text-ukraine-blue mb-2">{{ impactStats.employers }}+</div>
@@ -76,7 +76,7 @@
 <script setup>
 // In a real app, these statistics would come from an API
 const impactStats = {
-  jobSeekers: 5820,
+  refugees: 5820,
   employers: 340,
   jobsPosted: 1250,
   successfulHires: 870

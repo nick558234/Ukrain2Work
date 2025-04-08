@@ -8,7 +8,7 @@
     
     <TeamProfiles :showAll="true" />
     
-    <TestimonialsSection defaultTab="jobseekers" />
+    <TestimonialsSection defaultTab="refugees" />
     
     <CtaSection 
       type="general" 

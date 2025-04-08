@@ -2,7 +2,7 @@
   "nav": {
     "home": "Home",
     "employers": "For Employers",
-    "jobseekers": "For Job Seekers",
+    "refugees": "For Job Seekers",
     "blog": "Blog",
     "about": "About",
     "contact": "Contact",
@@ -47,7 +47,7 @@
       "primaryCta": "Register for free",
       "imageAlt": "Diverse employees in a Dutch company"
     },
-    "jobseekers": {
+    "refugees": {
       "title": "Find work in the Netherlands",
       "subtitle": "Discover opportunities at Dutch companies that welcome Ukrainian professionals.",
       "primaryCta": "View job openings",
@@ -83,7 +83,7 @@
           "description": "Browse candidates and connect directly with suitable profiles."
         }
       ],
-      "jobseekers": [
+      "refugees": [
         {
           "title": "Create a profile",
           "description": "Register and fill in your CV and work experience."
@@ -103,7 +103,7 @@
     "title": "What people are saying",
     "tabs": {
       "employers": "Employers",
-      "jobseekers": "Job Seekers"
+      "refugees": "Job Seekers"
     },
     "employers": [
       {
@@ -125,7 +125,7 @@
         "quote": "Our mission is to connect talented Ukrainian professionals with Dutch employers. I've seen firsthand how these connections transform lives and businesses."
       }
     ],
-    "jobseekers": [
+    "refugees": [
       {
         "id": 1,
         "name": "Olena Kovalenko",
@@ -236,7 +236,7 @@
       "description": "Watch the video below to see how our platform works and how we help Ukrainian refugees find work in the Netherlands."
     }
   },
-  "jobseekers": {
+  "refugees": {
     "search": {
       "title": "Search jobs",
       "subtitle": "Discover available positions at Dutch companies that welcome Ukrainian professionals.",
@@ -374,7 +374,7 @@
         "supportive": "Supportive network"
       },
       "stats": {
-        "jobSeekers": "Job seekers",
+        "refugees": "Job seekers",
         "employers": "Employers",
         "jobsPosted": "Jobs posted",
         "successfulHires": "Successful hires"
@@ -485,7 +485,7 @@
       "primaryCta": "Post a job",
       "secondaryCta": "Learn more"
     },
-    "jobseekers": {
+    "refugees": {
       "title": "Ready to start your career in the Netherlands?",
       "description": "Create an account today and start applying to Dutch employers.",
       "primaryCta": "Create account",

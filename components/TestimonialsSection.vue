@@ -16,10 +16,10 @@
         </button>
         <button 
           class="px-6 py-2 rounded-r-md font-medium transition-colors duration-200"
-          :class="activeTab === 'jobseekers' ? 'bg-ukraine-blue text-white' : 'bg-white text-ukraine-blue'"
-          @click="activeTab = 'jobseekers'"
+          :class="activeTab === 'refugees' ? 'bg-ukraine-blue text-white' : 'bg-white text-ukraine-blue'"
+          @click="activeTab = 'refugees'"
         >
-          {{ $t('testimonials.tabs.jobseekers') }}
+          {{ $t('testimonials.tabs.refugees') }}
         </button>
       </div>
       
@@ -82,7 +82,7 @@ const props = defineProps({
   defaultTab: {
     type: String,
     default: 'employers',
-    validator: (value) => ['employers', 'jobseekers'].includes(value)
+    validator: (value) => ['employers', 'refugees'].includes(value)
   }
 });
 
@@ -126,21 +126,21 @@ const testimonials = [
   },
   {
     id: 1,
-    type: 'jobseekers',
+    type: 'refugees',
     name: 'Olena Kovalenko',
     role: 'Software Developer',
     quote: 'Within two weeks of creating my profile, I had three interviews and a job offer. Ukraine2Work helped me start my new life in the Netherlands.'
   },
   {
     id: 2,
-    type: 'jobseekers',
+    type: 'refugees',
     name: 'Andriy Shevchenko',
     role: 'Logistics Specialist',
     quote: 'I was concerned about the language barrier, but found many opportunities where English was sufficient. My new employer even offers Dutch lessons.'
   },
   {
     id: 3,
-    type: 'jobseekers',
+    type: 'refugees',
     name: 'Natalia Ivanenko',
     role: 'Accountant',
     quote: 'The platform made it easy to showcase my qualifications to Dutch employers. The process was straightforward and I found a welcoming workplace.'

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <HeroSection pageType="jobseekers" primaryCtaLink="/jobs" />
+    <HeroSection pageType="refugees" primaryCtaLink="/jobs" />
     
     <SafetyBadges />
     
@@ -10,10 +10,10 @@
     
     <JobCategories />
     
-    <TestimonialsSection defaultTab="jobseekers" />
+    <TestimonialsSection defaultTab="refugees" />
     
     <CtaSection 
-      type="jobseekers" 
+      type="refugees" 
       primaryLink="https://nederland-werkt.8vance.com/?authState=register"
       secondaryLink="#" 
     />
