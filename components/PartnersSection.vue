@@ -3,7 +3,6 @@
     <div class="container">
       <h2 class="text-center text-ukraine-blue mb-12">{{ $t('partners.title') }}</h2>
       
-      <ClientOnly>
         <swiper-container
           ref="containerRef"
           :slides-per-view="2"
@@ -28,16 +27,17 @@
           <swiper-slide v-for="(partner, index) in partnersList" :key="index">
             <div class="flex justify-center items-center h-full">
               <a :href="partner.url" target="_blank" rel="noopener noreferrer">
-                <img 
+                <NuxtImg 
                   :src="partner.logo" 
                   :alt="partner.name"
                   class="h-24 p-2 grayscale hover:grayscale-0 transition-all duration-300"
+                  format="avif"
+                  sizes="(max-width: 768px) 100vw, (min-width: 768px) 50vw, 33vw"
                 />
               </a>
             </div>
           </swiper-slide>
         </swiper-container>
-      </ClientOnly>
     </div>
   </section>
 </template>
