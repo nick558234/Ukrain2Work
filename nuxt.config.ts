@@ -1,6 +1,14 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  ssr: true,
   devtools: { enabled: true },
+  nitro: {
+    preset: 'static',
+    prerender: {
+      crawlLinks: true,
+      routes: ['/']
+    }
+  },
 
   modules: ['@nuxtjs/tailwindcss', '@pinia/nuxt', '@nuxtjs/i18n', '@nuxt/image', 'nuxt-swiper'],
 
@@ -44,5 +52,9 @@ export default defineNuxtConfig({
     transpile: ['flag-icons']
   },
 
+  generate: {
+    fallback: true
+  },
+  
   compatibilityDate: '2025-04-07'
 })
