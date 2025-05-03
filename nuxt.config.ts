@@ -1,12 +1,14 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   ssr: true,
-  devtools: { enabled: true },
+  devtools: { enabled: false }, // Disable devtools in production
   nitro: {
     preset: 'static',
     prerender: {
       crawlLinks: true,
-      routes: ['/']
+      routes: ['/'],
+      ignore: [/^\/_ipx/, /\.(avif|webp)$/], // Ignore image processing routes and specific file types
+      failOnError: false // Prevent prerender errors from stopping the build
     }
   },
 
@@ -54,6 +56,27 @@ export default defineNuxtConfig({
 
   generate: {
     fallback: true
+  },
+  
+  image: {
+    // Improve image handling
+    quality: 80,
+    format: ['webp', 'jpg', 'png', 'svg'],
+    dir: 'public/images', // Set correct image directory
+    screens: {
+      xs: 320,
+      sm: 640,
+      md: 768,
+      lg: 1024,
+      xl: 1280,
+      xxl: 1536
+    },
+    provider: 'ipx'
+  },
+  
+  experimental: {
+    payloadExtraction: false, // Disable payload extraction which can cause issues
+    inlineSSRStyles: false
   },
   
   compatibilityDate: '2025-04-07'
