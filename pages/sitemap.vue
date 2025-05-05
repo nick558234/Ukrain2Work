@@ -14,7 +14,7 @@
           <li><NuxtLink to="/donate" class="text-blue-600 hover:underline">Donate</NuxtLink></li>
         </ul>
       </div>
-      
+       
       <div>
         <h2 class="text-xl font-semibold mb-4 border-b pb-2">Account</h2>
         <ul class="space-y-2">
