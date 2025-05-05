@@ -13,13 +13,12 @@
           <div class="relative">
             <div class="mb-6">
               <div class="aspect-w-1 aspect-h-1 mb-4">
-                <NuxtImg 
+                <img 
                   :src="member.photo"
                   :alt="member.name"
                   class="w-full h-full object-cover"
                   width="300"
                   height="300"
-                  placeholder
                 />
               </div>
             </div>
@@ -143,4 +142,4 @@ const displayedMembers = computed(() => {
 
 <style scoped>
 /* Component styles */
-</style>  
+</style>

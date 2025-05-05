@@ -28,14 +28,13 @@
         <div v-for="(testimonial, index) in filteredTestimonials" :key="index" class="bg-white rounded-lg shadow-md p-6">
           <div class="flex items-center space-x-4">
             <div class="flex-shrink-0">
-              <NuxtImg
+              <img
                 :src="`/images/testimonials/${testimonial.type}-${testimonial.id}.jpg`"
                 :alt="testimonial.name"
                 class="h-14 w-14 rounded-full object-cover border-2 border-white"
                 width="56"
                 height="56"
-                placeholder
-                :fallback="`https://placehold.co/56x56/e9f5ff/0057b8?text=${testimonial.name.charAt(0)}`"
+                :onerror="`this.src='https://placehold.co/56x56/e9f5ff/0057b8?text=${testimonial.name.charAt(0)}'`"
               />
             </div>
             <div>
@@ -58,14 +57,13 @@
           v-show="i === activeTestimonial"
         >
           <div class="mx-auto w-24 h-24 rounded-full overflow-hidden border-2 border-ukraine-yellow">
-            <NuxtImg 
+            <img 
               :src="`/images/testimonials/${testimonial.userType}-${testimonial.id}.jpg`" 
               :alt="`${testimonial.name} portrait`"
               class="w-full h-full object-cover"
               width="96"
               height="96"
-              placeholder
-              :fallback="`https://placehold.co/96x96/e9f5ff/0057b8?text=${testimonial.name.split(' ').map(n => n[0]).join('')}`"
+              :onerror="`this.src='https://placehold.co/96x96/e9f5ff/0057b8?text=${testimonial.name.split(' ').map(n => n[0]).join('')}'`"
             />
           </div>
         </div>

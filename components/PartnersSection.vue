@@ -27,12 +27,10 @@
           <swiper-slide v-for="(partner, index) in partnersList" :key="index">
             <div class="flex justify-center items-center h-full">
               <a :href="partner.url" target="_blank" rel="noopener noreferrer">
-                <NuxtImg 
+                <img 
                   :src="partner.logo" 
                   :alt="partner.name"
                   class="h-24 p-2 grayscale hover:grayscale-0 transition-all duration-300"
-                  format="avif"
-                  sizes="(max-width: 768px) 100vw, (min-width: 768px) 50vw, 33vw"
                 />
               </a>
             </div>

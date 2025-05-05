@@ -2,12 +2,11 @@
   <section class="relative bg-ukraine-light py-20">
     <!-- The image container with overlay -->
     <div class="absolute inset-0 overflow-hidden">
-      <NuxtImg 
+      <img 
         :src="bgImage" 
         alt="Background image"
         class="w-full h-full object-cover"
-        format="avif"
-        sizes="(max-width: 768px) 100vw, (min-width: 768px) 50vw, 33vw"     
+        :onerror="`this.src='https://placehold.co/1600x400/0057b8/ffffff?text=Ukraine2Work'`"   
       />
       <div class="absolute inset-0 bg-ukraine-blue bg-opacity-60"></div>
     </div>

@@ -7,14 +7,13 @@
       <div v-for="story in stories" :key="story.id" class="bg-white rounded-lg shadow overflow-hidden">
         <div class="md:flex">
           <div class="w-full md:w-1/3 h-48 md:h-auto relative">
-            <NuxtImg 
+            <img 
               :src="story.image" 
               :alt="story.name"
               class="w-full h-full object-cover"
               width="400" 
               height="400"
-              placeholder
-              :fallback="`https://placehold.co/400x400/e9f5ff/0057b8?text=${story.name.split(' ').map(n => n[0]).join('')}`"
+              :onerror="`this.src='https://placehold.co/400x400/e9f5ff/0057b8?text=${story.name.split(' ').map(n => n[0]).join('')}'`"
             />
           </div>
           <div class="p-6">

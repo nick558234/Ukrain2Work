@@ -35,14 +35,12 @@
         
         <div class="relative">
           <div class="aspect-w-4 aspect-h-3 rounded-lg overflow-hidden shadow-xl">
-            <NuxtImg 
-              src="/images/about/mission.jpg" 
+            <img 
               alt="Ukraine2Work mission" 
               class="w-full h-full object-cover"
               width="800"
               height="600"
-              placeholder
-              fallback="https://placehold.co/800x600/e9f5ff/0057b8?text=Our+Mission"
+              onerror="this.src='https://placehold.co/800x600/e9f5ff/0057b8?text=Our+Mission'"
             />
           </div>
           <div class="absolute -bottom-6 -left-6 w-40 h-40 bg-ukraine-yellow rounded-lg -z-10"></div>
