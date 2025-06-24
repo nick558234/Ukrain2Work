@@ -3,7 +3,7 @@ export default defineNuxtConfig({
   ssr: true,
   devtools: { enabled: false }, // Disable devtools in production
   nitro: {
-    preset: 'static',
+    preset: 'vercel',
     prerender: {
       crawlLinks: true,
       routes: ['/'],
