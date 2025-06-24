@@ -12,7 +12,23 @@ export default defineNuxtConfig({
     }
   },
 
-  modules: ['@nuxtjs/tailwindcss', '@pinia/nuxt', '@nuxtjs/i18n', '@nuxt/image', 'nuxt-swiper'],
+  modules: ['@nuxtjs/tailwindcss', '@pinia/nuxt', '@nuxtjs/i18n', '@nuxt/image', 'nuxt-swiper', 'nuxt-mail'],
+
+  // Mail configuration
+  mail: {
+    message: {
+      to: 'alex@ukraine2work.com',
+    },
+    smtp: {
+      host: 'smtp.strato.com',
+      port: 465, // Use 465 for SSL/TLS
+      auth: {
+        user: 'contact@nickvanhooff.com', // Your email 
+        pass: process.env.SMTP_PASSWORD || '' // Use environment variable for security
+      },
+
+    },
+  },
 
   i18n: {
     locales: [

@@ -4,12 +4,12 @@
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
         <!-- Contact form -->
         <div>
-          <h2 class="text-ukraine-blue mb-6">{{ $t('contact.form.title') }}</h2>
-          <p class="mb-8">{{ $t('contact.form.description') }}</p>
+          <h2 class="text-ukraine-blue mb-6">{{ t('contact.form.title') }}</h2>
+          <p class="mb-8">{{ t('contact.form.description') }}</p>
           
           <form @submit.prevent="submitContactForm" class="space-y-6">
             <div>
-              <label for="name" class="block text-gray-700 font-medium mb-2">{{ $t('contact.form.name') }}</label>
+              <label for="name" class="block text-gray-700 font-medium mb-2">{{ t('contact.form.name') }}</label>
               <input
                 id="name"
                 v-model="contactForm.name"
@@ -22,7 +22,7 @@
             </div>
             
             <div>
-              <label for="email" class="block text-gray-700 font-medium mb-2">{{ $t('contact.form.email') }}</label>
+              <label for="email" class="block text-gray-700 font-medium mb-2">{{ t('contact.form.email') }}</label>
               <input
                 id="email"
                 v-model="contactForm.email"
@@ -35,7 +35,7 @@
             </div>
             
             <div>
-              <label for="subject" class="block text-gray-700 font-medium mb-2">{{ $t('contact.form.subject') }}</label>
+              <label for="subject" class="block text-gray-700 font-medium mb-2">{{ t('contact.form.subject') }}</label>
               <select
                 id="subject"
                 v-model="contactForm.subject"
@@ -43,18 +43,18 @@
                   errors.subject ? 'border-red-500 focus:border-red-500' : 'border-gray-300 focus:border-ukraine-blue']"
                 @blur="validateField('subject')"
               >
-                <option value="">{{ $t('contact.form.selectSubject') }}</option>
-                <option value="employer-question">{{ $t('contact.form.subjects.employer') }}</option>
-                <option value="jobseeker-question">{{ $t('contact.form.subjects.jobseeker') }}</option>
-                <option value="partnership">{{ $t('contact.form.subjects.partnership') }}</option>
-                <option value="technical-issue">{{ $t('contact.form.subjects.technical') }}</option>
-                <option value="other">{{ $t('contact.form.subjects.other') }}</option>
+                <option value="">{{ t('contact.form.selectSubject') }}</option>
+                <option value="employer-question">{{ t('contact.form.subjects.employer') }}</option>
+                <option value="jobseeker-question">{{ t('contact.form.subjects.jobseeker') }}</option>
+                <option value="partnership">{{ t('contact.form.subjects.partnership') }}</option>
+                <option value="technical-issue">{{ t('contact.form.subjects.technical') }}</option>
+                <option value="other">{{ t('contact.form.subjects.other') }}</option>
               </select>
               <p v-if="errors.subject" class="mt-1 text-red-500 text-sm">{{ errors.subject }}</p>
             </div>
             
             <div>
-              <label for="message" class="block text-gray-700 font-medium mb-2">{{ $t('contact.form.message') }}</label>
+              <label for="message" class="block text-gray-700 font-medium mb-2">{{ t('contact.form.message') }}</label>
               <textarea
                 id="message"
                 v-model="contactForm.message"
@@ -78,8 +78,8 @@
               </div>
               <div class="ml-3 text-sm">
                 <label for="agreeToTerms" class="text-gray-700">
-                  {{ $t('contact.form.agreeToTerms') }} 
-                  <NuxtLink to="/privacy" class="text-ukraine-blue hover:underline">{{ $t('contact.form.privacyPolicy') }}</NuxtLink>
+                  {{ t('contact.form.agreeToTerms') }} 
+                  <NuxtLink to="/privacy" class="text-ukraine-blue hover:underline">{{ t('contact.form.privacyPolicy') }}</NuxtLink>
                 </label>
                 <p v-if="errors.agreeToTerms" class="mt-1 text-red-500 text-sm">{{ errors.agreeToTerms }}</p>
               </div>
@@ -91,17 +91,17 @@
                 color="primary" 
                 size="lg" 
                 :disabled="isSubmitting"
-                :text="isSubmitting ? $t('contact.form.sending') : $t('contact.form.submit')"
+                :text="isSubmitting ? t('contact.form.sending') : t('contact.form.submit')"
               >
                 <template v-if="isSubmitting">
                   <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                     <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                     <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                   </svg>
-                  {{ $t('contact.form.sending') }}
+                  {{ t('contact.form.sending') }}
                 </template>
                 <template v-else>
-                  {{ $t('contact.form.submit') }}
+                  {{ t('contact.form.submit') }}
                 </template>
               </AppButton>
             </div>
@@ -113,8 +113,8 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
               <div>
-                <h3 class="font-medium">{{ $t('contact.form.success.title') }}</h3>
-                <p class="mt-1 text-sm">{{ $t('contact.form.success.message') }}</p>
+                <h3 class="font-medium">{{ t('contact.form.success.title') }}</h3>
+                <p class="mt-1 text-sm">{{ t('contact.form.success.message') }}</p>
               </div>
             </div>
           </div>
@@ -122,7 +122,7 @@
         
         <!-- Contact info -->
         <div class="bg-white p-8 rounded-lg shadow-md">
-          <h3 class="font-bold mb-6">{{ $t('contact.info.title') }}</h3>
+          <h3 class="font-bold mb-6">{{ t('contact.info.title') }}</h3>
           
           <div class="space-y-6">
             <div class="flex">
@@ -132,8 +132,8 @@
                 </svg>
               </div>
               <div class="ml-4">
-                <h4 class="text-sm font-medium text-gray-900">{{ $t('contact.info.email.title') }}</h4>
-                <p class="mt-1 text-sm text-gray-600">{{ $t('contact.info.email.description') }}</p>
+                <h4 class="text-sm font-medium text-gray-900">{{ t('contact.info.email.title') }}</h4>
+                <p class="mt-1 text-sm text-gray-600">{{ t('contact.info.email.description') }}</p>
                 <a href="mailto:alex@ukraine2work.nl" class="mt-2 text-ukraine-blue font-medium hover:text-ukraine-blue-dark">
                   alex@ukraine2work.nl
                 </a>
@@ -147,8 +147,8 @@
                 </svg>
               </div>
               <div class="ml-4">
-                <h4 class="text-sm font-medium text-gray-900">{{ $t('contact.info.phone.title') }}</h4>
-                <p class="mt-1 text-sm text-gray-600">{{ $t('contact.info.phone.description') }}</p>
+                <h4 class="text-sm font-medium text-gray-900">{{ t('contact.info.phone.title') }}</h4>
+                <p class="mt-1 text-sm text-gray-600">{{ t('contact.info.phone.description') }}</p>
                 <a href="tel:+31638473157" class="mt-2 text-ukraine-blue font-medium hover:text-ukraine-blue-dark">
                   +31 6 38473157
                 </a>
@@ -163,8 +163,8 @@
                 </svg>
               </div>
               <div class="ml-4">
-                <h4 class="text-sm font-medium text-gray-900">{{ $t('contact.info.address.title') }}</h4>
-                <p class="mt-1 text-sm text-gray-600">{{ $t('contact.info.address.description') }}</p>
+                <h4 class="text-sm font-medium text-gray-900">{{ t('contact.info.address.title') }}</h4>
+                <p class="mt-1 text-sm text-gray-600">{{ t('contact.info.address.description') }}</p>
                 <address class="mt-2 not-italic text-sm">
             
                   The Netherlands
@@ -179,18 +179,18 @@
                 </svg>
               </div>
               <div class="ml-4">
-                <h4 class="text-sm font-medium text-gray-900">{{ $t('contact.info.hours.title') }}</h4>
-                <p class="mt-1 text-sm text-gray-600">{{ $t('contact.info.hours.description') }}</p>
+                <h4 class="text-sm font-medium text-gray-900">{{ t('contact.info.hours.title') }}</h4>
+                <p class="mt-1 text-sm text-gray-600">{{ t('contact.info.hours.description') }}</p>
                 <p class="mt-2 text-sm">
-                  {{ $t('contact.info.hours.weekdays') }}: 9:00 - 17:00<br />
-                  {{ $t('contact.info.hours.weekend') }}: {{ $t('contact.info.hours.closed') }}
+                  {{ t('contact.info.hours.weekdays') }}: 9:00 - 17:00<br />
+                  {{ t('contact.info.hours.weekend') }}: {{ t('contact.info.hours.closed') }}
                 </p>
               </div>
             </div>
           </div>
           
           <div class="mt-8">
-            <h4 class="text-sm font-medium text-gray-900 mb-4">{{ $t('contact.info.followUs') }}</h4>
+            <h4 class="text-sm font-medium text-gray-900 mb-4">{{ t('contact.info.followUs') }}</h4>
             <div class="flex space-x-4">
               <a href="#" aria-label="Facebook" class="text-gray-400 hover:text-ukraine-blue">
                 <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
@@ -217,6 +217,13 @@
 
 <script setup>
 import { ref, reactive } from 'vue';
+import { useMail } from '~/composables/useMail';
+
+// Use the mail composable directly
+const { sendEmail } = useMail();
+
+// Import i18n translation function
+const { t } = useI18n();
 
 // Form state
 const contactForm = reactive({
@@ -248,25 +255,25 @@ if (route.query.subject) {
 const validateField = (field) => {
   switch (field) {
     case 'name':
-      errors.name = !contactForm.name ? $t('contact.form.validation.nameRequired') : '';
+      errors.name = !contactForm.name ? t('contact.form.validation.nameRequired') : '';
       break;
     case 'email':
       if (!contactForm.email) {
-        errors.email = $t('contact.form.validation.emailRequired');
+        errors.email = t('contact.form.validation.emailRequired');
       } else if (!isValidEmail(contactForm.email)) {
-        errors.email = $t('contact.form.validation.emailValid');
+        errors.email = t('contact.form.validation.emailValid');
       } else {
         errors.email = '';
       }
       break;
     case 'subject':
-      errors.subject = !contactForm.subject ? $t('contact.form.validation.subjectRequired') : '';
+      errors.subject = !contactForm.subject ? t('contact.form.validation.subjectRequired') : '';
       break;
     case 'message':
-      errors.message = !contactForm.message ? $t('contact.form.validation.messageRequired') : '';
+      errors.message = !contactForm.message ? t('contact.form.validation.messageRequired') : '';
       break;
     case 'agreeToTerms':
-      errors.agreeToTerms = !contactForm.agreeToTerms ? $t('contact.form.validation.agreeRequired') : '';
+      errors.agreeToTerms = !contactForm.agreeToTerms ? t('contact.form.validation.agreeRequired') : '';
       break;
   }
 };
@@ -292,8 +299,30 @@ const submitContactForm = async () => {
   isSubmitting.value = true;
   
   try {
-    // In a real app, this would send data to an API endpoint
-    await new Promise(resolve => setTimeout(resolve, 1000)); // Simulating API call
+    // Send email using our custom mail composable
+    const { error } = await sendEmail({
+      subject: `Contact Form: ${contactForm.subject}`,
+      text: `
+Name: ${contactForm.name}
+Email: ${contactForm.email}
+Subject: ${contactForm.subject}
+Message: ${contactForm.message}
+      `,
+      html: `
+<div style="font-family: Arial, sans-serif; line-height: 1.5;">
+  <h2>New Contact Form Submission</h2>
+  <p><strong>From:</strong> ${contactForm.name} (${contactForm.email})</p>
+  <p><strong>Subject:</strong> ${contactForm.subject}</p>
+  <p><strong>Message:</strong></p>
+  <p>${contactForm.message.replace(/\n/g, '<br>')}</p>
+</div>
+      `
+    });
+
+    if (error) {
+      console.error('Email sending error:', error);
+      throw new Error('Failed to send email');
+    }
     
     formSubmitted.value = true;
     
