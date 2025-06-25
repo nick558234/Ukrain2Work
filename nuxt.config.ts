@@ -3,7 +3,12 @@ export default defineNuxtConfig({
   ssr: true,
   devtools: { enabled: false },
   nitro: {
-    preset: 'vercel'
+    preset: 'vercel',
+    storage: {
+      redis: {
+        driver: 'memory' // Use in-memory cache for cost efficiency
+      }
+    }
   },
 
   modules: ['@nuxtjs/tailwindcss', '@pinia/nuxt', '@nuxtjs/i18n', '@nuxt/image', 'nuxt-swiper'],
@@ -70,7 +75,24 @@ export default defineNuxtConfig({
       xl: 1280,
       xxl: 1536
     },
-    provider: 'ipx'
+    provider: 'ipx',
+    // Optimize for static content and caching
+    presets: {
+      avatar: {
+        modifiers: {
+          format: 'webp',
+          width: 150,
+          height: 150,
+          quality: 80
+        }
+      },
+      hero: {
+        modifiers: {
+          format: 'webp',
+          quality: 85
+        }
+      }
+    }
   },
   
   experimental: {

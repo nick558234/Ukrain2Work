@@ -92,7 +92,7 @@ export default defineEventHandler(async (event) => {
   // Basic content validation (prevent spam)
   const suspiciousPatterns = [
     /https?:\/\/[^\s]+/gi, // URLs
-    /\b(?:viagra|casino|lottery|winner|urgent|claim|prize)\b/gi, // Spam keywords
+    /\b(?:viagra|casino|urgent|claim|)\b/gi, // Spam keywords
     /(.)\1{10,}/gi // Repeated characters
   ]
   
