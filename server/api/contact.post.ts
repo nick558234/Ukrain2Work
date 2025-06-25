@@ -1,14 +1,11 @@
 import nodemailer from 'nodemailer'
-import NodeCache from 'node-cache'
-
-// Create cache instances for rate limiting
-const requestCache = new NodeCache({ stdTTL: 60 }) // 1 minute
-const emailCache = new NodeCache({ stdTTL: 300 }) // 5 minutes
+import { requestCache, emailCache } from '../utils/cache'
+import { validateCSRFToken, validateOrigin } from '../utils/csrf'
 
 // Rate limiting configuration
 const RATE_LIMITS = {
-  perIP: 5,        // 3 requests per IP per minute
-  perEmail: 5,     // 2 emails per email address per 5 minutes
+  perIP: 5,        // 5 requests per IP per minute
+  perEmail: 5,     // 5 emails per email address per 5 minutes
   globalDaily: 100 // 100 total emails per day
 }
 
@@ -21,12 +18,38 @@ export default defineEventHandler(async (event) => {
     })
   }
 
+  // CSRF Protection - Validate Origin/Referer
+  if (!validateOrigin(event)) {
+    throw createError({
+      statusCode: 403,
+      statusMessage: 'Invalid origin - CSRF protection'
+    })
+  }
+
   const config = useRuntimeConfig()
   const body = await readBody(event)
   
-  // Get client IP
+  // Validate CSRF token
+  const csrfToken = getHeader(event, 'x-csrf-token') || body.csrfToken
+  const sessionId = getCookie(event, 'sessionId') || getHeader(event, 'x-session-id')
+  
+  if (!csrfToken || !sessionId || !validateCSRFToken(csrfToken, sessionId)) {
+    console.log('CSRF validation failed:', { 
+      hasToken: !!csrfToken, 
+      hasSession: !!sessionId, 
+      tokenValid: csrfToken && sessionId ? validateCSRFToken(csrfToken, sessionId) : false 
+    })
+    throw createError({
+      statusCode: 403,
+      statusMessage: 'Invalid CSRF token'
+    })
+  }
+
+  // Get client IP for rate limiting
   const clientIP = getHeader(event, 'x-forwarded-for') || 
                   getHeader(event, 'x-real-ip') || 
+                  getHeader(event, 'cf-connecting-ip') || // Cloudflare
+                  event.node.req.socket?.remoteAddress ||
                   'unknown'
 
   // Validate required fields

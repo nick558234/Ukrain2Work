@@ -227,14 +227,25 @@
 </template>
 
 <script setup>
-import { ref, reactive } from 'vue';
+import { ref, reactive, onMounted } from 'vue';
 import { useMail } from '~/composables/useMail';
+import { useCSRF } from '~/composables/useCSRF';
 
-// Use the mail composable directly
+// Use the mail composable and CSRF protection
 const { sendEmail } = useMail();
+const { getCSRFToken } = useCSRF();
 
 // Import i18n translation function
 const { t } = useI18n();
+
+// Initialize CSRF token on component mount
+onMounted(async () => {
+  try {
+    await getCSRFToken();
+  } catch (error) {
+    console.error('Failed to initialize CSRF token:', error);
+  }
+});
 
 // Form state
 const contactForm = reactive({
@@ -366,7 +377,7 @@ const submitContactForm = async () => {
   errorMessage.value = '';
   
   try {
-    // Send email using our custom mail composable
+    // Send email using our custom mail composable with CSRF protection
     const result = await sendEmail({
       name: contactForm.name,
       email: contactForm.email,
@@ -403,6 +414,8 @@ const submitContactForm = async () => {
       errorMessage.value = 'Too many requests. Please wait before sending another message.';
     } else if (error.statusCode === 400) {
       errorMessage.value = 'Please check your message and try again.';
+    } else if (error.statusCode === 403) {
+      errorMessage.value = 'Security validation failed. Please refresh the page and try again.';
     } else {
       errorMessage.value = 'An error occurred. Please try again or contact us directly.';
     }
