@@ -3,10 +3,7 @@ export default defineNuxtConfig({
   ssr: true,
   devtools: { enabled: false },
   nitro: {
-    preset: 'vercel',
-    experimental: {
-      wasm: true
-    }
+    preset: 'vercel'
   },
 
   modules: ['@nuxtjs/tailwindcss', '@pinia/nuxt', '@nuxtjs/i18n', '@nuxt/image', 'nuxt-swiper'],
