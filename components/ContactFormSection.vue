@@ -90,8 +90,7 @@
                 type="submit" 
                 color="primary" 
                 size="lg" 
-                :disabled="isSubmitting"
-                :text="isSubmitting ? t('contact.form.sending') : t('contact.form.submit')"
+                :disabled="isSubmitting || isRateLimited"
               >
                 <template v-if="isSubmitting">
                   <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
@@ -115,6 +114,18 @@
               <div>
                 <h3 class="font-medium">{{ t('contact.form.success.title') }}</h3>
                 <p class="mt-1 text-sm">{{ t('contact.form.success.message') }}</p>
+              </div>
+            </div>
+          </div>
+
+          <div v-if="showError" class="mt-8 bg-red-50 border border-red-200 text-red-700 p-4 rounded-md">
+            <div class="flex">
+              <svg class="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <div>
+                <h3 class="font-medium">{{ t('contact.form.error.title') }}</h3>
+                <p class="mt-1 text-sm">{{ errorMessage }}</p>
               </div>
             </div>
           </div>
@@ -244,6 +255,53 @@ const errors = reactive({
 
 const isSubmitting = ref(false);
 const formSubmitted = ref(false);
+const showError = ref(false);
+const errorMessage = ref('');
+
+// Enhanced rate limiting
+const lastSubmissionTime = ref(0);
+const submissionCount = ref(0);
+const cooldownPeriod = 60000; // 1 minute
+const maxSubmissionsPerHour = 3;
+
+// Check rate limits
+const isRateLimited = computed(() => {
+  const now = Date.now();
+  const timeSinceLastSubmission = now - lastSubmissionTime.value;
+  
+  // Reset submission count if more than an hour has passed
+  if (timeSinceLastSubmission > 3600000) { // 1 hour
+    submissionCount.value = 0;
+  }
+  
+  // Check if in cooldown period
+  if (timeSinceLastSubmission < cooldownPeriod) {
+    return true;
+  }
+  
+  // Check if exceeded hourly limit
+  if (submissionCount.value >= maxSubmissionsPerHour) {
+    return true;
+  }
+  
+  return false;
+});
+
+const rateLimitMessage = computed(() => {
+  const now = Date.now();
+  const timeSinceLastSubmission = now - lastSubmissionTime.value;
+  
+  if (timeSinceLastSubmission < cooldownPeriod) {
+    const remainingTime = Math.ceil((cooldownPeriod - timeSinceLastSubmission) / 1000);
+    return `Please wait ${remainingTime} seconds before sending another message.`;
+  }
+  
+  if (submissionCount.value >= maxSubmissionsPerHour) {
+    return 'You have reached the maximum number of messages per hour. Please try again later.';
+  }
+  
+  return '';
+});
 
 // Get query parameter for subject if available
 const route = useRoute();
@@ -296,48 +354,58 @@ const isValidEmail = (email) => {
 const submitContactForm = async () => {
   if (!validateForm()) return;
   
+  // Check rate limiting
+  if (isRateLimited.value) {
+    showError.value = true;
+    errorMessage.value = rateLimitMessage.value;
+    return;
+  }
+  
   isSubmitting.value = true;
+  showError.value = false;
+  errorMessage.value = '';
   
   try {
     // Send email using our custom mail composable
-    const { error } = await sendEmail({
-      subject: `Contact Form: ${contactForm.subject}`,
-      text: `
-Name: ${contactForm.name}
-Email: ${contactForm.email}
-Subject: ${contactForm.subject}
-Message: ${contactForm.message}
-      `,
-      html: `
-<div style="font-family: Arial, sans-serif; line-height: 1.5;">
-  <h2>New Contact Form Submission</h2>
-  <p><strong>From:</strong> ${contactForm.name} (${contactForm.email})</p>
-  <p><strong>Subject:</strong> ${contactForm.subject}</p>
-  <p><strong>Message:</strong></p>
-  <p>${contactForm.message.replace(/\n/g, '<br>')}</p>
-</div>
-      `
+    const result = await sendEmail({
+      name: contactForm.name,
+      email: contactForm.email,
+      subject: contactForm.subject,
+      message: contactForm.message
     });
 
-    if (error) {
-      console.error('Email sending error:', error);
-      throw new Error('Failed to send email');
+    if (result.success) {
+      formSubmitted.value = true;
+      
+      // Update rate limiting counters
+      lastSubmissionTime.value = Date.now();
+      submissionCount.value += 1;
+      
+      // Reset form
+      Object.keys(contactForm).forEach(key => {
+        if (key === 'agreeToTerms') {
+          contactForm[key] = false;
+        } else {
+          contactForm[key] = '';
+        }
+      });
+    } else {
+      showError.value = true;
+      errorMessage.value = result.message || 'Failed to send email. Please try again.';
     }
-    
-    formSubmitted.value = true;
-    
-    // Reset form
-    Object.keys(contactForm).forEach(key => {
-      if (key === 'agreeToTerms') {
-        contactForm[key] = false;
-      } else {
-        contactForm[key] = '';
-      }
-    });
     
   } catch (error) {
     console.error('Error submitting form:', error);
-    // Handle error (show error message, etc.)
+    showError.value = true;
+    
+    // Handle specific error types
+    if (error.statusCode === 429) {
+      errorMessage.value = 'Too many requests. Please wait before sending another message.';
+    } else if (error.statusCode === 400) {
+      errorMessage.value = 'Please check your message and try again.';
+    } else {
+      errorMessage.value = 'An error occurred. Please try again or contact us directly.';
+    }
   } finally {
     isSubmitting.value = false;
   }

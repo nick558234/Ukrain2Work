@@ -1,33 +1,23 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   ssr: true,
-  devtools: { enabled: false }, // Disable devtools in production
+  devtools: { enabled: false },
   nitro: {
     preset: 'vercel',
-    prerender: {
-      crawlLinks: true,
-      routes: ['/'],
-      ignore: [/^\/_ipx/, /\.(avif|webp)$/], // Ignore image processing routes and specific file types
-      failOnError: false // Prevent prerender errors from stopping the build
+    experimental: {
+      wasm: true
     }
   },
 
-  modules: ['@nuxtjs/tailwindcss', '@pinia/nuxt', '@nuxtjs/i18n', '@nuxt/image', 'nuxt-swiper', 'nuxt-mail'],
+  modules: ['@nuxtjs/tailwindcss', '@pinia/nuxt', '@nuxtjs/i18n', '@nuxt/image', 'nuxt-swiper'],
 
-  // Mail configuration
-  mail: {
-    message: {
-      to: 'alex@ukraine2work.com',
-    },
-    smtp: {
-      host: 'smtp.strato.com',
-      port: 465, // Use 465 for SSL/TLS
-      auth: {
-        user: 'contact@nickvanhooff.com', // Your email 
-        pass: process.env.SMTP_PASSWORD || '' // Use environment variable for security
-      },
-
-    },
+  runtimeConfig: {
+    // Private keys (only available on server-side)
+    smtpPassword: process.env.SMTP_PASSWORD,
+    // Public keys (exposed to client-side)
+    public: {
+      // Add any public config here
+    }
   },
 
   i18n: {
@@ -69,10 +59,6 @@ export default defineNuxtConfig({
   build: {
     transpile: ['flag-icons']
   },
-
-  generate: {
-    fallback: true
-  },
   
   image: {
     // Improve image handling
@@ -91,8 +77,14 @@ export default defineNuxtConfig({
   },
   
   experimental: {
-    payloadExtraction: false, // Disable payload extraction which can cause issues
-    inlineSSRStyles: false
+    payloadExtraction: false // Disable payload extraction which can cause issues
+  },
+
+  // Build optimizations
+  vite: {
+    ssr: {
+      noExternal: ['nodemailer'] // Ensure server-side packages are bundled
+    }
   },
   
   compatibilityDate: '2025-04-07'
