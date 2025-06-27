@@ -2,6 +2,9 @@
   "functions": {
     "server/api/contact.js": {
       "maxDuration": 5
+    },
+    "server/api/newsletter.js": {
+      "maxDuration": 5
     }
   },
   "headers": [

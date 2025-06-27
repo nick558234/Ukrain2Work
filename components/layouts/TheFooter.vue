@@ -108,29 +108,7 @@
         </div>
         
         <!-- Newsletter -->
-        <div>
-          <h3 class="font-bold mb-6">{{ $t('footer.newsletter.title') }}</h3>
-          <p class="text-gray-200 mb-4">{{ $t('footer.newsletter.description') }}</p>
-          <form @submit.prevent="subscribeToNewsletter" class="flex flex-col sm:flex-row gap-2">
-            <input 
-              type="email" 
-              v-model="email"
-              placeholder="Vul je e-mailadres in"
-              class="px-4 py-2 rounded-md flex-grow text-gray-800 focus:outline-none focus:ring-2 focus:ring-ukraine-yellow"
-              required
-            />
-            <button 
-              type="submit" 
-              class="bg-ukraine-yellow text-ukraine-blue px-4 py-2 rounded-md font-medium hover:bg-opacity-90 transition-colors"
-              :disabled="isSubscribing"
-            >
-              {{ isSubscribing ? '...' : 'Abonneer' }}
-            </button>
-          </form>
-          <p v-if="subscriptionMessage" class="mt-2 text-sm" :class="subscriptionSuccess ? 'text-green-300' : 'text-red-300'">
-            {{ subscriptionMessage }}
-          </p>
-        </div>
+        <NewsletterSubscription />
       </div>
       
       <!-- Bottom footer -->
@@ -157,38 +135,5 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
-
-const email = ref('');
-const isSubscribing = ref(false);
-const subscriptionMessage = ref('');
-const subscriptionSuccess = ref(false);
-
-// Simulate API call for newsletter subscription
-const subscribeToNewsletter = async () => {
-  if (!email.value) return;
-  
-  try {
-    isSubscribing.value = true;
-    
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    subscriptionSuccess.value = true;
-    subscriptionMessage.value = 'Bedankt voor je inschrijving!';
-    email.value = '';
-    
-    // Clear success message after 5 seconds
-    setTimeout(() => {
-      if (subscriptionSuccess.value) {
-        subscriptionMessage.value = '';
-      }
-    }, 5000);
-  } catch (error) {
-    subscriptionSuccess.value = false;
-    subscriptionMessage.value = 'Inschrijving mislukt. Probeer het opnieuw.';
-  } finally {
-    isSubscribing.value = false;
-  }
-};
+// Footer component - now using NewsletterSubscription component
 </script>

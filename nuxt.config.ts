@@ -10,13 +10,12 @@ export default defineNuxtConfig({
       }
     },
     routeRules: {
-      // Homepage pre-rendered at build time
-      '/': { prerender: true },
-      // Static pages
-      '/about': { prerender: true },
-      '/privacy-policy': { prerender: true },
-      '/terms-of-service': { prerender: true },
-      '/sitemap': { prerender: true },
+      // Temporarily disable prerendering due to SSR issues
+      // '/': { prerender: true },
+      // '/about': { prerender: true },
+      // '/privacy-policy': { prerender: true },
+      // '/terms-of-service': { prerender: true },
+      // '/sitemap': { prerender: true },
       // Cache static assets aggressively
       '/_nuxt/**': { headers: { 'Cache-Control': 'public, max-age=31536000, immutable' } },
       '/images/**': { headers: { 'Cache-Control': 'public, max-age=2592000' } },

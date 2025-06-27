@@ -35,7 +35,12 @@
       "title": "Nieuwsbrief",
       "description": "Blijf op de hoogte van nieuwe mogelijkheden en updates",
       "placeholder": "E-mailadres",
-      "submit": "Abonneren"
+      "submit": "Abonneren",
+      "subscribe": "Abonneren",
+      "success": "Bedankt voor je inschrijving!",
+      "error": "Inschrijving mislukt. Probeer het opnieuw.",
+      "rateLimited": "Te veel verzoeken. Probeer het later opnieuw.",
+      "securityError": "Beveiligingsfout. Probeer de pagina te vernieuwen."
     },
     "copyright": "© {year} Ukraine2Work. Alle rechten voorbehouden.",
     "privacy": "Privacybeleid",

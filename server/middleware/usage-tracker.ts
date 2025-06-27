@@ -21,6 +21,12 @@ export default defineEventHandler(async (event) => {
     console.log(`[API] Contact form submission at ${new Date().toISOString()} - IP: ${clientIP} - UA: ${userAgent?.substring(0, 50)}`)
   }
   
+  // Track newsletter subscriptions
+  if (method === 'POST' && url === '/api/newsletter') {
+    const clientIP = getHeader(event, 'x-forwarded-for') || getHeader(event, 'x-real-ip') || 'unknown'
+    console.log(`[NEWSLETTER] Subscription request at ${new Date().toISOString()} - IP: ${clientIP} - UA: ${userAgent?.substring(0, 50)}`)
+  }
+  
   // Track CSRF token requests
   if (method === 'GET' && url === '/api/csrf-token') {
     console.log(`[CSRF] Token request at ${new Date().toISOString()}`)

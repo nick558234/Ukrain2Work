@@ -29,7 +29,12 @@
       "title": "Newsletter",
       "description": "Stay updated with new opportunities and updates",
       "placeholder": "Email address",
-      "submit": "Subscribe"
+      "submit": "Subscribe",
+      "subscribe": "Subscribe",
+      "success": "Thank you for subscribing!",
+      "error": "Subscription failed. Please try again.",
+      "rateLimited": "Too many requests. Please try again later.",
+      "securityError": "Security error. Please refresh the page."
     },
     "copyright": "© {year} Ukraine2Work. All rights reserved."
   },
