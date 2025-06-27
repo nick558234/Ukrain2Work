@@ -125,7 +125,7 @@ export default defineEventHandler(async (event) => {
     // Prepare email content
     const mailOptions = {
       from: 'contact@nickvanhooff.com',
-      to: 'nickvanhooff03@gmail.com',
+      to: 'alexspaan295@gmail.com',
       subject: 'Newsletter Subscription - Ukraine2Work',
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">

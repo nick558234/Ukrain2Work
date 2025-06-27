@@ -147,7 +147,7 @@ export default defineEventHandler(async (event) => {
       try {
         const result = await transporter.sendMail({
           from: 'contact@nickvanhooff.com',
-          to: 'nickvanhooff03@gmail.com',
+          to: 'lexspaan295@gmail.com',
           subject: `Contact Form: ${sanitizedBody.subject}`,
           text: `
 Name: ${sanitizedBody.name}
