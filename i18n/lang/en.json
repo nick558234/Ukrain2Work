@@ -473,10 +473,40 @@
       "followUs": "Follow us"
     },
     "faq": {
-      "title": "Frequently asked questions",
-      "usefulLinks": "Useful links",
-      "stillHaveQuestions": "Still have questions?",
-      "contactUs": "Contact us"
+      "entries": {
+        "algemeen": [
+          { "q": "What is Ukraine2Work?", "a": "Ukraine2Work is a platform that helps Ukrainian refugees find work in the Netherlands." },
+          { "q": "Who is Ukraine2Work for?", "a": "For Ukrainian refugees and other status holders who want to work in the Netherlands." },
+          { "q": "Is Ukraine2Work free?", "a": "Yes, using Ukraine2Work is completely free for job seekers." },
+          { "q": "In which languages is the platform available?", "a": "The platform is available in Dutch, English, and Ukrainian." },
+          { "q": "Does Ukraine2Work only work for Ukrainian refugees?", "a": "No, other status holders can also use the platform." }
+        ],
+        "registratie": [
+          { "q": "How can I register on Ukraine2Work?", "a": "You can register via the registration form on the website." },
+          { "q": "How does the registration process work?", "a": "After entering your details, you will receive a confirmation and can further complete your profile." },
+          { "q": "Can I edit my profile later?", "a": "Yes, you can edit your profile at any time after logging in." },
+          { "q": "Can I get help during the registration process?", "a": "Yes, our team is ready to support you during registration." }
+        ],
+        "vacaturematching": [
+          { "q": "What types of jobs are available on the platform?", "a": "There are jobs in various sectors, from technology to healthcare and logistics." },
+          { "q": "How can I find a suitable job?", "a": "Use the search function and filters to find vacancies that suit you." },
+          { "q": "How long does it take to find a job through Ukraine2Work?", "a": "This varies per person, but we do our best to match you as quickly as possible." },
+          { "q": "What if I can't find a suitable vacancy?", "a": "Contact our team, we are happy to help you further." }
+        ],
+        "ondersteuning": [
+          { "q": "How does Ukraine2Work help me find work?", "a": "We offer personal guidance, CV checks, and interview training." },
+          { "q": "What support does Ukraine2Work offer after registration?", "a": "After registration, you can use our job coaches and workshops." },
+          { "q": "What is a Skills APK?", "a": "A Skills APK is an assessment of your skills to increase your chances on the job market." }
+        ],
+        "werkgevers": [
+          { "q": "How can employers register on Ukraine2Work?", "a": "Employers can sign up via the employer portal." },
+          { "q": "What are the costs for companies?", "a": "There are costs for companies to post vacancies and use extra services." },
+          { "q": "How does Ukraine2Work ensure that vacancies are up to date?", "a": "We work with reliable partners and regularly check the vacancies." }
+        ],
+        "contact": [
+          { "q": "How can I contact Ukraine2Work?", "a": "You can contact us via the contact form, email, or phone. See our contact page for more information." }
+        ]
+      }
     }
   },
   "profile": {

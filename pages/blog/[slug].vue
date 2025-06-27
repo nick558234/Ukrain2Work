@@ -17,7 +17,7 @@
         <img 
           :src="post.image" 
           :alt="post.title" 
-          class="w-full h-64 md:h-96 object-cover"
+          class="w-full h-80 md:h-[32rem] object-cover"  
         >
       </div>
 
