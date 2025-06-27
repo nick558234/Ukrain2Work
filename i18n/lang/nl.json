@@ -382,9 +382,65 @@
     },
     "faq": {
       "title": "Veelgestelde vragen",
-      "usefulLinks": "Nuttige links",
-      "stillHaveQuestions": "Heeft u nog vragen?",
-      "contactUs": "Neem contact met ons op"
+      "usefulLinks": "Handige links",
+      "stillHaveQuestions": "Nog vragen?",
+      "contactUs": "Neem contact op",
+      "q1": {
+        "question": "Hebben Oekraïense vluchtelingen een werkvergunning nodig in Nederland?",
+        "answer": "Nee, Oekraïense vluchtelingen hebben geen aparte werkvergunning nodig om in Nederland te werken. Zodra je tijdelijke beschermingsstatus en BSN-nummer zijn toegekend, mag je legaal bij elke werkgever in Nederland werken.",
+        "link1": {
+          "text": "Officiële informatie van de Nederlandse overheid"
+        }
+      },
+      "q2": {
+        "question": "Is Ukraine2Work gratis voor werkzoekenden?",
+        "answer": "Ja, Ukraine2Work is volledig gratis voor Oekraïense werkzoekenden. Er zijn geen kosten voor het aanmaken van een account, het opbouwen van een profiel, het zoeken naar banen of het solliciteren."
+      },
+      "q3": {
+        "question": "Hoe kunnen werkgevers Oekraïense diploma's verifiëren?",
+        "answer": "Nederland heeft instellingen die kunnen helpen bij het beoordelen en erkennen van Oekraïense diploma's en kwalificaties. Wij kunnen werkgevers ondersteunen bij het contact met deze diensten en begeleiden in het proces.",
+        "link1": {
+          "text": "IDW (Internationale Diplomawaardering)"
+        }
+      },
+      "q4": {
+        "question": "Welke talen moet ik spreken om in Nederland te werken?",
+        "answer": "Taalvereisten hangen af van de specifieke baan. Veel internationale bedrijven werken in het Engels, en voor deze functies is Engels vaak voldoende. Voor andere functies kan Nederlands vereist zijn. Onze vacatures vermelden altijd de taaleisen."
+      },
+      "q5": {
+        "question": "Hoe vind ik huisvesting in Nederland?",
+        "answer": "Ukraine2Work richt zich vooral op werk, maar we begrijpen dat huisvesting belangrijk is. We werken samen met organisaties die tijdelijke huisvesting bieden aan Oekraïense vluchtelingen, en in onze rubriek 'resources' vind je informatie over langdurige huisvesting.",
+        "link1": {
+          "text": "Huisvestingsbronnen voor Oekraïners"
+        },
+        "link2": {
+          "text": "Informatie over tijdelijke opvang"
+        }
+      },
+      "q6": {
+        "question": "Wat voor salaris kan ik verwachten in Nederland?",
+        "answer": "Het salaris hangt af van je vakgebied, ervaring en locatie. Het minimumloon in Nederland is €1.934,40 per maand (per 2023) voor voltijdswerk voor volwassenen. Veel professionele functies bieden een hoger salaris. In onze vacatures staat het salaris vermeld als deze bekend is.",
+        "link1": {
+          "text": "Salarisgids per sector"
+        }
+      },
+      "q7": {
+        "question": "Kunnen werkgevers belastingvoordeel krijgen voor het aannemen van Oekraïense vluchtelingen?",
+        "answer": "Nederlandse werkgevers kunnen in aanmerking komen voor subsidies en belastingvoordelen bij het aannemen van Oekraïense vluchtelingen. Dit kan loonkostensubsidies en belastingvoordelen voor scholing omvatten. In onze werkgeversgids vind je meer informatie.",
+        "link1": {
+          "text": "Gids voor werkgeversvoordelen"
+        }
+      },
+      "q8": {
+        "question": "Hoe kan ik mijn cv verbeteren voor de Nederlandse arbeidsmarkt?",
+        "answer": "De Nederlandse arbeidsmarkt heeft specifieke voorkeuren voor cv-opmaak en inhoud. Wij bieden gratis cv-templates voor Oekraïense professionals en persoonlijke cv-checks via onze partners.",
+        "link1": {
+          "text": "Download cv-templates"
+        },
+        "link2": {
+          "text": "Gratis cv-check aanvragen"
+        }
+      }
     }
   },
   "profile": {

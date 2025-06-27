@@ -6,7 +6,7 @@
         <!-- Logo and tagline -->
         <div>
           <NuxtLink to="/" class="inline-block mb-4">
-            <!-- <img src="/img/logo-white.svg" alt="Ukraine2Work" class="h-10" /> -->logo
+          <img src="/images/logo.jpg" alt="Ukraine2Work" width="64" height="64" class="w-16"/>
           </NuxtLink>
           <p class="text-gray-200 mb-6">{{ $t('footer.tagline') }}</p>
           <div class="flex space-x-4">

@@ -14,7 +14,7 @@
             class="flex justify-between items-center w-full py-5 text-left font-medium focus:outline-none"
             :class="openFaq === index ? 'text-ukraine-blue' : 'text-gray-900'"
           >
-            <span>{{ item.question }}</span>
+            <span>{{ $t(item.question) }}</span>
             <svg 
               class="h-5 w-5 transition-transform duration-200" 
               :class="openFaq === index ? 'transform rotate-180 text-ukraine-blue' : 'text-gray-500'"
@@ -29,14 +29,14 @@
             v-show="openFaq === index" 
             class="pb-5 prose max-w-none"
           >
-            <p>{{ item.answer }}</p>
+            <p>{{ $t(item.answer) }}</p>
             
             <div v-if="item.links && item.links.length" class="mt-4">
               <p class="text-gray-600 font-medium">{{ $t('contact.faq.usefulLinks') }}:</p>
               <ul class="list-disc pl-5 mt-2 space-y-1">
                 <li v-for="(link, i) in item.links" :key="i">
                   <NuxtLink :to="link.url" class="text-ukraine-blue hover:underline">
-                    {{ link.text }}
+                    {{ $t(link.text) }}
                   </NuxtLink>
                 </li>
               </ul>
@@ -70,82 +70,82 @@ const toggleFaq = (index) => {
   openFaq.value = openFaq.value === index ? null : index;
 };
 
-// FAQ data - in a real app this would come from i18n or an API
+// FAQ data now references translation keys
 const faqs = [
   {
-    question: 'Do Ukrainian refugees need a work permit in the Netherlands?',
-    answer: 'No, Ukrainian refugees do not need a separate work permit to work in the Netherlands. Once you have received your temporary protection status and BSN number, you can legally work for any employer in the Netherlands.',
+    question: 'contact.faq.q1.question',
+    answer: 'contact.faq.q1.answer',
     links: [
       {
-        text: 'Official Dutch government information',
+        text: 'contact.faq.q1.link1.text',
         url: 'https://ind.nl/en/ukraine/Pages/Working-in-the-Netherlands.aspx'
       }
     ]
   },
   {
-    question: 'Is Ukraine2Work free to use for job seekers?',
-    answer: 'Yes, Ukraine2Work is completely free for Ukrainian job seekers. There are no fees or charges for creating an account, building a profile, searching for jobs, or applying to positions.',
+    question: 'contact.faq.q2.question',
+    answer: 'contact.faq.q2.answer',
     links: []
   },
   {
-    question: 'How can employers verify Ukrainian qualifications?',
-    answer: 'The Netherlands has institutions that can help evaluate and recognize Ukrainian diplomas and qualifications. We can assist employers in contacting these credential evaluation services and guide them through the process.',
+    question: 'contact.faq.q3.question',
+    answer: 'contact.faq.q3.answer',
     links: [
       {
-        text: 'IDW (International Credential Evaluation)',
+        text: 'contact.faq.q3.link1.text',
         url: '/resources/credential-evaluation'
       }
     ]
   },
   {
-    question: 'What languages do I need to know to work in the Netherlands?',
-    answer: 'Language requirements depend on the specific job. Many international companies operate in English, and for these positions, Ukrainian candidates often only need English proficiency. For other positions, Dutch may be required. Our job listings clearly indicate language requirements.',
+    question: 'contact.faq.q4.question',
+    answer: 'contact.faq.q4.answer',
     links: []
   },
   {
-    question: 'How can I find housing in the Netherlands?',
-    answer: 'While Ukraine2Work focuses primarily on employment, we understand housing is a critical need. We have partnerships with organizations that provide temporary housing assistance for Ukrainian refugees, and our resources section has information about finding long-term accommodation.',
+    question: 'contact.faq.q5.question',
+    answer: 'contact.faq.q5.answer',
     links: [
       {
-        text: 'Housing resources for Ukrainians',
+        text: 'contact.faq.q5.link1.text',
         url: '/resources/housing'
       },
       {
-        text: 'Government temporary shelter information',
+        text: 'contact.faq.q5.link2.text',
         url: '/resources/shelter'
       }
     ]
   },
   {
-    question: 'What salary can I expect in the Netherlands?',
-    answer: 'Salaries depend on your field, experience level, and location within the Netherlands. The Dutch minimum wage is €1,934.40 per month (as of 2023) for full-time work for adults. Many professional positions offer higher salaries. Our job listings include salary information when available.',
+    question: 'contact.faq.q6.question',
+    answer: 'contact.faq.q6.answer',
     links: [
       {
-        text: 'Salary guide by industry',
+        text: 'contact.faq.q6.link1.text',
         url: '/resources/salary-guide'
       }
     ]
   },
   {
-    question: 'Can employers get tax benefits for hiring Ukrainian refugees?',
-    answer: 'Dutch employers may be eligible for various subsidies and tax benefits when hiring Ukrainian refugees, depending on circumstances. These can include wage cost subsidies and tax breaks for job training. Our employer resources guide covers available programs in detail.',
+    question: 'contact.faq.q7.question',
+    answer: 'contact.faq.q7.answer',
     links: [
       {
-        text: 'Employer incentives guide',
+        text: 'contact.faq.q7.link1.text',
         url: '/employers/incentives'
       }
     ]
   },
   {
-    question: 'How can I improve my CV for the Dutch job market?',
-    answer: 'The Dutch job market has specific preferences for CV formatting and content. We provide free CV templates specifically designed for Ukrainian professionals entering the Dutch job market, as well as personalized resume review services through our partner organizations.',
+    question: 'contact.faq.q8.question',
+    answer: 'contact.faq.q8.answer',
     links: [
       {
-        text: 'Download CV templates',
+        text: 'contact.faq.q8.link1.text',
         url: '/resources/cv-templates'
       },
       {
-        text: 'Book a free CV review',
+        text: 'contact.faq.q8.link2.text',
         url: '/resources/cv-review'
       }
     ]
