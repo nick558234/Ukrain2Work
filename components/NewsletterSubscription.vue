@@ -33,7 +33,7 @@ const isSubscribing = ref(false)
 const subscriptionMessage = ref('')
 const subscriptionSuccess = ref(false)
 
-const { t } = useI18n()
+const { t, locale } = useI18n()
 
 const subscribeToNewsletter = async () => {
   if (!email.value) return
@@ -48,12 +48,13 @@ const subscribeToNewsletter = async () => {
       const tokenResponse = await $fetch('/api/csrf-token')
       const { csrfToken, sessionId } = tokenResponse
       
-      // Send newsletter subscription request
+      // Send newsletter subscription request with current language
       const response = await $fetch('/api/newsletter', {
         method: 'POST',
         body: {
           email: email.value,
           type: 'newsletter',
+          language: locale.value, // Use locale from setup
           csrfToken: csrfToken
         },
         headers: {
