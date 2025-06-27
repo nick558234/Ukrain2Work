@@ -421,9 +421,18 @@
     "viewAll": "Bekijk alle artikelen",
     "readMore": "Lees meer",
     "relatedPosts": "Gerelateerde artikelen",
+    "relatedArticles": "Gerelateerde artikelen",
     "categories": "Categorieën",
     "postedOn": "Geplaatst op {date}",
-    "by": "door"
+    "by": "door",
+    "backToBlog": "Terug naar blog",
+    "tags": "Tags",
+    "share": "Delen",
+    "copyLink": "Link kopiëren",
+    "copied": "Gekopieerd!",
+    "minRead": "min leestijd",
+    "notFound": "Blog niet gevonden",
+    "notFoundDescription": "De blog die je zoekt bestaat niet of is verplaatst."
   },
   "partners": {
     "title": "Onze partners"
