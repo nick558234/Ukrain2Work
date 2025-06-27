@@ -1,78 +1,27 @@
 {
-  "functions": {
-    "server/api/contact.js": {
-      "maxDuration": 5
-    },
-    "server/api/newsletter.js": {
-      "maxDuration": 5
-    }
-  },
   "headers": [
     {
       "source": "/_nuxt/(.*)",
       "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        },
-        {
-          "key": "X-Cache-Tag",
-          "value": "static-assets"
-        }
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
       ]
     },
-
     {
       "source": "/images/(.*)",
       "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=2592000, s-maxage=2592000"
-        },
-        {
-          "key": "X-Cache-Tag",
-          "value": "images"
-        }
-      ]
-    },
-    {
-      "source": "/(.*\\.(css|js|woff2?|png|jpe?g|webp|svg|ico|gif|ttf|eot))",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=2592000, s-maxage=2592000"
-        },
-        {
-          "key": "X-Cache-Tag",
-          "value": "static-files"
-        }
+        { "key": "Cache-Control", "value": "public, max-age=2592000" }
       ]
     },
     {
       "source": "/favicon.ico",
       "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=86400"
-        }
-      ]
-    },
-    {
-      "source": "/(.*\\.(html|json))",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=3600, s-maxage=3600"
-        }
+        { "key": "Cache-Control", "value": "public, max-age=86400" }
       ]
     },
     {
       "source": "/api/(.*)",
       "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "no-cache, no-store, must-revalidate"
-        }
+        { "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" }
       ]
     }
   ],
