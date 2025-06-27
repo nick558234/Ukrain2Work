@@ -3,11 +3,11 @@
     <!-- New hero header with background image and small CTAs -->
     <PageHeader
       bgImage="/images/team/alexSpaan_square.webp"
-      title="Connect Ukrainian Talent with Dutch Opportunities"
-      subtitle="Ukraine2Work bridges skilled Ukrainian professionals with employers across the Netherlands"
-      primaryCta="Find a Job"
+      :title="$t('home.heroTitle')"
+      :subtitle="$t('home.heroSubtitle')"
+      :primaryCta="$t('home.heroPrimaryCta')"
       primaryCtaLink="/refugees"
-      secondaryCta="Hire Talent"
+      :secondaryCta="$t('home.heroSecondaryCta')"
       secondaryCtaLink="/employers"
       :overlayOpacity="60"
       :darkText="false"
@@ -19,21 +19,21 @@
     <div class="container py-12">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
         <div class="bg-blue-50 p-6 rounded-lg shadow">
-          <h2 class="text-xl font-semibold mb-3">For Refugees</h2>
-          <p class="mb-4">Find job opportunities across the Netherlands that match your skills and experience.</p>
-          <NuxtLink to="/refugees" class="text-blue-600 font-medium">Learn More →</NuxtLink>
+          <h2 class="text-xl font-semibold mb-3">{{$t('home.forRefugees')}}</h2>
+          <p class="mb-4">{{$t('home.forRefugeesDesc')}}</p>
+          <NuxtLink to="/refugees" class="text-blue-600 font-medium">{{$t('home.learnMore')}} →</NuxtLink>
         </div>
         
         <div class="bg-blue-50 p-6 rounded-lg shadow">
-          <h2 class="text-xl font-semibold mb-3">For Employers</h2>
-          <p class="mb-4">Post job openings and find qualified Ukrainian professionals.</p>
-          <NuxtLink to="/employers" class="text-blue-600 font-medium">Post a Job →</NuxtLink>
+          <h2 class="text-xl font-semibold mb-3">{{$t('home.forEmployers')}}</h2>
+          <p class="mb-4">{{$t('home.forEmployersDesc')}}</p>
+          <NuxtLink to="/employers" class="text-blue-600 font-medium">{{$t('home.postJob')}} →</NuxtLink>
         </div>
         
         <div class="bg-blue-50 p-6 rounded-lg shadow">
-          <h2 class="text-xl font-semibold mb-3">Success Stories</h2>
-          <p class="mb-4">Read about Ukrainians who found employment through our platform.</p>
-          <NuxtLink to="/success-stories" class="text-blue-600 font-medium">Read Stories →</NuxtLink>
+          <h2 class="text-xl font-semibold mb-3">{{$t('home.successStories')}}</h2>
+          <p class="mb-4">{{$t('home.successStoriesDesc')}}</p>
+          <NuxtLink to="/success-stories" class="text-blue-600 font-medium">{{$t('home.readStories')}} →</NuxtLink>
         </div>
       </div>
     </div>

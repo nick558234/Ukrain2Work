@@ -154,7 +154,18 @@
   "employers": {
     "benefits": {
       "title": "Benefits for employers",
-      "description": "Why you should consider Ukrainian professionals for your business."
+      "noWorkPermitTitle": "No Work Permits Required",
+      "noWorkPermitDesc": "Ukrainian refugees can work immediately in the Netherlands without requiring special work permits.",
+      "talentPoolTitle": "Skilled Talent Pool",
+      "talentPoolDesc": "Access a diverse pool of qualified Ukrainian professionals across various industries and specializations.",
+      "fastOnboardingTitle": "Fast Onboarding",
+      "fastOnboardingDesc": "Our simplified process helps you find and onboard Ukrainian talent quickly and efficiently.",
+      "culturalSupportTitle": "Cultural Support",
+      "culturalSupportDesc": "We provide resources to help with cultural integration and language barriers in the workplace.",
+      "multilingualTitle": "Multilingual Platform",
+      "multilingualDesc": "Our platform is available in Dutch, English, and Ukrainian to ensure clear communication for all parties.",
+      "dedicatedSupportTitle": "Dedicated Support",
+      "dedicatedSupportDesc": "Our team provides guidance on legal requirements and best practices for hiring Ukrainian employees."
     },
     "postJob": {
       "title": "Post a job",
@@ -654,5 +665,20 @@
         "answer": "Yes, Ukrainian refugees can do volunteer work without a work permit."
       }
     }
+  },
+  "home": {
+    "forRefugees": "For Refugees",
+    "forRefugeesDesc": "Find job opportunities across the Netherlands that match your skills and experience.",
+    "learnMore": "Learn More",
+    "forEmployers": "For Employers",
+    "forEmployersDesc": "Post job openings and find qualified Ukrainian professionals.",
+    "postJob": "Post a Job",
+    "successStories": "Success Stories",
+    "successStoriesDesc": "Read about Ukrainians who found employment through our platform.",
+    "readStories": "Read Stories",
+    "heroTitle": "Connect Ukrainian Talent with Dutch Opportunities",
+    "heroSubtitle": "Ukraine2Work bridges skilled Ukrainian professionals with employers across the Netherlands",
+    "heroPrimaryCta": "Find a Job",
+    "heroSecondaryCta": "Hire Talent"
   }
 }

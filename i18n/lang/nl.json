@@ -123,7 +123,18 @@
   "employers": {
     "benefits": {
       "title": "Voordelen voor werkgevers",
-      "description": "Waarom u Oekraïense professionals zou moeten overwegen voor uw bedrijf."
+      "noWorkPermitTitle": "Geen werkvergunning nodig",
+      "noWorkPermitDesc": "Oekraïense vluchtelingen kunnen direct in Nederland werken zonder speciale werkvergunning.",
+      "talentPoolTitle": "Gekwalificeerde talentenpool",
+      "talentPoolDesc": "Toegang tot een diverse pool van gekwalificeerde Oekraïense professionals in verschillende sectoren.",
+      "fastOnboardingTitle": "Snelle onboarding",
+      "fastOnboardingDesc": "Ons vereenvoudigde proces helpt u snel en efficiënt Oekraïens talent te vinden en in te werken.",
+      "culturalSupportTitle": "Culturele ondersteuning",
+      "culturalSupportDesc": "Wij bieden middelen voor culturele integratie en het overbruggen van taalbarrières op de werkvloer.",
+      "multilingualTitle": "Meertalig platform",
+      "multilingualDesc": "Ons platform is beschikbaar in het Nederlands, Engels en Oekraïens voor duidelijke communicatie.",
+      "dedicatedSupportTitle": "Toegewijde ondersteuning",
+      "dedicatedSupportDesc": "Ons team geeft advies over wettelijke vereisten en best practices voor het aannemen van Oekraïense medewerkers."
     },
     "postJob": {
       "title": "Plaats een vacature",
@@ -435,7 +446,13 @@
     "notFoundDescription": "De blog die je zoekt bestaat niet of is verplaatst."
   },
   "partners": {
-    "title": "Onze partners"
+    "title": "Onze partners",
+    "list": [
+      {
+        "name": "Dutch Ministry of Labor",
+        "logo": "/img/partners/ministry.svg"
+      }
+    ]
   },
   "refugees": {
     "hero": {
@@ -550,5 +567,20 @@
         "answer": "Ja, Oekraïense vluchtelingen kunnen vrijwilligerswerk doen zonder werkvergunning."
       }
     }
+  },
+  "home": {
+    "forRefugees": "Voor vluchtelingen",
+    "forRefugeesDesc": "Vind vacatures in heel Nederland die passen bij jouw vaardigheden en ervaring.",
+    "learnMore": "Meer informatie",
+    "forEmployers": "Voor werkgevers",
+    "forEmployersDesc": "Plaats vacatures en vind gekwalificeerde Oekraïense professionals.",
+    "postJob": "Vacature plaatsen",
+    "successStories": "Succesverhalen",
+    "successStoriesDesc": "Lees over Oekraïners die via ons platform werk vonden.",
+    "readStories": "Lees verhalen",
+    "heroTitle": "Verbind Oekraïens talent met Nederlandse kansen",
+    "heroSubtitle": "Ukraine2Work brengt gekwalificeerde Oekraïense professionals in contact met werkgevers in heel Nederland",
+    "heroPrimaryCta": "Vind een baan",
+    "heroSecondaryCta": "Neem talent aan"
   }
 }

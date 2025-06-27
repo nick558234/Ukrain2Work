@@ -11,7 +11,7 @@
     </div>
 
     <!-- Blog post content -->
-    <article v-if="post" class="max-w-4xl mx-auto">
+    <article v-if="post">
       <!-- Hero image -->
       <div class="mb-8 rounded-lg overflow-hidden shadow-lg">
         <img 

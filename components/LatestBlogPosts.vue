@@ -20,35 +20,36 @@
 </template>
 
 <script setup>
-// In a real app, this would use queryContent to fetch the latest blog posts
-// For now, we'll use mock data
+const { t } = useI18n()
+
+// Use the same blog posts as the blog index page
 const latestPosts = [
   {
-    title: 'Work permits for Ukrainians in the Netherlands: What you need to know',
-    excerpt: 'The Dutch government has simplified the process for Ukrainian refugees to work in the Netherlands. Here\'s what you need to know about your rights.',
-    slug: 'work-permits-for-ukrainians',
-    date: '2023-05-15',
-    author: 'Marta Shevchenko',
-    image: '/img/blog/work-permits.jpg',
-    category: 'Legal Information'
+    title: 'We staan op de SER-website! 🎉',
+    slug: 'ukraine2work-ser-website',
+    excerpt: 'Met trots delen we dat Ukraine2Work vanaf vandaag te vinden is op de officiële site van de Sociaal-Economische Raad (SER).',
+    category: 'Nieuws',
+    date: '2025-01-15',
+    image: 'https://media.licdn.com/dms/image/v2/D4D22AQEiVAEFuufCeg/feedshare-shrink_2048_1536/B4DZdEznvIGkAo-/0/1749206073094?e=1753920000&v=beta&t=6r-eIbtyNb_0daP0driFv26Fxz1aFiMLiLEg1vGl9AU',
+    tags: ['Ukraine2Work', 'SER', 'WerkVoorOekraïne', 'SkillBasedMatching', 'InclusieveArbeidsmarkt']
   },
   {
-    title: 'Success Story: How Anna found her dream job in Rotterdam',
-    excerpt: 'After fleeing Ukraine, Anna wasn\'t sure if she could find work in her field. Read how she connected with an employer through Ukraine2Work.',
-    slug: 'success-story-anna',
-    date: '2023-04-22',
-    author: 'Jan Bakker',
-    image: '/img/blog/success-story.jpg',
-    category: 'Success Stories'
+    title: 'How to get 10,000 Ukrainians into Work?',
+    slug: 'how-to-get-10000-ukrainians-into-work',
+    excerpt: 'Helping Ukrainian refugees find suitable jobs—that is the mission of Alex Spaan, founder of Ukraine2Work.',
+    category: 'Interview',
+    date: '2025-02-24',
+    image: '/images/team/alex_spaan.webp',
+    tags: ['RefugeeEmployment', 'MaatschappelijkeImpact', 'AIvoorWerk', 'SamenSterk']
   },
   {
-    title: 'Top 5 skills Dutch employers are looking for in 2023',
-    excerpt: 'What skills are in high demand in the Dutch job market? This article explores the most sought-after qualifications and how to highlight them.',
-    slug: 'top-skills-2023',
-    date: '2023-03-18',
-    author: 'Emma de Jong',
-    image: '/img/blog/skills.jpg',
-    category: 'Job Market'
+    title: 'Primeur: Ukraine2Work x Metaverse Solutions – ervaar je toekomst in 3D',
+    slug: 'ukraine2work-metaverse-solutions-3d',
+    excerpt: 'Ukraine2Work en Metaverse Solutions bundelen krachten in digitale beroepsoriëntatie met hyperrealistische 3D-werkomgevingen.',
+    category: 'Innovatie',
+    date: '2025-01-08',
+    image: 'https://media.licdn.com/dms/image/v2/D4D22AQFL-nc5EmSnvg/feedshare-shrink_800/B4DZa0qQ0lHQAw-/0/1746787700684?e=1753920000&v=beta&t=tESBAEUOQ2NzSongNCdnwiONZ9djCLFnQIhEHttUg3A',
+    tags: ['Metaverse', 'VirtualReality', 'JobTraining', 'Innovation', 'Technology']
   }
 ];
 </script>
