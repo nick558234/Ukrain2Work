@@ -8,6 +8,22 @@ export default defineNuxtConfig({
       redis: {
         driver: 'memory' // Use in-memory cache for cost efficiency
       }
+    },
+    routeRules: {
+      // Homepage pre-rendered at build time
+      '/': { prerender: true },
+      // Static pages
+      '/about': { prerender: true },
+      '/privacy-policy': { prerender: true },
+      '/terms-of-service': { prerender: true },
+      '/sitemap': { prerender: true },
+      // Cache static assets aggressively
+      '/_nuxt/**': { headers: { 'Cache-Control': 'public, max-age=31536000, immutable' } },
+      '/images/**': { headers: { 'Cache-Control': 'public, max-age=2592000' } },
+      // API routes should not be cached
+      '/api/**': { headers: { 'Cache-Control': 'no-cache, no-store, must-revalidate' } },
+      // Dynamic pages with short cache
+      '/blog/**': { headers: { 'Cache-Control': 'public, max-age=3600' } }
     }
   },
 
