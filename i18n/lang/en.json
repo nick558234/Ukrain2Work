@@ -73,6 +73,14 @@
   },
   "howItWorks": {
     "title": "How it works",
+    "moreInfo": "More info",
+    "modal": {
+      "title": "How does onboarding work?",
+      "subtitle": "Register in just four simple steps.",
+      "close": "Close",
+      "prev": "Previous",
+      "next": "Next"
+    },
     "steps": {
       "employers": [
         {

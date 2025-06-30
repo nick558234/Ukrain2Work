@@ -22,7 +22,8 @@ export default defineNuxtConfig({
       // API routes should not be cached
       '/api/**': { headers: { 'Cache-Control': 'no-cache, no-store, must-revalidate' } },
       // Dynamic pages with short cache
-      '/blog/**': { headers: { 'Cache-Control': 'public, max-age=3600' } }
+      '/blog/**': { headers: { 'Cache-Control': 'public, max-age=3600' } },
+      '/video/**': { headers: { 'Cache-Control': 'public, max-age=31536000, immutable' } }
     }
   },
 

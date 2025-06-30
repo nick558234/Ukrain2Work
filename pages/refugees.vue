@@ -216,14 +216,13 @@
             <h2 class="text-3xl font-bold mb-6">{{ $t('refugees.video.title') }}</h2>
             <p class="text-xl mb-8">{{ $t('refugees.video.description') }}</p>
             <div class="aspect-w-16 aspect-h-9 rounded-xl overflow-hidden shadow-xl">
-              <iframe 
-                src="https://www.youtube.com/embed/your-video-id" 
-                title="Ukraine2Work Platform Video" 
-                frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowfullscreen
-                class="w-full h-full"
-              ></iframe>
+              <video
+                :src="videoUrl"
+                controls
+                class="w-full h-full bg-black rounded"
+              >
+                {{ $t('refugees.video.notSupported') }}
+              </video>
             </div>
           </div>
         </div>
@@ -361,4 +360,16 @@
 definePageMeta({
   layout: 'default'
 });
-</script> 
+
+import { computed } from 'vue';
+import { useI18n } from 'vue-i18n';
+
+const { locale } = useI18n();
+
+const videoUrl = computed(() => {
+  // Use your own video files in the public/videos/ directory
+  return locale.value === 'uk'
+    ? '/video/video_ukraine.mp4'
+    : '/video/video_dutch.mp4';
+});
+</script>

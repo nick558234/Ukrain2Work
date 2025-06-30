@@ -81,7 +81,15 @@
     }
   },
   "howItWorks": {
-    "title": "Hoe het werkt",
+    "title": "Hoe werkt het",
+    "moreInfo": "Meer info",
+    "modal": {
+      "title": "Hoe werkt onboarding?",
+      "subtitle": "Registreer in slechts vier eenvoudige stappen.",
+      "close": "Sluiten",
+      "prev": "Vorige",
+      "next": "Volgende"
+    },
     "steps": {
       "employers": [
         {
