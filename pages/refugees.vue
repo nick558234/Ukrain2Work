@@ -2,31 +2,54 @@
   <div>   
     <main>
       <!-- Hero Section -->
-      <section class="bg-gradient-to-r from-ukraine-blue to-ukraine-yellow py-16">
-        <div class="container mx-auto px-4">
-          <div class="max-w-3xl mx-auto text-center text-white">
-            <h1 class="text-4xl md:text-5xl font-bold mb-6">{{ $t('refugees.hero.title') }}</h1>
-            <p class="text-xl mb-8">{{ $t('refugees.hero.subtitle') }}</p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-              <AppButton 
-                :href="`https://nederland-werkt.8vance.com/?language=${$i18n.locale}&authState=register`"
-                target="_blank"
-                color="white"
-                size="lg"
-              >
-                {{ $t('refugees.hero.cta') }}
-              </AppButton>
-              <AppButton 
-                to="contact"
-                color="outline-white"
-                size="lg"
-              >
-                {{ $t('refugees.hero.contact') }}
-              </AppButton>
-            </div>
-          </div>
-        </div>
-      </section>
+<section class="relative min-h-[60vh] flex flex-col items-center justify-center bg-gradient-to-br from-ukraine-blue/10 via-white to-ukraine-yellow/10 py-16 md:py-20 border-b border-gray-200">
+  <div class="container mx-auto px-4 flex flex-col items-center justify-center h-full">
+    <div class="max-w-3xl w-full text-center animate-fade-in motion-safe:animate-fade-in delay-100 duration-700 ease-out mx-auto">
+      
+      <!-- Titel -->
+      <h1 class="text-4xl md:text-5xl font-extrabold mb-4 text-ukraine-blue leading-snug tracking-tight drop-shadow-sm text-balance text-center">
+        {{ $t('refugees.hero.title') }}
+      </h1>
+
+      <!-- Subtitel -->
+      <p class="text-lg md:text-xl mb-10 text-gray-700 leading-relaxed text-balance max-w-2xl mx-auto text-center">
+        {{ $t('refugees.hero.subtitle') }}
+      </p>
+
+      <!-- CTA Buttons -->
+      <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+        
+        <!-- CTA: Register -->
+        <AppButton 
+          :href="`https://nederland-werkt.8vance.com/?language=${$i18n.locale}&authState=register`"
+          target="_blank"
+          color="white"
+          size="lg"
+          class="group flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-ukraine-blue text-white hover:bg-ukraine-blue/90 hover:scale-105 transition duration-300 shadow-md focus-visible:ring-4 focus-visible:ring-ukraine-yellow focus-visible:ring-offset-2"
+        >
+          {{ $t('refugees.hero.cta') }}
+        </AppButton>
+
+        <!-- CTA: Contact -->
+        <AppButton 
+          to="contact"
+          color="outline-white"
+          size="lg"
+          class="group flex items-center justify-center gap-2 px-6 py-3 rounded-xl border-2 border-ukraine-blue text-ukraine-blue hover:bg-ukraine-blue hover:text-white hover:scale-105 transition duration-300 shadow-md focus-visible:ring-4 focus-visible:ring-ukraine-yellow focus-visible:ring-offset-2"
+        >
+          {{ $t('refugees.hero.contact') }}
+        </AppButton>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
 
       <!-- White vs Black Work Section -->
       <section class="py-16 bg-gray-50">
