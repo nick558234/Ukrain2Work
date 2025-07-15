@@ -21,19 +21,19 @@
         <div class="bg-blue-50 p-6 rounded-lg shadow">
           <h2 class="text-xl font-semibold mb-3">{{$t('home.forRefugees')}}</h2>
           <p class="mb-4">{{$t('home.forRefugeesDesc')}}</p>
-          <NuxtLink to="/refugees" class="text-blue-600 font-medium">{{$t('home.learnMore')}} →</NuxtLink>
+          <NuxtLink :to="getLocalizedPath('/refugees')" class="text-blue-600 font-medium">{{$t('home.learnMore')}} →</NuxtLink>
         </div>
         
         <div class="bg-blue-50 p-6 rounded-lg shadow">
           <h2 class="text-xl font-semibold mb-3">{{$t('home.forEmployers')}}</h2>
           <p class="mb-4">{{$t('home.forEmployersDesc')}}</p>
-          <NuxtLink to="/employers" class="text-blue-600 font-medium">{{$t('home.postJob')}} →</NuxtLink>
+          <NuxtLink :to="getLocalizedPath('/employers')" class="text-blue-600 font-medium">{{$t('home.postJob')}} →</NuxtLink>
         </div>
         
         <div class="bg-blue-50 p-6 rounded-lg shadow">
           <h2 class="text-xl font-semibold mb-3">{{$t('home.successStories')}}</h2>
           <p class="mb-4">{{$t('home.successStoriesDesc')}}</p>
-          <NuxtLink to="/success-stories" class="text-blue-600 font-medium">{{$t('home.readStories')}} →</NuxtLink>
+          <NuxtLink :to="getLocalizedPath('/success-stories')" class="text-blue-600 font-medium">{{$t('home.readStories')}} →</NuxtLink>
         </div>
       </div>
     </div>
@@ -52,6 +52,10 @@
 
 <script setup lang="ts">
 import { computed } from 'vue';
+import { useNavigation } from '~/composables/useNavigation';
+
+// Get navigation composable
+const { getLocalizedPath } = useNavigation();
 
 definePageMeta({
   title: 'Home'

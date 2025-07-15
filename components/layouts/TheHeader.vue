@@ -3,7 +3,7 @@
     <div class="container mx-auto px-4 py-4">
       <div class="flex justify-between items-center">
         <!-- Logo -->
-        <NuxtLink to="/" class="flex items-center">
+        <NuxtLink :to="getLocalizedPath('/')" class="flex items-center">
           <img src="/images/logo.jpg" alt="Ukraine2Work" width="64" height="64" class="w-16"/>
         </NuxtLink>
 
@@ -12,7 +12,7 @@
           <NuxtLink
             v-for="item in navigationItems"
             :key="item.route"
-            :to="item.route"
+            :to="getLocalizedPath(item.route)"
             class="text-gray-700 hover:text-ukraine-blue font-medium transition-colors"
             :class="{ 'text-ukraine-blue': isActive(item.route) }"
           >
@@ -22,7 +22,7 @@
           <!-- Auth buttons -->
           <div class="flex items-center space-x-4 ml-4">
             <AppButton 
-              :href="`https://nederland-werkt.8vance.com/?authState=login&language=${$i18n.locale}`"
+              :href="getAuthUrl('login')"
               target="_blank"
               color="outline"
               size="sm"
@@ -30,7 +30,7 @@
               {{ $t('auth.login') }}
             </AppButton>
             <AppButton 
-              :href="`https://nederland-werkt.8vance.com/?authState=register&language=${$i18n.locale}`"
+              :href="getAuthUrl('register')"
               target="_blank"
               color="primary"
               size="sm"
@@ -99,7 +99,7 @@
             <NuxtLink
               v-for="item in navigationItems"
               :key="item.route"
-              :to="item.route"
+              :to="getLocalizedPath(item.route)"
               class="text-gray-700 hover:text-ukraine-blue px-2 py-1 rounded-md transition-colors"
               :class="{ 'text-ukraine-blue': isActive(item.route) }"
               @click="mobileMenuOpen = false"
@@ -110,7 +110,7 @@
 
           <div class="mt-6 pt-4 border-t border-gray-200 flex flex-col space-y-4">
             <AppButton 
-              :href="`https://nederland-werkt.8vance.com/?authState=login&language=${$i18n.locale}`"
+              :href="getAuthUrl('login')"
               target="_blank"
               color="outline"
               size="sm"
@@ -119,7 +119,7 @@
               {{ $t('auth.login') }}
             </AppButton>
             <AppButton 
-              :href="`https://nederland-werkt.8vance.com/?authState=register&language=${$i18n.locale}`"
+              :href="getAuthUrl('register')"
               target="_blank"
               color="primary"
               size="sm"
@@ -141,6 +141,10 @@
 <script setup>
 import { ref, computed } from 'vue';
 import { useRoute } from 'vue-router';
+import { useNavigation } from '~/composables/useNavigation';
+
+// Get navigation composable
+const { getLocalizedPath, isActive, getAuthUrl } = useNavigation();
 
 // Navigation data
 const navigationItems = [
@@ -157,14 +161,6 @@ const mobileMenuOpen = ref(false);
 
 // Get current route
 const route = useRoute();
-
-// Check if navigation item is active
-const isActive = (path) => {
-  if (path === '/') {
-    return route.path === '/';
-  }
-  return route.path.startsWith(path);
-};
 </script>
 
 <style scoped>

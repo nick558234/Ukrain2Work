@@ -2,7 +2,7 @@
   <div class="container mx-auto px-4 py-8">
     <!-- Back to blog link -->
     <div class="mb-6">
-      <NuxtLink to="/blog" class="inline-flex items-center text-ukraine-blue hover:text-ukraine-yellow transition-colors">
+      <NuxtLink :to="getLocalizedPath('/blog')" class="inline-flex items-center text-ukraine-blue hover:text-ukraine-yellow transition-colors">
         <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
         </svg>
@@ -156,8 +156,13 @@
 </template>
 
 <script setup lang="ts">
+import { useNavigation } from '~/composables/useNavigation';
+
 const route = useRoute()
 const { t } = useI18n()
+
+// Get navigation composable
+const { getLocalizedPath } = useNavigation();
 
 // Get the slug from the route
 const slug = route.params.slug as string

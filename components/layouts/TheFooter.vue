@@ -5,7 +5,7 @@
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
         <!-- Logo and tagline -->
         <div>
-          <NuxtLink to="/" class="inline-block mb-4">
+          <NuxtLink :to="getLocalizedPath('/')" class="inline-block mb-4">
           <img src="/images/logo.jpg" alt="Ukraine2Work" width="64" height="64" class="w-16"/>
           </NuxtLink>
           <p class="text-gray-200 mb-6">{{ $t('footer.tagline') }}</p>
@@ -51,12 +51,12 @@
           <h3 class="font-bold mb-6">{{ $t('footer.quickLinks') }}</h3>
           <ul class="space-y-3">
             <li>
-              <NuxtLink to="/about" class="text-gray-200 hover:text-white transition-colors">
+              <NuxtLink :to="getLocalizedPath('/about')" class="text-gray-200 hover:text-white transition-colors">
                 {{ $t('footer.about') }}
               </NuxtLink>
             </li>
             <li>
-              <NuxtLink to="/contact" class="text-gray-200 hover:text-white transition-colors">
+              <NuxtLink :to="getLocalizedPath('/contact')" class="text-gray-200 hover:text-white transition-colors">
                 {{ $t('footer.contact') }}
               </NuxtLink>
             </li>
@@ -71,7 +71,7 @@
               </a>
             </li>
             <li>
-              <NuxtLink to="/faq" class="text-gray-200 hover:text-white transition-colors">
+              <NuxtLink :to="getLocalizedPath('/faq')" class="text-gray-200 hover:text-white transition-colors">
                 {{ $t('footer.faq') }}
               </NuxtLink>
             </li>
@@ -124,7 +124,7 @@
             <a href="pdf/Algemene_Voorwaarden.pdf" target="_blank" class="text-gray-300 text-sm hover:text-white transition-colors">
               {{ $t('footer.terms') }}
             </a>
-            <NuxtLink to="/faq" class="text-gray-300 text-sm hover:text-white transition-colors">
+            <NuxtLink :to="getLocalizedPath('/faq')" class="text-gray-300 text-sm hover:text-white transition-colors">
               {{ $t('footer.faq') }}
             </NuxtLink>
           </div>
@@ -135,5 +135,10 @@
 </template>
 
 <script setup>
+import { useNavigation } from '~/composables/useNavigation';
+
+// Get navigation composable
+const { getLocalizedPath } = useNavigation();
+
 // Footer component - now using NewsletterSubscription component
 </script>
