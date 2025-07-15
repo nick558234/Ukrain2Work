@@ -405,21 +405,11 @@
       }
     },
     "timeline": {
-      "title": "Our history",
-      "events": {
-        "invasion": {
-          "title": "Russian invasion of Ukraine",
-          "description": "Following Russia's invasion of Ukraine, millions of Ukrainians were forced to flee their homes, creating the largest refugee crisis in Europe since World War II."
-        },
-        "foundation": {
-          "title": "Founding of Ukraine2Work",
-          "description": "Ukraine2Work was founded by Anna Kovalenko, who recognized the urgent need to help Ukrainian refugees rebuild their lives through meaningful employment in the Netherlands."
-        }
-      }
+      "title": "Our Timeline – The Growth of Ukraine2Work"
     },
     "team": {
-      "title": "Our team",
-      "description": "Meet the dedicated professionals making Ukraine2Work possible. Our diverse team includes both Dutch and Ukrainian experts with a shared mission to build bridges and create opportunities.",
+      "title": "Our Team",
+      "description": "Meet the people behind Ukraine2Work who are dedicated to connecting Ukrainian talent with Dutch employers.",
       "ukrainian": "Ukrainian",
       "meetFullTeam": "Meet the full team"
     }

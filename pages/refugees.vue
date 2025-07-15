@@ -2,9 +2,9 @@
   <div>   
     <main>
       <!-- Hero Section -->
-<section class="relative min-h-[60vh] flex flex-col items-center justify-center bg-gradient-to-br from-ukraine-blue/10 via-white to-ukraine-yellow/10 py-16 md:py-20 border-b border-gray-200">
-  <div class="container mx-auto px-4 flex flex-col items-center justify-center h-full">
-    <div class="max-w-3xl w-full text-center animate-fade-in motion-safe:animate-fade-in delay-100 duration-700 ease-out mx-auto">
+<section class="bg-gradient-to-br from-ukraine-blue/10 via-white to-ukraine-yellow/10 py-16 md:py-20 border-b border-gray-200 flex items-center justify-center">
+  <div class="container mx-auto px-4">
+    <div class="max-w-3xl mx-auto text-center animate-fade-in motion-safe:animate-fade-in delay-100 duration-700 ease-out">
       
       <!-- Titel -->
       <h1 class="text-4xl md:text-5xl font-extrabold mb-4 text-ukraine-blue leading-snug tracking-tight drop-shadow-sm text-balance text-center">
@@ -25,7 +25,7 @@
           target="_blank"
           color="white"
           size="lg"
-          class="group flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-ukraine-blue text-white hover:bg-ukraine-blue/90 hover:scale-105 transition duration-300 shadow-md focus-visible:ring-4 focus-visible:ring-ukraine-yellow focus-visible:ring-offset-2"
+          class="group flex  gap-2 px-6 py-3 rounded-xl bg-ukraine-blue text-white hover:bg-ukraine-blue/90 hover:scale-105 transition duration-300 shadow-md focus-visible:ring-4 focus-visible:ring-ukraine-yellow focus-visible:ring-offset-2"
         >
           {{ $t('refugees.hero.cta') }}
         </AppButton>
@@ -35,7 +35,7 @@
           to="contact"
           color="outline-white"
           size="lg"
-          class="group flex items-center justify-center gap-2 px-6 py-3 rounded-xl border-2 border-ukraine-blue text-ukraine-blue hover:bg-ukraine-blue hover:text-white hover:scale-105 transition duration-300 shadow-md focus-visible:ring-4 focus-visible:ring-ukraine-yellow focus-visible:ring-offset-2"
+          class="group flex items-center gap-2 px-6 py-3 rounded-xl border-2 border-ukraine-blue text-ukraine-blue hover:bg-ukraine-blue hover:text-white hover:scale-105 transition duration-300 shadow-md focus-visible:ring-4 focus-visible:ring-ukraine-yellow focus-visible:ring-offset-2"
         >
           {{ $t('refugees.hero.contact') }}
         </AppButton>
@@ -239,13 +239,17 @@
             <h2 class="text-3xl font-bold mb-6">{{ $t('refugees.video.title') }}</h2>
             <p class="text-xl mb-8">{{ $t('refugees.video.description') }}</p>
             <div class="aspect-w-16 aspect-h-9 rounded-xl overflow-hidden shadow-xl">
-              <video
+              <iframe 
                 :src="videoUrl"
-                controls
+                :title="$t('refugees.video.title')"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
                 class="w-full h-full bg-black rounded"
+                style="aspect-ratio: 16/9; min-height: 315px;"
               >
-                {{ $t('refugees.video.notSupported') }}
-              </video>
+              </iframe>
             </div>
           </div>
         </div>
@@ -390,9 +394,9 @@ import { useI18n } from 'vue-i18n';
 const { locale } = useI18n();
 
 const videoUrl = computed(() => {
-  // Use your own video files in the public/videos/ directory
+  // Use YouTube embedded videos based on language
   return locale.value === 'uk'
-    ? '/video/video_ukraine.mp4'
-    : '/video/video_dutch.mp4';
+    ? 'https://www.youtube.com/embed/ir1SFnwL3_w?si=Ut0mzYhGSwrgLHGv'
+    : 'https://www.youtube.com/embed/cuLfJyW0KiA?si=oNJh4qJ_rD8j7xZ_';
 });
 </script>

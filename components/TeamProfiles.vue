@@ -86,6 +86,9 @@
 
 <script setup>
 import { computed } from 'vue';
+import { useI18n } from 'vue-i18n';
+
+const { locale } = useI18n();
 
 const props = defineProps({
   showAll: {
@@ -98,45 +101,88 @@ const props = defineProps({
   }
 });
 
-// In a real app, team data would be fetched from an API or via CMS
-const teamMembers = [
-  {
-    name: 'Alex Spaan',
-    role: 'Owner',  
-    bio: 'Owner of Ukraine2Work',  
-    photo: '/images/team/alexSpaan_square.webp',  
-    linkedin: 'https://www.linkedin.com/in/alex-spaan/',  
-    email: 'alex@ukraine2work.nl',  
-    phone: '+31638473157',  
-    label: 'Team Leader', // New label property
-    ukrainian: false  
-  },
-  {
-    name: 'Jan de Vries',
-    role: 'Employer Relations Manager',
-    bio: 'Dedicated to connecting Dutch employers with Ukrainian talent. Previously worked in corporate recruitment for 10+ years at major Dutch companies.',
-    photo: '/img/team/jan-de-vries.jpg',
-    linkedin: 'https://linkedin.com/in/example',
-    email: 'jan@ukraine2work.nl',
-    phone: null,
-    label: 'Recruitment Expert', // New label property
-    ukrainian: false
-  },
-  {
-    name: 'Oleksandr Shevchenko',
-    role: 'Job Seeker Support Specialist',
-    bio: 'Helps Ukrainian refugees navigate the Dutch job market. Came to the Netherlands in 2022 and brings firsthand experience of the challenges faced.',
-    photo: '/img/team/oleksandr-shevchenko.jpg',
-    linkedin: 'https://linkedin.com/in/example',
-    email: 'oleksandr@ukraine2work.nl',
-    phone: null,
-    label: 'Support Specialist', // New label property
-    ukrainian: true
-  },
-];
+// Team data with internationalization
+const teamMembers = computed(() => {
+  const teamData = {
+    nl: [
+      {
+        name: 'Alex Spaan',
+        role: 'Oprichter & CEO',
+        bio: 'Oprichter & CEO @ Ukraine2Work | Startup School Pioneer | Skill-Based Job Platform voor Vluchtelingen | Verbindt Talent met Kansen door AI, LLM & Menselijke Ondersteuning',
+        photo: '/images/team/alexSpaan_square.webp',
+        linkedin: 'https://www.linkedin.com/in/alex-spaan/',
+        email: 'alex@ukraine2work.nl',
+        phone: '+31638473157',
+        label: 'CEO',
+        ukrainian: false
+      },
+      {
+        name: 'Floris Deijnen',
+        role: 'Matchmaker Werk & Talent',
+        bio: 'Helpt vluchtelingen, expats en jongeren uit de jeugdzorg betekenisvol werk te vinden in Nederland. Iedereen verdient een eerlijke kans. Werk is de sleutel tot integratie, onafhankelijkheid en het opbouwen van een toekomst.',
+        photo: '/images/team/floris_square.jpeg',
+        linkedin: 'https://www.linkedin.com/in/floris-deijnen/',
+        email: 'floris@ukraine2work.nl',
+        phone: null,
+        label: 'Matchmaker',
+        ukrainian: false
+      }
+    ],
+    en: [
+      {
+        name: 'Alex Spaan',
+        role: 'Founder & CEO',
+        bio: 'Founder & CEO @ Ukraine2Work | Startup School Pioneer | Skill-Based Job Platform for Refugees | Connecting Talent to Opportunity through AI, LLM & Human Support',
+        photo: '/images/team/alexSpaan_square.webp',
+        linkedin: 'https://www.linkedin.com/in/alex-spaan/',
+        email: 'alex@ukraine2work.nl',
+        phone: '+31638473157',
+        label: 'CEO',
+        ukrainian: false
+      },
+      {
+        name: 'Floris Deijnen',
+        role: 'Work & Talent Matchmaker',
+        bio: 'Helping refugees, expats and young adults in youth care find meaningful work in the Netherlands. Everyone deserves a fair chance. Employment is key to integration, independence, and building a future.',
+        photo: '/images/team/floris_square.jpeg',
+        linkedin: 'https://www.linkedin.com/in/floris-deijnen/',
+        email: 'floris@ukraine2work.nl',
+        phone: null,
+        label: 'Matchmaker',
+        ukrainian: false
+      }
+    ],
+    uk: [
+      {
+        name: 'Алекс Спаан',
+        role: 'Засновник і CEO',
+        bio: 'Засновник і CEO @ Ukraine2Work | Піонер Startup School | Платформа для пошуку роботи на основі навичок для біженців | З\'єднує талант з можливостями через ШІ, LLM і людську підтримку',
+        photo: '/images/team/alexSpaan_square.webp',
+        linkedin: 'https://www.linkedin.com/in/alex-spaan/',
+        email: 'alex@ukraine2work.nl',
+        phone: '+31638473157',
+        label: 'CEO',
+        ukrainian: false
+      },
+      {
+        name: 'Флоріс Дейнен',
+        role: 'Спеціаліст з підбору роботи та талантів',
+        bio: 'Допомагає біженцям, експатам та молоді з молодіжної опіки знайти значущу роботу в Нідерландах. Кожен заслуговує на справедливий шанс. Робота є ключем до інтеграції, незалежності та побудови майбутнього.',
+        photo: '/images/team/floris_square.jpeg',
+        linkedin: 'https://www.linkedin.com/in/floris-deijnen/',
+        email: 'floris@ukraine2work.nl',
+        phone: null,
+        label: 'Спеціаліст',
+        ukrainian: false
+      }
+    ]
+  };
+
+  return teamData[locale.value] || teamData.nl;
+});
 
 const displayedMembers = computed(() => {
-  return props.showAll ? teamMembers : teamMembers.slice(0, props.previewCount);
+  return props.showAll ? teamMembers.value : teamMembers.value.slice(0, props.previewCount);
 });
 </script>
 

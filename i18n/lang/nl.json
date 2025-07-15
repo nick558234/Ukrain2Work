@@ -126,7 +126,47 @@
     "tabs": {
       "employers": "Werkgevers",
       "refugees": "Werkzoekenden"
-    }
+    },
+    "employers": [
+      {
+        "id": 1,
+        "name": "Jan De Vries",
+        "role": "HR Manager, Tech Solutions NL",
+        "quote": "Ukraine2Work maakte het ongelooflijk eenvoudig om gekwalificeerde Oekraïense professionals te vinden. Het proces verliep soepel en we vonden een perfecte match voor ons ontwikkelteam."
+      },
+      {
+        "id": 2,
+        "name": "Maria Jansen",
+        "role": "CEO, Amsterdam Retail Group",
+        "quote": "We konden binnen enkele weken drie Oekraïense teamleden verwelkomen. Hun vaardigheden en werkethiek zijn uitstekend geweest, en de integratie verliep naadloos."
+      },
+      {
+        "id": 3,
+        "name": "Alex Spaan",
+        "role": "Eigenaar, Ukraine2Work",
+        "quote": "Onze missie is om getalenteerde Oekraïense professionals te verbinden met Nederlandse werkgevers. Ik heb uit eerste hand gezien hoe deze verbindingen levens en bedrijven transformeren."
+      }
+    ],
+    "refugees": [
+      {
+        "id": 1,
+        "name": "Olena Kovalenko",
+        "role": "Software Developer",
+        "quote": "Binnen twee weken na het aanmaken van mijn profiel had ik drie sollicitatiegesprekken en een baanaanbieding. Ukraine2Work heeft me geholpen mijn nieuwe leven in Nederland te starten."
+      },
+      {
+        "id": 2,
+        "name": "Andriy Shevchenko",
+        "role": "Logistiek Specialist",
+        "quote": "Ik maakte me zorgen over de taalbarrière, maar vond veel mogelijkheden waar Engels voldoende was. Mijn nieuwe werkgever biedt zelfs Nederlandse lessen aan."
+      },
+      {
+        "id": 3,
+        "name": "Natalia Ivanenko",
+        "role": "Accountant",
+        "quote": "Het platform maakte het gemakkelijk om mijn kwalificaties aan Nederlandse werkgevers te tonen. Het proces was eenvoudig en ik vond een gastvrije werkplek."
+      }
+    ]
   },
   "employers": {
     "benefits": {
@@ -449,6 +489,14 @@
           "text": "Gratis cv-check aanvragen"
         }
       }
+    },
+    "timeline": {
+      "title": "Onze Tijdlijn – De groei van Ukraine2Work"
+    },
+    "team": {
+      "title": "Ons Team",
+      "description": "Ontmoet de mensen achter Ukraine2Work die zich inzetten voor het verbinden van Oekraïens talent met Nederlandse werkgevers.",
+      "meetFullTeam": "Ontmoet het volledige team"
     }
   },
   "profile": {
