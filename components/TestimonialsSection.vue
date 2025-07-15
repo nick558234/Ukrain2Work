@@ -76,6 +76,8 @@
 import { ref, computed } from 'vue';
 import { useI18n } from 'vue-i18n';
 
+const { t, locale } = useI18n();
+
 const props = defineProps({
   defaultTab: {
     type: String,
@@ -86,66 +88,87 @@ const props = defineProps({
 
 const activeTab = ref(props.defaultTab);
 
-// Generate placeholder images for Alex Spaan (the business owner)
-const getTestimonialImageSrc = (testimonial) => {
+// Get testimonials from translation files
+const testimonials = computed(() => {
   try {
-    return `/images/testimonials/${testimonial.type}-${testimonial.id}.jpg`;
-  } catch (e) {
-    // Return placeholder for each testimonial type with colored backgrounds
-    const bgColor = testimonial.type === 'employers' ? '0057b8' : 'ffd700';
-    const textColor = testimonial.type === 'employers' ? 'ffffff' : '000000';
-    return `https://placehold.co/96x96/${bgColor}/${textColor}?text=${testimonial.name.charAt(0)}`;
+    // Get current messages from i18n
+    const messages = locale.value === 'nl' ? 
+      require('@/i18n/lang/nl.json') : 
+      locale.value === 'uk' ? 
+        require('@/i18n/lang/uk.json') : 
+        require('@/i18n/lang/en.json');
+    
+    const employersData = messages.testimonials?.employers || [];
+    const refugeesData = messages.testimonials?.refugees || [];
+    
+    // Combine and add type field
+    const combined = [
+      ...employersData.map(item => ({ ...item, type: 'employers' })),
+      ...refugeesData.map(item => ({ ...item, type: 'refugees' }))
+    ];
+    
+    return combined;
+  } catch (error) {
+    console.warn('Error loading testimonials from translation files:', error);
+    // Fallback to working with t() function
+    return getFallbackTestimonials();
   }
+});
+
+// Fallback function to get testimonials using t()
+const getFallbackTestimonials = () => {
+  const employersTestimonials = [
+    {
+      id: 1,
+      name: t('testimonials.employers.0.name', 'Jan De Vries'),
+      role: t('testimonials.employers.0.role', 'HR Manager, Tech Solutions NL'),
+      quote: t('testimonials.employers.0.quote', 'Ukraine2Work made it incredibly easy to find qualified Ukrainian professionals.'),
+      type: 'employers'
+    },
+    {
+      id: 2,
+      name: t('testimonials.employers.1.name', 'Maria Jansen'),
+      role: t('testimonials.employers.1.role', 'CEO, Amsterdam Retail Group'),
+      quote: t('testimonials.employers.1.quote', 'We were able to welcome three Ukrainian team members within weeks.'),
+      type: 'employers'
+    },
+    {
+      id: 3,
+      name: t('testimonials.employers.2.name', 'Alex Spaan'),
+      role: t('testimonials.employers.2.role', 'Owner, Ukraine2Work'),
+      quote: t('testimonials.employers.2.quote', 'Our mission is to connect talented Ukrainian professionals with Dutch employers.'),
+      type: 'employers'
+    }
+  ];
+
+  const refugeesTestimonials = [
+    {
+      id: 1,
+      name: t('testimonials.refugees.0.name', 'Olena Kovalenko'),
+      role: t('testimonials.refugees.0.role', 'Software Developer'),
+      quote: t('testimonials.refugees.0.quote', 'Within two weeks of creating my profile, I had three interviews and a job offer.'),
+      type: 'refugees'
+    },
+    {
+      id: 2,
+      name: t('testimonials.refugees.1.name', 'Andriy Shevchenko'),
+      role: t('testimonials.refugees.1.role', 'Marketing Specialist'),
+      quote: t('testimonials.refugees.1.quote', 'The platform made it easy to connect with Dutch employers.'),
+      type: 'refugees'
+    },
+    {
+      id: 3,
+      name: t('testimonials.refugees.2.name', 'Natalia Bondar'),
+      role: t('testimonials.refugees.2.role', 'Financial Analyst'),
+      quote: t('testimonials.refugees.2.quote', 'Ukraine2Work helped me restart my career in the Netherlands.'),
+      type: 'refugees'
+    }
+  ];
+
+  return [...employersTestimonials, ...refugeesTestimonials];
 };
 
-// Mock testimonials data with added ID field
-// In a real application, this would come from an API or CMS
-const testimonials = [
-  {
-    id: 1,
-    type: 'employers',
-    name: 'Jan De Vries',
-    role: 'HR Manager, Tech Solutions NL',
-    quote: 'Ukraine2Work made it incredibly easy to find qualified Ukrainian professionals. The process was smooth and we found a perfect match for our development team.'
-  },
-  {
-    id: 2,
-    type: 'employers',
-    name: 'Maria Jansen',
-    role: 'CEO, Amsterdam Retail Group',
-    quote: 'We were able to welcome three Ukrainian team members within weeks. Their skills and work ethic have been outstanding, and the integration was seamless.'
-  },
-  {
-    id: 3,
-    type: 'employers',
-    name: 'Alex Spaan',
-    role: 'Owner, Ukraine2Work',
-    quote: 'Our mission is to connect talented Ukrainian professionals with Dutch employers. I\'ve seen firsthand how these connections transform lives and businesses.'
-  },
-  {
-    id: 1,
-    type: 'refugees',
-    name: 'Olena Kovalenko',
-    role: 'Software Developer',
-    quote: 'Within two weeks of creating my profile, I had three interviews and a job offer. Ukraine2Work helped me start my new life in the Netherlands.'
-  },
-  {
-    id: 2,
-    type: 'refugees',
-    name: 'Andriy Shevchenko',
-    role: 'Logistics Specialist',
-    quote: 'I was concerned about the language barrier, but found many opportunities where English was sufficient. My new employer even offers Dutch lessons.'
-  },
-  {
-    id: 3,
-    type: 'refugees',
-    name: 'Natalia Ivanenko',
-    role: 'Accountant',
-    quote: 'The platform made it easy to showcase my qualifications to Dutch employers. The process was straightforward and I found a welcoming workplace.'
-  }
-];
-
 const filteredTestimonials = computed(() => {
-  return testimonials.filter(testimonial => testimonial.type === activeTab.value);
+  return testimonials.value.filter(testimonial => testimonial.type === activeTab.value);
 });
 </script>

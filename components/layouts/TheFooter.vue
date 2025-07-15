@@ -61,12 +61,12 @@
               </NuxtLink>
             </li>
             <li>
-              <a href="pdf/Algemene_Voorwaarden.pdf" target="_blank" class="text-gray-200 hover:text-white transition-colors">
+              <a href="/pdf/Algemene_Voorwaarden.pdf" target="_blank" class="text-gray-200 hover:text-white transition-colors">
                 {{ $t('footer.terms') }}
               </a>
             </li>
             <li>
-              <a href="pdf/Privacy_Policy.pdf" target="_blank" class="text-gray-200 hover:text-white transition-colors">
+              <a href="/pdf/Privacy_Policy.pdf" target="_blank" class="text-gray-200 hover:text-white transition-colors">
                 {{ $t('footer.privacy') }}
               </a>
             </li>

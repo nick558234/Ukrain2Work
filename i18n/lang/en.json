@@ -25,6 +25,12 @@
     "blog": "Blog",
     "successStories": "Success Stories",
     "donate": "Donate",
+    "email": "Email",
+    "phone": "Phone",
+    "faq": "FAQ",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "sitemap": "Sitemap",
     "newsletter": {
       "title": "Newsletter",
       "description": "Stay updated with new opportunities and updates",
