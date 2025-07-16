@@ -23,7 +23,7 @@
         <AppButton 
           :href="`https://nederland-werkt.8vance.com/?language=${$i18n.locale}&authState=register`"
           target="_blank"
-          color="white"
+          color="outline"
           size="lg"
           class="group flex  gap-2 px-6 py-3 rounded-xl bg-ukraine-blue text-white hover:bg-ukraine-blue/90 hover:scale-105 transition duration-300 shadow-md focus-visible:ring-4 focus-visible:ring-ukraine-yellow focus-visible:ring-offset-2"
         >
@@ -399,4 +399,30 @@ const videoUrl = computed(() => {
     ? 'https://www.youtube.com/embed/ir1SFnwL3_w?si=Ut0mzYhGSwrgLHGv'
     : 'https://www.youtube.com/embed/cuLfJyW0KiA?si=oNJh4qJ_rD8j7xZ_';
 });
+
+// SEO meta tags for refugees/job seekers page
+useSeoMeta({
+  title: 'Werk in Nederland voor Oekraïense Vluchtelingen',
+  description: 'Vind werk in Nederland als Oekraïense vluchteling met Ukraine2Work. Gratis registratie, skill-based matching, Nederlandse werkgevers.',
+  keywords: 'Ukraine2Work work, Ukraine 2 Work jobs, werk Nederland, Oekraïense vluchtelingen werk, job search Ukraine, Ukrainian jobs Netherlands, work permit, skilled jobs',
+  author: 'Ukraine2Work',
+  robots: 'index, follow',
+  
+  // Open Graph
+  ogTitle: 'Werk in Nederland voor Oekraïense Vluchtelingen',
+  ogDescription: 'Vind werk in Nederland als Oekraïense vluchteling met Ukraine2Work. Gratis registratie, skill-based matching, Nederlandse werkgevers.',
+  ogUrl: 'https://ukraine2work.nl/refugees',
+  
+  // Twitter Card
+  twitterCard: 'summary_large_image',
+  twitterTitle: 'Werk in Nederland voor Oekraïense Vluchtelingen',
+  twitterDescription: 'Vind werk in Nederland als Oekraïense vluchteling met Ukraine2Work. Gratis registratie, skill-based matching, Nederlandse werkgevers.'
+})
+
+// Canonical URL
+useHead({
+  link: [
+    { rel: 'canonical', href: 'https://ukraine2work.nl/refugees' }
+  ]
+})
 </script>

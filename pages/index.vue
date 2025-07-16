@@ -57,6 +57,38 @@ import { useNavigation } from '~/composables/useNavigation';
 // Get navigation composable
 const { getLocalizedPath } = useNavigation();
 
+// Add structured data for home page
+const { addOrganizationSchema, addWebsiteSchema, addServiceSchema } = useStructuredData()
+addOrganizationSchema()
+addWebsiteSchema()
+addServiceSchema()
+
+// SEO meta tags for home page
+useSeoMeta({
+  title: 'Ukraine2Work - Oekraïense Vluchtelingen & Jobs',
+  description: 'Ukraine2Work verbindt Oekraïense vluchtelingen met Nederlandse werkgevers via skill-based matching. Vind werk of talent in Nederland.',
+  keywords: 'Ukraine2Work, Ukraine 2 Work, Oekraïense vluchtelingen, Nederlandse werkgevers, werk Nederland, talent matching, jobs Nederland, vluchtelingen werk',
+  author: 'Ukraine2Work',
+  robots: 'index, follow',
+  
+  // Open Graph
+  ogTitle: 'Ukraine2Work - Oekraïense Vluchtelingen & Jobs',
+  ogDescription: 'Ukraine2Work verbindt Oekraïense vluchtelingen met Nederlandse werkgevers via skill-based matching. Vind werk of talent in Nederland.',
+  ogUrl: 'https://ukraine2work.nl',
+  
+  // Twitter Card
+  twitterCard: 'summary_large_image',
+  twitterTitle: 'Ukraine2Work - Oekraïense Vluchtelingen & Jobs',
+  twitterDescription: 'Ukraine2Work verbindt Oekraïense vluchtelingen met Nederlandse werkgevers via skill-based matching. Vind werk of talent in Nederland.',
+})
+
+// Canonical URL
+useHead({
+  link: [
+    { rel: 'canonical', href: 'https://ukraine2work.nl' }
+  ]
+})
+
 definePageMeta({
   title: 'Home'
 });

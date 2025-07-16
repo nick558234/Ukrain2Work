@@ -57,7 +57,7 @@
     color: {
       type: String,
       default: 'primary',
-      validator: (value) => ['primary', 'secondary', 'outline'].includes(value)
+      validator: (value) => ['primary', 'secondary', 'outline', 'white'].includes(value)
     },
     size: {
       type: String,
@@ -101,6 +101,8 @@
         return 'bg-ukraine-yellow text-ukraine-blue hover:bg-opacity-90';
       case 'outline':
         return 'bg-transparent border-2 border-ukraine-blue text-ukraine-blue hover:bg-ukraine-blue hover:text-white';
+      case 'white':
+        return 'bg-white text-ukraine-blue hover:bg-gray-100 border-2 border-white';
       default:
         return '';
     }

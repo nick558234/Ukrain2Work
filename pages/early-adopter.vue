@@ -348,11 +348,62 @@ definePageMeta({
   layout: false
 })
 
+// Add structured data
+const { addOrganizationSchema, addServiceSchema } = useStructuredData()
+addOrganizationSchema()
+addServiceSchema()
+
+// Add Early Adopter specific structured data
+useHead({
+  script: [{
+    type: 'application/ld+json',
+    innerHTML: JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'Offer',
+      name: 'Ukraine2Work Early Adopter Deal',
+      description: 'Exclusieve Early Adopter aanbieding voor werkgevers in de regio Eindhoven. Skill-based matching platform voor Oekraïense vluchtelingen.',
+      price: '750',
+      priceCurrency: 'EUR',
+      validThrough: '2025-08-15',
+      availability: 'https://schema.org/LimitedAvailability',
+      availabilityStarts: '2025-01-01',
+      availabilityEnds: '2025-08-15',
+      seller: {
+        '@type': 'Organization',
+        name: 'Ukraine2Work'
+      },
+      areaServed: {
+        '@type': 'City',
+        name: 'Eindhoven'
+      }
+    })
+  }]
+})
+
 // SEO meta tags
 useSeoMeta({
-  title: 'Early Adopter Deal - Ukraine2Work',
-  description: 'Word Early Adopter van Ukraine2Work en profiteer van exclusieve voordelen voor werkgevers in regio Eindhoven. Skill-based matching, geen set-upkosten, en directe toegang tot talenten. Meld je nu aan!',
-  keywords: 'Early Adopter, Ukraine2Work, werkgevers, Eindhoven, Oekraïense vluchtelingen, werk, matching, pakket, aanbieding, recruitment, arbeidsmarkt'
+  title: 'Early Adopter Deal - Ukraine2Work Eindhoven',
+  description: 'Word Early Adopter van Ukraine2Work en profiteer van exclusieve voordelen voor werkgevers in regio Eindhoven. Skill-based matching.',
+  keywords: 'Early Adopter, Ukraine2Work, werkgevers, Eindhoven, Oekraïense vluchtelingen, werk, matching, pakket, aanbieding, recruitment',
+  author: 'Ukraine2Work',
+  robots: 'index, follow',
+  
+  // Open Graph
+  ogTitle: 'Early Adopter Deal - Ukraine2Work Eindhoven',
+  ogDescription: 'Word Early Adopter van Ukraine2Work en profiteer van exclusieve voordelen voor werkgevers in regio Eindhoven. Skill-based matching.',
+  ogUrl: 'https://ukraine2work.nl/early-adopter',
+  
+  // Twitter Card
+  twitterCard: 'summary_large_image',
+  twitterTitle: 'Early Adopter Deal - Ukraine2Work Eindhoven',
+  twitterDescription: 'Word Early Adopter van Ukraine2Work en profiteer van exclusieve voordelen voor werkgevers in regio Eindhoven. Skill-based matching.'
+})
+
+// Canonical URL
+useHead({
+  link: [
+    { rel: 'canonical', href: 'https://ukraine2work.nl/early-adopter' }
+  ]
 })
 
 // Modal state

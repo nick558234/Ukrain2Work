@@ -186,7 +186,11 @@
       "multilingualDesc": "Ons platform is beschikbaar in het Nederlands, Engels en Oekraïens voor duidelijke communicatie.",
       "dedicatedSupportTitle": "Toegewijde ondersteuning",
       "dedicatedSupportDesc": "Ons team geeft advies over wettelijke vereisten en best practices voor het aannemen van Oekraïense medewerkers."
-    },
+    }
+  ,
+  "makeAppointment": "Maak afspraak",
+  "note": "Let op: Je wordt doorgestuurd naar een externe agenda om een afspraak te maken.",
+  "noteDetail": "De afspraak wordt gemaakt via Google Calendar. Je ontvangt een bevestiging per e-mail.",
     "postJob": {
       "title": "Plaats een vacature",
       "subtitle": "Bereik duizenden gekwalificeerde Oekraïense werkzoekenden met uw vacature.",
@@ -407,6 +411,10 @@
         "title": "Bericht verzonden!",
         "message": "Bedankt voor uw bericht. We nemen zo snel mogelijk contact met u op."
       }
+    ,
+    "makeAppointment": "Maak afspraak",
+    "note": "Let op: Je wordt doorgestuurd naar een externe agenda om een afspraak te maken.",
+    "noteDetail": "De afspraak wordt gemaakt via Google Calendar. Je ontvangt een bevestiging per e-mail."
     },
     "info": {
       "title": "Contactgegevens",

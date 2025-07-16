@@ -451,8 +451,12 @@
       "success": {
         "title": "Message sent!",
         "message": "Thank you for your message. We'll get back to you as soon as possible."
-      }
-    },
+      },
+    "makeAppointment": "Book appointment",
+    "note": "Note: You will be redirected to an external calendar to book your appointment.",
+    "noteDetail": "The appointment will be scheduled via Google Calendar. You will receive a confirmation by email."},
+    
+    
     "info": {
       "title": "Contact information",
       "email": {

@@ -106,4 +106,30 @@
 <script setup>
 // Employers page targeting Dutch businesses looking to hire Ukrainian talent
 // Emphasizes the benefits and straightforward process of hiring Ukrainian workers
+
+// SEO meta tags for employers page
+useSeoMeta({
+  title: 'Voor Werkgevers - Vind Oekraïens Talent',
+  description: 'Ukraine2Work helpt Nederlandse werkgevers bij het vinden van gekwalificeerd Oekraïens talent via skill-based matching. Geen wervingskosten.',
+  keywords: 'Ukraine2Work werkgevers, Ukraine 2 Work employers, Oekraïens talent, Nederlandse werkgevers, recruitment platform, personeel zoeken, skilled workers, Ukrainian professionals',
+  author: 'Ukraine2Work',
+  robots: 'index, follow',
+  
+  // Open Graph
+  ogTitle: 'Voor Werkgevers - Vind Oekraïens Talent',
+  ogDescription: 'Ukraine2Work helpt Nederlandse werkgevers bij het vinden van gekwalificeerd Oekraïens talent via skill-based matching. Geen wervingskosten.',
+  ogUrl: 'https://ukraine2work.nl/employers',
+  
+  // Twitter Card
+  twitterCard: 'summary_large_image',
+  twitterTitle: 'Voor Werkgevers - Vind Oekraïens Talent',
+  twitterDescription: 'Ukraine2Work helpt Nederlandse werkgevers bij het vinden van gekwalificeerd Oekraïens talent via skill-based matching. Geen wervingskosten.'
+})
+
+// Canonical URL
+useHead({
+  link: [
+    { rel: 'canonical', href: 'https://ukraine2work.nl/employers' }
+  ]
+})
 </script>

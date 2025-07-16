@@ -105,6 +105,32 @@ const faqs = {
 const open = reactive({})
 const activeCategory = ref(categories[0].id)
 
+// SEO meta tags for FAQ page
+useSeoMeta({
+  title: 'Veelgestelde Vragen (FAQ) - Ukraine2Work',
+  description: 'Vind antwoorden op veelgestelde vragen over Ukraine2Work. Informatie over registratie, werk zoeken, talent vinden en working permits.',
+  keywords: 'Ukraine2Work FAQ, Ukraine 2 Work vragen, veelgestelde vragen, hulp Ukraine2Work, support, registration help, work permit questions, employer FAQ',
+  author: 'Ukraine2Work',
+  robots: 'index, follow',
+  
+  // Open Graph
+  ogTitle: 'Veelgestelde Vragen (FAQ) - Ukraine2Work',
+  ogDescription: 'Vind antwoorden op veelgestelde vragen over Ukraine2Work. Informatie over registratie, werk zoeken, talent vinden en working permits.',
+  ogUrl: 'https://ukraine2work.nl/faq',
+  
+  // Twitter Card
+  twitterCard: 'summary_large_image',
+  twitterTitle: 'Veelgestelde Vragen (FAQ) - Ukraine2Work',
+  twitterDescription: 'Vind antwoorden op veelgestelde vragen over Ukraine2Work. Informatie over registratie, werk zoeken, talent vinden en working permits.'
+})
+
+// Canonical URL
+useHead({
+  link: [
+    { rel: 'canonical', href: 'https://ukraine2work.nl/faq' }
+  ]
+})
+
 function toggle(catId, i) {
   open[catId] = open[catId] === i ? null : i
 }

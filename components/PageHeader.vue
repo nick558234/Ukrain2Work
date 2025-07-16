@@ -84,7 +84,7 @@ const props = defineProps({
   },
   secondaryCtaColor: {
     type: String,
-    default: 'outline'
+    default: 'white'
   },
   ctaSize: {
     type: String,

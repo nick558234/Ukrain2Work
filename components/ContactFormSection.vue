@@ -7,7 +7,41 @@
           <h2 class="text-ukraine-blue mb-6">{{ t('contact.form.title') }}</h2>
           <p class="mb-8">{{ t('contact.form.description') }}</p>
           
+
+
           <form @submit.prevent="submitContactForm" class="space-y-6">
+    <!-- Appointment Modal -->
+    <div 
+      v-if="showModal" 
+      class="modal fixed z-50 inset-0 bg-black bg-opacity-50 flex justify-center items-center transition-opacity duration-300" 
+      aria-modal="true" 
+      role="dialog"
+      @click="closeModal"
+    >
+      <div class="bg-white rounded-2xl shadow-2xl w-full max-w-lg p-6 mx-2 relative" @click.stop>
+        <div class="flex justify-between items-center mb-4">
+          <h3 class="text-xl font-semibold">{{ t('contact.form.makeAppointment') }}</h3>
+          <button 
+            @click="closeModal" 
+            class="text-2xl font-bold text-gray-500 hover:text-gray-800 transition-colors duration-150" 
+            aria-label="Sluit modal"
+          >
+            &times;
+          </button>
+        </div>
+        <div class="mb-4 p-3 bg-blue-50 border-l-4 border-[#0057B8] rounded text-sm text-gray-800">
+          <strong>{{ t('contact.form.note') }}</strong> {{ t('contact.form.noteDetail') }}
+        </div>
+        <iframe 
+          src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ12wo0kN60_uvYB2URSbtYLAj-xlEvySc9FDqhLFuFKubHFwi9FSq6CH2kT9OPQY8zW94KSzadF?gv=true" 
+          style="border: 0; border-radius: 1rem;" 
+          width="100%" 
+          height="500" 
+          frameborder="0" 
+          aria-label="Afspraak plannen"
+        ></iframe>
+      </div>
+    </div>
             <div>
               <label for="name" class="block text-gray-700 font-medium mb-2">{{ t('contact.form.name') }}</label>
               <input
@@ -131,6 +165,8 @@
           </div>
         </div>
         
+        <!-- Maak afspraak button (right column) -->
+        
         <!-- Contact info -->
         <div class="bg-white p-8 rounded-lg shadow-md">
           <h3 class="font-bold mb-6">{{ t('contact.info.title') }}</h3>
@@ -203,23 +239,19 @@
           <div class="mt-8">
             <h4 class="text-sm font-medium text-gray-900 mb-4">{{ t('contact.info.followUs') }}</h4>
             <div class="flex space-x-4">
-              <a href="#" aria-label="Facebook" class="text-gray-400 hover:text-ukraine-blue">
-                <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" />
-                </svg>
-              </a>
-              <a href="#" aria-label="Twitter" class="text-gray-400 hover:text-ukraine-blue">
-                <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723 10.018 10.018 0 01-3.12 1.195 4.92 4.92 0 00-8.384 4.482A13.935 13.935 0 013.5 3.746a4.92 4.92 0 001.524 6.565 4.89 4.89 0 01-2.226-.616v.061a4.917 4.917 0 003.95 4.82 4.88 4.88 0 01-2.224.084 4.921 4.921 0 004.6 3.42 9.88 9.88 0 01-6.114 2.108c-.398 0-.788-.026-1.176-.064a13.93 13.93 0 007.538 2.21c9.054 0 14-7.503 14-14.001 0-.213-.004-.426-.014-.637a10.001 10.001 0 002.455-2.55z" />
-                </svg>
-              </a>
-              <a href="#" aria-label="LinkedIn" class="text-gray-400 hover:text-ukraine-blue">
+
+              <a href="https://www.linkedin.com/company/ukraine2work/" target="_blank" aria-label="LinkedIn" class="text-gray-400 hover:text-ukraine-blue">
                 <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
                 </svg>
               </a>
             </div>
           </div>
+          <div class="mt-8">
+          <AppButton color="secondary" size="md" @click="openModal">
+            {{ t('contact.form.makeAppointment') }}
+          </AppButton>
+        </div>
         </div>
       </div>
     </div>
@@ -268,6 +300,11 @@ const isSubmitting = ref(false);
 const formSubmitted = ref(false);
 const showError = ref(false);
 const errorMessage = ref('');
+
+// Modal state for appointment
+const showModal = ref(false);
+const openModal = () => { showModal.value = true; };
+const closeModal = () => { showModal.value = false; };
 
 // Enhanced rate limiting
 const lastSubmissionTime = ref(0);
