@@ -1,11 +1,11 @@
 <template>
-  <section class="py-16 bg-ukraine-light">
+  <!-- <section class="py-16 bg-ukraine-light">
     <div class="container">
       <h2 class="text-center text-ukraine-blue text-2xl md:text-3xl lg:text-4xl mb-12">
         {{ $t('testimonials.title') }}
       </h2>
       
-      <!-- Tabs -->
+    
       <div class="flex justify-center mb-8">
         <button 
           class="px-6 py-2 rounded-l-md font-medium transition-colors duration-200"
@@ -23,7 +23,7 @@
         </button>
       </div>
       
-      <!-- Testimonials -->
+      
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <div v-for="(testimonial, index) in filteredTestimonials" :key="index" class="bg-white rounded-lg shadow-md p-6">
           <div class="flex items-center space-x-4">
@@ -48,7 +48,7 @@
         </div>
       </div>
 
-      <!-- Testimonial content with profile image -->
+      
       <div class="max-w-3xl mx-auto text-center pt-8">
         <div 
           v-for="(testimonial, i) in filteredTestimonials" 
@@ -69,7 +69,7 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 </template>
 
 <script setup>
