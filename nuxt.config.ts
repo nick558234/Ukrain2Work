@@ -74,6 +74,9 @@ export default defineNuxtConfig({
 
   app: {
     head: {
+      htmlAttrs: {
+        lang: 'nl'
+      },
       title: 'Ukraine2Work - Connecting Ukrainian Talent with Dutch Businesses',
       meta: [
         { charset: 'utf-8' },

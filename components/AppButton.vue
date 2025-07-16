@@ -30,7 +30,7 @@
       :aria-disabled="disabled"
       @click="disabled ? $event.preventDefault() : null"
     >
-      <slot></slot>
+      <slot>{{ text }}</slot>
     </a>
     
     <!-- Use regular button when no link is provided -->
