@@ -30,6 +30,10 @@ export default defineNuxtConfig({
 
   modules: ['@nuxtjs/tailwindcss', '@pinia/nuxt', '@nuxtjs/i18n', '@nuxt/image', 'nuxt-swiper', '@nuxtjs/sitemap'],
 
+  pinia: {
+    storesDirs: ['./stores/**']
+  },
+
   sitemap: {
     hostname: 'https://ukraine2work.nl',
     gzip: true,
@@ -160,7 +164,9 @@ export default defineNuxtConfig({
   },
   
   experimental: {
-    payloadExtraction: false // Disable payload extraction which can cause issues
+    payloadExtraction: false, // Disable payload extraction which can cause issues
+    renderJsonPayloads: false, // Disable JSON payload rendering to fix Pinia serialization
+    writeEarlyHints: false // Disable early hints
   },
 
   // Build optimizations
