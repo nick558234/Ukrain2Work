@@ -1,4 +1,9 @@
 {
+  "functions": {
+    ".output/server/**": {
+      "maxDuration": 10
+    }
+  },
   "headers": [
     {
       "source": "/_nuxt/(.*)",
