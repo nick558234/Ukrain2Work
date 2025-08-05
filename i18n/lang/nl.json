@@ -96,16 +96,16 @@
     "steps": {
       "employers": [
         {
-          "title": "Maak een account aan",
-          "description": "Registreer als werkgever en stel uw bedrijfsprofiel in."
+          "title": "Maak contact",
+          "description": "Neem contact op via email, contactformulier of WhatsApp."
         },
         {
-          "title": "Plaats een vacature",
-          "description": "Voeg uw openstaande posities toe met duidelijke eisen en informatie."
+          "title": "Bespreken vacatures",
+          "description": "We bespreken uw openstaande posities en wensen."
         },
         {
-          "title": "Vind uw match",
-          "description": "Bekijk kandidaten en maak direct contact met geschikte profielen."
+          "title": "Wij delen de resultaten",
+          "description": "Wij delen de resultaten voor kandidaten. Voor grote bedrijven zit hier een uitzondering op - die kunnen bij stap 3 zelf kandidaten vinden."
         }
       ],
       "refugees": [

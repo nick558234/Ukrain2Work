@@ -45,7 +45,7 @@ const props = defineProps({
   },
   primaryLink: {
     type: String,
-    default: `https://nederland-werkt.8vance.com/?authState=register&language=en`
+    default: `https://ukraine2work.8vance.com/?authState=register&language=eng`
   },
   secondaryLink: {
     type: String,

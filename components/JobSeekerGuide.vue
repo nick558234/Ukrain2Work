@@ -77,7 +77,7 @@ const { locale, t } = useI18n();
 
 // External auth URL
 const authUrl = computed(() => {
-  return `https://nederland-werkt.8vance.com/?language=${locale.value}`;
+  return `https://ukraine2work.8vance.com/?language=${locale.value === 'nl' ? 'nl' : 'eng'}`;
 });
 
 // Guide steps

@@ -213,7 +213,8 @@
                 <h4 class="text-sm font-medium text-gray-900">{{ t('contact.info.address.title') }}</h4>
                 <p class="mt-1 text-sm text-gray-600">{{ t('contact.info.address.description') }}</p>
                 <address class="mt-2 not-italic text-sm">
-            
+                  Torenallee 20<br/>
+                  Videolab<br/>
                   The Netherlands
                 </address>
               </div>

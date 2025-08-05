@@ -43,9 +43,9 @@ export function useNavigation() {
    * @returns The authentication URL with language parameter
    */
   const getAuthUrl = (authState: 'login' | 'register' = 'login'): string => {
-    const baseUrl = 'https://nederland-werkt.8vance.com/'
+    const baseUrl = 'https://ukraine2work.8vance.com/'
     const url = new URL(baseUrl)
-    url.searchParams.set('language', languageStore.currentLocale)
+    url.searchParams.set('language', languageStore.currentLocale === 'nl' ? 'nl' : 'eng')
     url.searchParams.set('authState', authState)
     return url.toString()
   }

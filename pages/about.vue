@@ -4,9 +4,9 @@
     
     <MissionSection />
     
-    <TimelineSection />
-    
     <TeamProfiles :showAll="true" />
+    
+    <TimelineSection />
     
     <TestimonialsSection defaultTab="refugees" />
     

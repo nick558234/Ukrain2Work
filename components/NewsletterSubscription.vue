@@ -7,7 +7,8 @@
         type="email" 
         v-model="email"
         :placeholder="t('footer.newsletter.placeholder')"
-        class="px-4 py-2 rounded-md flex-grow text-gray-800 focus:outline-none focus:ring-2 focus:ring-ukraine-yellow"
+        class="px-4 py-2 rounded-md  text-gray-800 focus:outline-none focus:ring-2 focus:ring-ukraine-yellow"
+        :class="widthNormal"
         required
         :disabled="isSubscribing"
       />
@@ -27,7 +28,12 @@
 
 <script setup>
 import { ref } from 'vue'
-
+const prop = defineProps({
+  widthNormal: {
+    type: String,
+    default: 'flex-grow '
+  }
+})
 const email = ref('')
 const isSubscribing = ref(false)
 const subscriptionMessage = ref('')

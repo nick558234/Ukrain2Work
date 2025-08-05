@@ -123,7 +123,7 @@ const teamMembers = computed(() => {
         photo: '/images/team/floris_square.jpeg',
         linkedin: 'https://www.linkedin.com/in/floris-deijnen/',
         email: 'floris@ukraine2work.nl',
-        phone: null,
+        phone: '+31644185220',
         label: 'Matchmaker',
         ukrainian: false
       }
@@ -147,7 +147,7 @@ const teamMembers = computed(() => {
         photo: '/images/team/floris_square.jpeg',
         linkedin: 'https://www.linkedin.com/in/floris-deijnen/',
         email: 'floris@ukraine2work.nl',
-        phone: null,
+        phone: '+31644185220',
         label: 'Matchmaker',
         ukrainian: false
       }
@@ -171,7 +171,7 @@ const teamMembers = computed(() => {
         photo: '/images/team/floris_square.jpeg',
         linkedin: 'https://www.linkedin.com/in/floris-deijnen/',
         email: 'floris@ukraine2work.nl',
-        phone: null,
+        phone: '+31644185220',
         label: 'Спеціаліст',
         ukrainian: false
       }

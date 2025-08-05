@@ -13,9 +13,9 @@ export function useLanguageHandler() {
   
   // Get URL for 8vance auth platform
   const getAuthUrl = (authState: 'login' | 'register' | null = null) => {
-    const baseUrl = 'https://nederland-werkt.8vance.com/'
+    const baseUrl = 'https://ukraine2work.8vance.com/'
     const url = new URL(baseUrl)
-    url.searchParams.set('language', languageStore.currentLocale)
+    url.searchParams.set('language', languageStore.currentLocale === 'nl' ? 'nl' : 'eng')
     
     if (authState) {
       url.searchParams.set('authState', authState)

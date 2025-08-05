@@ -35,7 +35,7 @@ export const validateOrigin = (event: any): boolean => {
     `http://${host}`,
     'http://localhost:3000',
     'http://localhost:3001', // Add port 3001
-    'https://ukrain2work.vercel.app',
+    'https://ukraine2work.vercel.app',
     'https://ukraine2work.nl'
   ]
   

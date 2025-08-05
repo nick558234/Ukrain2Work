@@ -90,16 +90,16 @@
     "steps": {
       "employers": [
         {
-          "title": "Create an account",
-          "description": "Register as an employer and set up your company profile."
+          "title": "Make contact",
+          "description": "Contact us via email, contact form, or WhatsApp."
         },
         {
-          "title": "Post a job",
-          "description": "Add your open positions with clear requirements and information."
+          "title": "Discuss vacancies",
+          "description": "We discuss your open positions and requirements."
         },
         {
-          "title": "Find your match",
-          "description": "Browse candidates and connect directly with suitable profiles."
+          "title": "We share the results",
+          "description": "We share the results for candidates. For large companies, there's an exception - they can find candidates themselves in step 3."
         }
       ],
       "refugees": [

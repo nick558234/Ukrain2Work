@@ -40,7 +40,7 @@
         
         <h2 class="text-xl font-semibold mb-4 border-b pb-2 mt-8">External Links</h2>
         <ul class="space-y-2">
-          <li><a href="https://nederland-werkt.8vance.com/?authState=register" target="_blank" class="text-blue-600 hover:underline">Register Platform</a></li>
+          <li><a href="https://ukraine2work.8vance.com/?authState=register" target="_blank" class="text-blue-600 hover:underline">Register Platform</a></li>
         </ul>
       </div>
     </div>

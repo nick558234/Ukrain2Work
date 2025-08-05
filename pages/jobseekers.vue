@@ -14,7 +14,7 @@
     
     <CtaSection 
       type="refugees" 
-      primaryLink="https://nederland-werkt.8vance.com/?authState=register"
+      primaryLink="https://ukraine2work.8vance.com/?authState=register"
       secondaryLink="#" 
     />
   </div>

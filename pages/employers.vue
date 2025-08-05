@@ -2,9 +2,32 @@
   <div>
     <HeroSection 
       pageType="employers" 
-      primaryCtaLink="https://nederland-werkt.8vance.com/?language=${$i18n.locale}&authState=register" 
+      primaryCtaLink="https://ukraine2work.8vance.com/?authState=register&language=eng" 
       class="bg-ukraine-blue text-white"
     />
+    
+    <!-- Video Section -->
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="text-3xl font-bold mb-6">{{ $t('employers.video.title') }}</h2>
+          <p class="text-xl mb-8">{{ $t('employers.video.description') }}</p>
+          <div class="aspect-w-16 aspect-h-9 rounded-xl overflow-hidden shadow-xl">
+            <iframe 
+              :src="employerVideoUrl"
+              :title="$t('employers.video.title')"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+              class="w-full h-full bg-black rounded"
+              style="aspect-ratio: 16/9; min-height: 315px;"
+            >
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
     
     <section class="py-16 bg-white">
       <div class="container mx-auto px-4">
@@ -76,16 +99,6 @@
         </div>
       </div>
     </section>
-
-    <section class="py-16 bg-white">
-      <div class="container mx-auto px-4">
-        <div class="max-w-3xl mx-auto text-center">
-          <h2 class="text-3xl font-bold mb-6 text-ukraine-blue">{{ $t('employers.video.title') }}</h2>
-          <p class="text-gray-700 mb-8">{{ $t('employers.video.description') }}</p>
-          <!-- Add your video component here -->
-        </div>
-      </div>
-    </section>
     
     <EmployerBenefits />
     
@@ -97,13 +110,26 @@
     
     <CtaSection 
       type="employers" 
-      primaryLink="https://nederland-werkt.8vance.com/?authState=register"
+      primaryLink="contact"
       secondaryLink="#" 
     />
   </div>
 </template>
 
 <script setup>
+import { computed } from 'vue';
+import { useI18n } from 'vue-i18n';
+
+const { locale } = useI18n();
+
+// Computed property for employer video URL based on language
+const employerVideoUrl = computed(() => {
+  // Use YouTube embedded videos based on language
+  return locale.value === 'uk'
+    ? 'https://www.youtube.com/embed/ir1SFnwL3_w?si=Ut0mzYhGSwrgLHGv' // Ukrainian video for employers
+    : 'https://www.youtube.com/embed/cuLfJyW0KiA?si=oNJh4qJ_rD8j7xZ_'; // Dutch/English video for employers
+});
+
 // Employers page targeting Dutch businesses looking to hire Ukrainian talent
 // Emphasizes the benefits and straightforward process of hiring Ukrainian workers
 

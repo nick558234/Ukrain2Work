@@ -21,7 +21,7 @@
         
         <!-- CTA: Register -->
         <AppButton 
-          :href="`https://nederland-werkt.8vance.com/?language=${$i18n.locale}&authState=register`"
+          :href="`https://ukraine2work.8vance.com/?language=${$i18n.locale}&authState=register`"
           target="_blank"
           color="outline"
           size="lg"
@@ -45,8 +45,28 @@
   </div>
 </section>
 
-
-
+      <!-- Video Section -->
+      <section class="py-16">
+        <div class="container mx-auto px-4">
+          <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-6">{{ $t('refugees.video.title') }}</h2>
+            <p class="text-xl mb-8">{{ $t('refugees.video.description') }}</p>
+            <div class="aspect-w-16 aspect-h-9 rounded-xl overflow-hidden shadow-xl">
+              <iframe 
+                :src="videoUrl"
+                :title="$t('refugees.video.title')"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+                class="w-full h-full bg-black rounded"
+                style="aspect-ratio: 16/9; min-height: 315px;"
+              >
+              </iframe>
+            </div>
+          </div>
+        </div>
+      </section>
 
 
 
@@ -232,29 +252,6 @@
         </div>
       </section>
 
-      <!-- Video Section -->
-      <section class="py-16">
-        <div class="container mx-auto px-4">
-          <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-3xl font-bold mb-6">{{ $t('refugees.video.title') }}</h2>
-            <p class="text-xl mb-8">{{ $t('refugees.video.description') }}</p>
-            <div class="aspect-w-16 aspect-h-9 rounded-xl overflow-hidden shadow-xl">
-              <iframe 
-                :src="videoUrl"
-                :title="$t('refugees.video.title')"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen
-                class="w-full h-full bg-black rounded"
-                style="aspect-ratio: 16/9; min-height: 315px;"
-              >
-              </iframe>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <!-- Information Section -->
       <section class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
@@ -262,7 +259,7 @@
           
           <div class="max-w-4xl mx-auto">
             <!-- Matchmaking -->
-            <div class="bg-white rounded-xl shadow-lg p-8 mb-8">
+            <div class="bg-white rounded-xl shadow-lg p-8 mb-8 text-center">
               <h3 class="text-2xl font-bold mb-6">{{ $t('refugees.information.matchmaking.title') }}</h3>
               <div class="grid md:grid-cols-3 gap-6">
                 <div class="bg-blue-50 p-6 rounded-lg">
@@ -331,7 +328,7 @@
               <p class="mb-6">{{ $t('refugees.information.howToFindWork.description') }}</p>
               <div class="flex justify-center">
                 <AppButton 
-                  :href="`https://nederland-werkt.8vance.com/?language=${$i18n.locale}&authState=register`"
+                  :href="`https://ukraine2work.8vance.com/?language=${$i18n.locale}&authState=register`"
                   target="_blank"
                   color="primary"
                   size="lg"

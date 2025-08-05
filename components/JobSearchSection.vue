@@ -244,7 +244,7 @@
                 <AppButton 
                   color="outline" 
                   size="sm"
-                  :href="`https://nederland-werkt.8vance.com/job/${job.id}?language=${$i18n.locale}`"
+                  :href="`https://ukraine2work.8vance.com/job/${job.id}?language=${$i18n.locale === 'nl' ? 'nl' : 'eng'}`"
                   target="_blank"
                 >
                   {{ $t('refugees.search.applyNow') }}
@@ -408,6 +408,6 @@ const viewJobDetails = async (jobId) => {
 
 const applyToJob = (jobId) => {
   // Redirect to external application URL
-  window.open(`https://nederland-werkt.8vance.com/job/${jobId}?language=${$i18n.locale}`, '_blank');
+  window.open(`https://ukraine2work.8vance.com/job/${jobId}?language=${$i18n.locale}`, '_blank');
 };
 </script>

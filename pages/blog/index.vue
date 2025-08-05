@@ -81,11 +81,9 @@
 
     <!-- Newsletter CTA -->
     <section class="mt-16 bg-ukraine-blue rounded-lg p-8 text-center text-white">
-      <h2 class="text-2xl font-bold mb-4">Blijf op de hoogte</h2>
-      <p class="mb-6 opacity-90">
-        Ontvang de nieuwste updates, verhalen en kansen rechtstreeks in je mailbox.
-      </p>
-      <NewsletterSubscription />
+      <div class="max-w-md mx-auto">
+        <NewsletterSubscription widthNormal="w-full" />
+      </div>
     </section>
   </div>
 </template>
