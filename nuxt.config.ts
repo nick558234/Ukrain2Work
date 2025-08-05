@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   ssr: true,
-  devtools: { enabled: false }, // Disable in production for cost savings
+  devtools: { enabled: true },
   nitro: {
     preset: 'vercel',
     storage: {
@@ -20,22 +20,15 @@ export default defineNuxtConfig({
       // Cache static assets aggressively
       '/_nuxt/**': { headers: { 'Cache-Control': 'public, max-age=31536000, immutable' } },
       '/images/**': { headers: { 'Cache-Control': 'public, max-age=2592000' } },
-      // API routes should not be cached but use edge
-      '/api/**': { 
-        headers: { 'Cache-Control': 'no-cache, no-store, must-revalidate' },
-        cors: true
-      },
+      // API routes should not be cached
+      '/api/**': { headers: { 'Cache-Control': 'no-cache, no-store, must-revalidate' } },
       // Dynamic pages with short cache
       '/blog/**': { headers: { 'Cache-Control': 'public, max-age=3600' } },
       '/video/**': { headers: { 'Cache-Control': 'public, max-age=31536000, immutable' } }
     }
   },
 
-  modules: ['@nuxtjs/tailwindcss', '@pinia/nuxt', '@nuxtjs/i18n', '@nuxtjs/sitemap'],
-
-  pinia: {
-    storesDirs: ['./stores/**']
-  },
+  modules: ['@nuxtjs/tailwindcss', '@pinia/nuxt', '@nuxtjs/i18n', '@nuxt/image', 'nuxt-swiper', '@nuxtjs/sitemap'],
 
   sitemap: {
     hostname: 'https://ukraine2work.nl',
@@ -133,30 +126,47 @@ export default defineNuxtConfig({
     transpile: ['flag-icons']
   },
   
-  experimental: {
-    payloadExtraction: false, // Disable payload extraction which can cause issues
-    renderJsonPayloads: false, // Disable JSON payload rendering
-    clientFallback: true // Enable client-side fallback
-  },
-
-  // Build optimizations for cost savings
-  vite: {
-    ssr: {
-      noExternal: ['nodemailer', 'pinia'] // Bundle server packages to reduce cold starts
+  image: {
+    // Improve image handling
+    quality: 80,
+    format: ['webp', 'jpg', 'png', 'svg'],
+    dir: 'public/images', // Set correct image directory
+    screens: {
+      xs: 320,
+      sm: 640,
+      md: 768,
+      lg: 1024,
+      xl: 1280,
+      xxl: 1536
     },
-    optimizeDeps: {
-      include: ['vue', 'vue-router']
-    },
-    build: {
-      rollupOptions: {
-        output: {
-          manualChunks: {
-            // Split vendor chunks to improve caching
-            vendor: ['vue', 'vue-router'],
-            ui: ['@nuxtjs/tailwindcss']
-          }
+    provider: 'ipx',
+    // Optimize for static content and caching
+    presets: {
+      avatar: {
+        modifiers: {
+          format: 'webp',
+          width: 150,
+          height: 150,
+          quality: 80
+        }
+      },
+      hero: {
+        modifiers: {
+          format: 'webp',
+          quality: 85
         }
       }
+    }
+  },
+  
+  experimental: {
+    payloadExtraction: false // Disable payload extraction which can cause issues
+  },
+
+  // Build optimizations
+  vite: {
+    ssr: {
+      noExternal: ['nodemailer'] // Ensure server-side packages are bundled
     }
   },
   
