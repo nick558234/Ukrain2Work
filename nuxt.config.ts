@@ -9,6 +9,9 @@ export default defineNuxtConfig({
         driver: 'memory' // Use in-memory cache for cost efficiency
       }
     },
+    experimental: {
+      wasm: true
+    },
     routeRules: {
       // Temporarily disable prerendering due to SSR issues
       // '/': { prerender: true },
@@ -28,6 +31,10 @@ export default defineNuxtConfig({
   },
 
   modules: ['@nuxtjs/tailwindcss', '@pinia/nuxt', '@nuxtjs/i18n', '@nuxt/image', 'nuxt-swiper', '@nuxtjs/sitemap'],
+
+  pinia: {
+    storesDirs: ['./stores/**']
+  },
 
   sitemap: {
     hostname: 'https://ukraine2work.nl',
@@ -159,13 +166,15 @@ export default defineNuxtConfig({
   },
   
   experimental: {
-    payloadExtraction: false // Disable payload extraction which can cause issues
+    payloadExtraction: false, // Disable payload extraction which can cause issues
+    renderJsonPayloads: false, // Disable JSON payload rendering
+    clientFallback: true // Enable client-side fallback
   },
 
   // Build optimizations
   vite: {
     ssr: {
-      noExternal: ['nodemailer'] // Ensure server-side packages are bundled
+      noExternal: ['nodemailer', 'pinia'] // Ensure server-side packages are bundled
     }
   },
   
