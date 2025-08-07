@@ -21,8 +21,8 @@ const languageStore = useLanguageStore()
 
 // Show feedback tool in development or when explicitly enabled
 const showFeedbackTool = computed(() => {
-  // Only show in development mode or when enabled via environment variable
-  return process.dev || process.env.ENABLE_FEEDBACK_TOOL === 'true'
+  // ALTIJD AAN - voor feedback sessies
+  return true
 })
 
 const navigationItems = [
