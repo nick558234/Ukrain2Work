@@ -40,6 +40,7 @@
               class="w-full h-full object-cover"
               width="800"
               height="600"
+              src="/images/mission_illustration.webp"
               onerror="this.src='https://placehold.co/800x600/e9f5ff/0057b8?text=Our+Mission'"
             />
           </div>
