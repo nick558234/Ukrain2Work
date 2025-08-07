@@ -74,7 +74,7 @@ const props = defineProps({
   },
   primaryCtaLink: {
     type: String,
-    default: '#'
+    default: '#contactform'
   },
   img: {
     type: String,

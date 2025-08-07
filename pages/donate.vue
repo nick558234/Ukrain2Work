@@ -1,7 +1,7 @@
 <template>
   <div class="container mx-auto px-4 py-8">
     <h1 class="text-3xl font-bold mb-6">Support Our Mission</h1>
-    <p class="mb-8 text-lg">Your donation helps us connect Ukrainian refugees with employment opportunities and provide essential resources.</p>
+    <p class="mb-8 text-lg">Your donation helps us connect Ukrainian refugees with employment opportunities and provide essential resources. Fill out the form below and click "Send Donation Email" to contact us directly about your donation.</p>
     
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
       <div class="bg-blue-50 p-6 rounded-lg shadow">
@@ -31,7 +31,8 @@
       </div>
       
       <div class="bg-white p-6 rounded-lg shadow border border-gray-200">
-        <h2 class="text-xl font-semibold mb-4">Donate Now</h2>
+        <h2 class="text-xl font-semibold mb-4">Donation Request</h2>
+        <p class="text-sm text-gray-600 mb-4">Fill out the information below to send us a donation request via email.</p>
         <form @submit.prevent="handleDonation" class="space-y-4">
           <div>
             <label for="amount" class="block mb-1 font-medium">Select Amount</label>
@@ -85,7 +86,7 @@
             type="submit" 
             class="w-full bg-blue-600 text-white py-3 px-4 rounded-md hover:bg-blue-700 transition duration-200 font-medium"
           >
-            Donate €{{ selectedAmount }}
+            Send Donation Email
           </button>
         </form>
       </div>
@@ -93,13 +94,13 @@
     
     <div class="text-center">
       <h3 class="text-xl font-semibold mb-4">Other Ways to Support</h3>
-      <p>For corporate donations or other forms of support, please contact us at:</p>
+      <p class="mb-4">For corporate donations, partnerships, or other forms of support, please contact us directly:</p>
 
       <a 
-        href="mailto:alex@ukraine2work.org" 
+        href="/contact#contactform" 
         class="mt-4 inline-block bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition duration-200"
       >
-        Contact Us
+        Contact Us 
       </a>
     </div>
   </div>
@@ -113,10 +114,35 @@ const name = ref('')
 const email = ref('')
 
 const handleDonation = async () => {
-  if (formValid.value) {
-    // Process donation
+  if (!name.value || !email.value || !selectedAmount.value) {
+    alert('Please fill in all required fields.')
+    return
   }
-};
+
+  // Create email content
+  const subject = encodeURIComponent('Donation Request - Ukraine2Work')
+  const body = encodeURIComponent(`Dear Ukraine2Work Team,
+
+I would like to make a donation to support your mission of connecting Ukrainian refugees with employment opportunities.
+
+Donation Details:
+- Amount: €${selectedAmount.value}
+- Name: ${name.value}
+- Email: ${email.value}
+
+Please provide me with the necessary information to complete this donation, such as:
+- Bank account details for wire transfer
+- Preferred payment method
+- Any tax receipt information
+
+Thank you for the important work you're doing to help Ukrainian refugees find employment opportunities.
+
+Best regards,
+${name.value}`)
+
+  // Open email client with pre-filled content
+  window.open(`mailto:alex@ukraine2work.nl?subject=${subject}&body=${body}`)
+}
 
 definePageMeta({
   title: 'Donate'

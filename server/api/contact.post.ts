@@ -34,11 +34,6 @@ export default defineEventHandler(async (event) => {
   const sessionId = getCookie(event, 'sessionId') || getHeader(event, 'x-session-id')
   
   if (!csrfToken || !sessionId || !validateCSRFToken(csrfToken, sessionId)) {
-    console.log('CSRF validation failed:', { 
-      hasToken: !!csrfToken, 
-      hasSession: !!sessionId, 
-      tokenValid: csrfToken && sessionId ? validateCSRFToken(csrfToken, sessionId) : false 
-    })
     throw createError({
       statusCode: 403,
       statusMessage: 'Invalid CSRF token'

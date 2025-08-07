@@ -259,7 +259,6 @@ This email was sent from the Ukraine2Work website newsletter subscription form.
       userLanguage = 'uk'
     }
 
-    console.log(`Newsletter language detection: ${userLanguage} (referer: ${referer}, accept-lang: ${acceptLanguage}, body-lang: ${bodyLanguage})`)
 
     // Get localized content
     const emailContent = getWelcomeEmailContent(email, userLanguage)
@@ -348,14 +347,12 @@ Unsubscribe: [link] | Privacy Policy: https://ukraine2work.nl/privacy-policy
         if (!adminEmailSent) {
           await transporter.sendMail(adminMailOptions)
           adminEmailSent = true
-          console.log(`Admin notification sent for newsletter subscription: ${email}`)
         }
         
         // Send subscriber confirmation email
         if (!subscriberEmailSent) {
           await transporter.sendMail(subscriberMailOptions)
           subscriberEmailSent = true
-          console.log(`Confirmation email sent to subscriber: ${email}`)
         }
         
       } catch (emailError) {
@@ -385,7 +382,6 @@ Unsubscribe: [link] | Privacy Policy: https://ukraine2work.nl/privacy-policy
     requestCache.set(globalKey, globalCount + 1, 86400) // 24 hours TTL
 
     // Log successful subscription
-    console.log(`Newsletter subscription successful: ${email} from IP: ${clientIP}`)
 
     return {
       success: true,

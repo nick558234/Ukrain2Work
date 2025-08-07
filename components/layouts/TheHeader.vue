@@ -8,7 +8,7 @@
         </NuxtLink>
 
         <!-- Desktop navigation -->
-        <nav class="hidden md:flex items-center space-x-6">
+        <nav class="hidden lg:flex items-center space-x-6">
           <NuxtLink
             v-for="item in navigationItems"
             :key="item.route"
@@ -48,7 +48,7 @@
         <!-- Mobile menu button -->
         <button
           @click="mobileMenuOpen = !mobileMenuOpen"
-          class="md:hidden text-gray-700 hover:text-ukraine-blue"
+          class="lg:hidden text-gray-700 hover:text-ukraine-blue"
           aria-label="Toggle menu"
         >
           <svg
@@ -93,7 +93,7 @@
       >
         <nav
           v-if="mobileMenuOpen"
-          class="md:hidden mt-4 py-4 border-t border-gray-200"
+          class="lg:hidden mt-4 py-4 border-t border-gray-200"
         >
           <div class="flex flex-col space-y-4">
             <NuxtLink

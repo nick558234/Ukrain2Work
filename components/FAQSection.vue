@@ -1,7 +1,7 @@
 <template>
   <section class="py-16 bg-white">
     <div class="container">
-      <h2 class="text-ukraine-blue text-center mb-12">{{ $t('contact.faq.title') }}</h2>
+      <h2 class="text-ukraine-blue text-2xl md:text-3xl lg:text-4xl text-center mb-12">{{ $t('contact.faq.title') }}</h2>
       
       <div class="max-w-4xl mx-auto">
         <div 
@@ -48,7 +48,7 @@
       <div class="mt-12 text-center">
         <p class="mb-6">{{ $t('contact.faq.stillHaveQuestions') }}</p>
         <NuxtLink 
-          to="/contact?subject=other" 
+          to="#contactform" 
           class="inline-flex items-center px-6 py-3 bg-ukraine-blue text-white rounded-md hover:bg-opacity-90 transition-colors"
         >
           <svg class="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">

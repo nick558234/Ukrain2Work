@@ -12,7 +12,7 @@
       :overlayOpacity="60"
       :darkText="false"
       ctaSize="lg"
-      :debug="true"
+
     />
   
     <!-- Existing content -->

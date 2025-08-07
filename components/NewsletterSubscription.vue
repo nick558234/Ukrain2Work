@@ -2,19 +2,18 @@
   <div>
     <h3 class="font-bold mb-6">{{ t('footer.newsletter.title') }}</h3>
     <p class="text-gray-200 mb-4">{{ t('footer.newsletter.description') }}</p>
-    <form @submit.prevent="subscribeToNewsletter" class="flex flex-col sm:flex-row gap-2">
+    <form @submit.prevent="subscribeToNewsletter" class="flex flex-col gap-2">
       <input 
         type="email" 
         v-model="email"
         :placeholder="t('footer.newsletter.placeholder')"
-        class="px-4 py-2 rounded-md  text-gray-800 focus:outline-none focus:ring-2 focus:ring-ukraine-yellow"
-        :class="widthNormal"
+        class="px-3 py-2 rounded-md text-gray-800 focus:outline-none focus:ring-2 focus:ring-ukraine-yellow w-full text-sm"
         required
         :disabled="isSubscribing"
       />
       <button 
         type="submit" 
-        class="bg-ukraine-yellow text-ukraine-blue px-4 py-2 rounded-md font-medium hover:bg-opacity-90 transition-colors disabled:opacity-50"
+        class="bg-ukraine-yellow text-ukraine-blue px-4 py-2 rounded-md font-medium hover:bg-opacity-90 transition-colors disabled:opacity-50 text-sm w-full sm:w-auto"
         :disabled="isSubscribing || !email"
       >
         {{ isSubscribing ? '...' : t('footer.newsletter.subscribe') }}
@@ -28,12 +27,7 @@
 
 <script setup>
 import { ref } from 'vue'
-const prop = defineProps({
-  widthNormal: {
-    type: String,
-    default: 'flex-grow '
-  }
-})
+
 const email = ref('')
 const isSubscribing = ref(false)
 const subscriptionMessage = ref('')

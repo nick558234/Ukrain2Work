@@ -1,5 +1,5 @@
 <template>
-  <section class="py-16 bg-ukraine-light">
+  <section id="contactform" class="py-16 bg-ukraine-light">
     <div class="container">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
         <!-- Contact form -->

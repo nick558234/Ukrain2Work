@@ -134,7 +134,6 @@ const jobForm = ref({
 const submitJobPosting = () => {
   // In a real application, this would submit the job posting to an API
   alert('Job posting submitted! In a real application, this would save to a database.');
-  console.log('Job posting form data:', jobForm.value);
   
   // Reset form after submission
   jobForm.value = {

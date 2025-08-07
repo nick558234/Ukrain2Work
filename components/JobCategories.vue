@@ -135,7 +135,6 @@ const categories = [
   }
 ];
 
-// Mock jobs data - in a real app this would come from an API
 const jobsData = [
   {
     id: 101,
@@ -220,7 +219,5 @@ const filteredJobs = computed(() => {
 });
 
 const viewJobDetails = (jobId) => {
-  // In a real app, this would navigate to job details
-  console.log('Viewing job details for ID:', jobId);
 };
 </script>

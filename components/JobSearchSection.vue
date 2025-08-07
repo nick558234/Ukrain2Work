@@ -285,7 +285,6 @@ const filters = ref({
   date: ''
 });
 
-// Mock jobs data - in a real app, this would come from an API
 const jobs = ref([
   {
     id: 1,
@@ -362,12 +361,7 @@ const searchJobs = () => {
   
   // Simulate API call delay
   setTimeout(() => {
-    // In a real app, this would make an API call with search parameters
-    console.log('Searching jobs with:', {
-      query: searchQuery.value,
-      location: location.value,
-      filters: filters.value
-    });
+  
     
     isLoading.value = false;
     // Results would be returned from the API
@@ -375,8 +369,6 @@ const searchJobs = () => {
 };
 
 const loadMoreJobs = () => {
-  // In a real app, this would load the next page of results
-  console.log('Loading more jobs...');
 };
 
 const handleSearch = async () => {

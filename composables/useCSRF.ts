@@ -9,19 +9,12 @@ export const useCSRF = () => {
    */
   const getCSRFToken = async () => {
     try {
-      console.log('Fetching CSRF token...')
       const response = await $fetch('/api/csrf-token', {
         method: 'GET'
       })
       
       csrfToken.value = response.csrfToken
       sessionId.value = response.sessionId
-      
-      console.log('CSRF token received:', { 
-        hasToken: !!csrfToken.value, 
-        hasSession: !!sessionId.value,
-        tokenLength: csrfToken.value?.length 
-      })
       
       return { csrfToken: csrfToken.value, sessionId: sessionId.value }
     } catch (error) {
@@ -38,10 +31,7 @@ export const useCSRF = () => {
       'X-CSRF-Token': csrfToken.value,
       'X-Session-ID': sessionId.value
     }
-    console.log('Using CSRF headers:', { 
-      hasToken: !!headers['X-CSRF-Token'], 
-      hasSession: !!headers['X-Session-ID'] 
-    })
+
     return headers
   }
 
