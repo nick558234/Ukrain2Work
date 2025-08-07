@@ -744,5 +744,14 @@
     "heroSubtitle": "Ukraine2Work bridges skilled Ukrainian professionals with employers across the Netherlands",
     "heroPrimaryCta": "Find a Job",
     "heroSecondaryCta": "Hire Talent"
+  },
+  "feedback": {
+    "label": "Feedback",
+    "placeholder": "E.g.: this text is incorrect, the link doesn't work, I have a suggestion...",
+    "selectedText": "Selected text",
+    "location": "Location on page",
+    "send": "Send",
+    "sending": "Sending...",
+    "cancel": "Cancel"
   }
 }

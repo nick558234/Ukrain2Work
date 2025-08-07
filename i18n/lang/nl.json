@@ -705,5 +705,14 @@
     "heroSubtitle": "Ukraine2Work brengt gekwalificeerde Oekraïense professionals in contact met werkgevers in heel Nederland",
     "heroPrimaryCta": "Vind een baan",
     "heroSecondaryCta": "Neem talent aan"
+  },
+  "feedback": {
+    "label": "Feedback",
+    "placeholder": "Bijv: deze tekst klopt niet, de link werkt niet, ik heb een suggestie...",
+    "selectedText": "Geselecteerde tekst",
+    "location": "Locatie op pagina",
+    "send": "Verstuur",
+    "sending": "Versturen...",
+    "cancel": "Annuleer"
   }
 }

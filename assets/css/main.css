@@ -55,3 +55,19 @@
     @apply text-xl md:text-2xl lg:text-3xl font-bold font-sans;
   }
 }
+
+@layer components {
+  /* Feedback Tool Styling */
+  .feedback-form {
+    backdrop-filter: blur(4px);
+  }
+  
+  .feedback-form textarea {
+    resize: vertical;
+    min-height: 80px;
+  }
+  
+  .feedback-form button:disabled {
+    @apply opacity-50 cursor-not-allowed;
+  }
+}
