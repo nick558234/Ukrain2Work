@@ -1,59 +1,77 @@
 <template>
   <div v-if="showForm" :style="formStyle" class="feedback-form">
-    <form @submit.prevent="submitFeedback">
-      <div class="mb-3">
-        <label class="block text-sm font-medium text-gray-700 mb-1">
-          <strong>{{ $t('feedback.label') || 'Feedback:' }}</strong>
-        </label>
-        <textarea 
-          v-model="message" 
-          rows="4" 
-          class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-ukraine-blue focus:border-transparent"
-          :placeholder="$t('feedback.placeholder') || 'Bijv: de tekst klopt niet...'"
-          required
-        ></textarea>
-      </div>
-      
-      <div v-if="selectedText" class="mb-3 p-2 bg-gray-50 rounded text-sm">
-        <strong>{{ $t('feedback.selectedText') || 'Geselecteerde tekst:' }}</strong><br>
-        <em>"{{ selectedText }}"</em>
-      </div>
-      
-      <!-- Context informatie -->
-      <div v-if="clickContext.tagName" class="mb-3 p-2 bg-blue-50 rounded text-sm">
-        <strong>{{ $t('feedback.location') || 'Locatie op pagina:' }}</strong><br>
-        
-        <div v-if="clickContext.nearestHeading" class="mb-1">
-          <span class="text-gray-600">Sectie:</span> {{ clickContext.nearestHeading.text }}
+    <!-- Mobile header met close button -->
+    <div class="flex justify-between items-center mb-3 md:hidden">
+      <h3 class="text-lg font-semibold text-gray-800">{{ $t('feedback.label') || 'Feedback' }}</h3>
+      <button 
+        type="button" 
+        @click="cancelForm"
+        class="text-gray-500 hover:text-gray-700 text-xl leading-none"
+        aria-label="Sluiten"
+      >
+        ×
+      </button>
+    </div>
+
+    <!-- Scrollable content container -->
+    <div class="flex-1 overflow-y-auto pr-1" style="max-height: calc(100% - 60px);">
+      <form @submit.prevent="submitFeedback" class="space-y-3">
+        <div>
+          <label class="hidden md:block text-sm font-medium text-gray-700 mb-1">
+            <strong>{{ $t('feedback.label') || 'Feedback:' }}</strong>
+          </label>
+          <textarea 
+            v-model="message" 
+            rows="4" 
+            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-ukraine-blue focus:border-transparent text-sm"
+            :placeholder="$t('feedback.placeholder') || 'Bijv: de tekst klopt niet...'"
+            required
+          ></textarea>
         </div>
         
-        <div v-if="clickContext.textContent" class="mb-1">
-          <span class="text-gray-600">Element tekst:</span> "{{ clickContext.textContent }}"
+        <div v-if="selectedText" class="p-2 bg-gray-50 rounded text-sm">
+          <strong>{{ $t('feedback.selectedText') || 'Geselecteerde tekst:' }}</strong><br>
+          <em>"{{ selectedText }}"</em>
         </div>
         
-        <div class="mb-1">
-          <span class="text-gray-600">Element:</span> {{ clickContext.tagName.toLowerCase() }}
-          <span v-if="clickContext.className" class="text-gray-500">.{{ clickContext.className.split(' ').slice(0, 2).join('.') }}</span>
+        <!-- Context informatie -->
+        <div v-if="clickContext.tagName" class="p-2 bg-blue-50 rounded text-sm">
+          <strong>{{ $t('feedback.location') || 'Locatie op pagina:' }}</strong><br>
+          
+          <div v-if="clickContext.nearestHeading" class="mb-1">
+            <span class="text-gray-600">Sectie:</span> {{ clickContext.nearestHeading.text }}
+          </div>
+          
+          <div v-if="clickContext.textContent" class="mb-1">
+            <span class="text-gray-600">Element tekst:</span> "{{ clickContext.textContent }}"
+          </div>
+          
+          <div>
+            <span class="text-gray-600">Element:</span> {{ clickContext.tagName.toLowerCase() }}
+            <span v-if="clickContext.className" class="text-gray-500">.{{ clickContext.className.split(' ').slice(0, 2).join('.') }}</span>
+          </div>
         </div>
-      </div>
-      
-      <div class="flex gap-2">
-        <button 
-          type="submit" 
-          class="px-4 py-2 bg-ukraine-blue text-white rounded hover:bg-blue-700 transition-colors"
-          :disabled="submitting"
-        >
-          {{ submitting ? ($t('feedback.sending') || 'Versturen...') : ($t('feedback.send') || 'Verstuur') }}
-        </button>
-        <button 
-          type="button" 
-          @click="cancelForm"
-          class="px-4 py-2 bg-gray-300 text-gray-700 rounded hover:bg-gray-400 transition-colors"
-        >
-          {{ $t('feedback.cancel') || 'Annuleer' }}
-        </button>
-      </div>
-    </form>
+      </form>
+    </div>
+
+    <!-- Fixed button container at bottom -->
+    <div class="flex gap-2 pt-3 border-t border-gray-200 mt-3 bg-white">
+      <button 
+        type="submit" 
+        @click="submitFeedback"
+        class="flex-1 px-4 py-2 bg-ukraine-blue text-white rounded hover:bg-blue-700 transition-colors text-sm font-medium"
+        :disabled="submitting || !message.trim()"
+      >
+        {{ submitting ? ($t('feedback.sending') || 'Versturen...') : ($t('feedback.send') || 'Verstuur') }}
+      </button>
+      <button 
+        type="button" 
+        @click="cancelForm"
+        class="px-4 py-2 bg-gray-300 text-gray-700 rounded hover:bg-gray-400 transition-colors text-sm md:block hidden"
+      >
+        {{ $t('feedback.cancel') || 'Annuleer' }}
+      </button>
+    </div>
   </div>
 </template>
 
@@ -218,17 +236,29 @@ function openForm(e) {
   // Zorg ervoor dat het formulier binnen het viewport blijft
   const viewportWidth = window.innerWidth
   const viewportHeight = window.innerHeight
-  const formWidth = 350 // Geschatte breedte van het formulier
-  const formHeight = 200 // Geschatte hoogte van het formulier
-
+  const isMobile = viewportWidth < 768 // md breakpoint
+  
+  // Mobile: gebruik volledige viewport behalve wat padding
+  // Desktop: gebruik normale positioning
   let adjustedX = x.value
   let adjustedY = y.value
+  let formWidth = 350
+  let formHeight = 400 // Meer ruimte voor content
 
-  if (x.value + formWidth > viewportWidth) {
-    adjustedX = viewportWidth - formWidth - 20
-  }
-  if (y.value + formHeight > viewportHeight) {
-    adjustedY = viewportHeight - formHeight - 20
+  if (isMobile) {
+    // Op mobile: centreer het formulier en maak het bijna fullscreen
+    adjustedX = 10
+    adjustedY = 10
+    formWidth = viewportWidth - 20
+    formHeight = Math.min(viewportHeight - 20, 500) // Max hoogte of viewport minus padding
+  } else {
+    // Desktop: normale positioning zoals voorheen
+    if (x.value + formWidth > viewportWidth) {
+      adjustedX = viewportWidth - formWidth - 20
+    }
+    if (y.value + formHeight > viewportHeight) {
+      adjustedY = viewportHeight - formHeight - 20
+    }
   }
 
   formStyle.value = {
@@ -241,8 +271,13 @@ function openForm(e) {
     borderRadius: '8px',
     padding: '16px',
     boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
-    minWidth: '320px',
-    maxWidth: '400px',
+    width: isMobile ? `${formWidth}px` : 'auto',
+    minWidth: isMobile ? 'auto' : '320px',
+    maxWidth: isMobile ? 'none' : '400px',
+    maxHeight: `${formHeight}px`,
+    overflow: 'hidden',
+    display: 'flex',
+    flexDirection: 'column'
   }
 
   showForm.value = true
@@ -333,5 +368,35 @@ onBeforeUnmount(() => {
 <style scoped>
 .feedback-form {
   font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Custom scrollbar voor mobile */
+.feedback-form .overflow-y-auto::-webkit-scrollbar {
+  width: 4px;
+}
+
+.feedback-form .overflow-y-auto::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 2px;
+}
+
+.feedback-form .overflow-y-auto::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 2px;
+}
+
+.feedback-form .overflow-y-auto::-webkit-scrollbar-thumb:hover {
+  background: #a1a1a1;
+}
+
+/* Zorg ervoor dat touch events goed werken op mobile */
+@media (max-width: 768px) {
+  .feedback-form {
+    touch-action: auto;
+  }
+  
+  .feedback-form textarea {
+    font-size: 16px; /* Voorkom zoom op iOS */
+  }
 }
 </style>
