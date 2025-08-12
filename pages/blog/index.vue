@@ -100,7 +100,7 @@ const blogPosts = [
     excerpt: 'Met trots delen we dat Ukraine2Work vanaf vandaag te vinden is op de officiële site van de Sociaal-Economische Raad (SER).',
     category: 'Nieuws',
     date: '2025-01-15',
-    image: 'https://media.licdn.com/dms/image/v2/D4D22AQEiVAEFuufCeg/feedshare-shrink_2048_1536/B4DZdEznvIGkAo-/0/1749206073094?e=1753920000&v=beta&t=6r-eIbtyNb_0daP0driFv26Fxz1aFiMLiLEg1vGl9AU',
+    image: '/images/ser.jpg',
     tags: ['Ukraine2Work', 'SER', 'WerkVoorOekraïne', 'SkillBasedMatching', 'InclusieveArbeidsmarkt']
   },
   {
@@ -120,7 +120,7 @@ const blogPosts = [
     excerpt: 'Ukraine2Work en Metaverse Solutions bundelen krachten in digitale beroepsoriëntatie met hyperrealistische 3D-werkomgevingen.',
     category: 'Innovatie',
     date: '2025-01-08',
-    image: 'https://media.licdn.com/dms/image/v2/D4D22AQFL-nc5EmSnvg/feedshare-shrink_800/B4DZa0qQ0lHQAw-/0/1746787700684?e=1753920000&v=beta&t=tESBAEUOQ2NzSongNCdnwiONZ9djCLFnQIhEHttUg3A',
+    image: '/images/metaverse_solutions.jpg',
     tags: ['Metaverse', 'VirtualReality', 'JobTraining', 'Innovation', 'Technology']
   }
 ]
