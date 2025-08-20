@@ -75,9 +75,9 @@
 <script setup>
 // In a real app, these statistics would come from an API
 const impactStats = {
-  refugees: 5820,
-  employers: 340,
-  jobsPosted: 1250,
-  successfulHires: 870
+  refugees: 5500,
+  employers: 0,
+  jobsPosted: 300000,
+  successfulHires: 1
 };
 </script>

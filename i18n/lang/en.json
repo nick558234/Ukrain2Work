@@ -2,7 +2,6 @@
   "nav": {
     "home": "Home",
     "employers": "For Employers",
-    "refugees": "For Job Seekers",
     "blog": "Blog",
     "about": "About",
     "contact": "Contact",
@@ -407,7 +406,7 @@
         "refugees": "Job seekers",
         "employers": "Employers",
         "jobsPosted": "Jobs posted",
-        "successfulHires": "Successful hires"
+        "successfulHires": "Placements"
       }
     },
     "timeline": {

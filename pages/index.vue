@@ -2,15 +2,13 @@
   <div class="mx-auto">
     <!-- New hero header with background image and small CTAs -->
     <PageHeader
-      bgImage="/images/team/alexSpaan_square.webp"
+      bgImage="/images/banner.jpg"
       :title="$t('home.heroTitle')"
       :subtitle="$t('home.heroSubtitle')"
       :primaryCta="$t('home.heroPrimaryCta')"
       primaryCtaLink="/refugees"
       :secondaryCta="$t('home.heroSecondaryCta')"
       secondaryCtaLink="/employers"
-      :overlayOpacity="60"
-      :darkText="false"
       ctaSize="lg"
 
     />

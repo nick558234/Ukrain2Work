@@ -1,11 +1,11 @@
 <template>
-  <section class="relative bg-ukraine-light py-32">
+  <section class="relative bg-ukraine-light py-24">
     <!-- The image container with overlay -->
     <div class="absolute inset-0 overflow-hidden">
       <img 
         :src="bgImage" 
         alt="Background image"
-        class="w-full h-full object-cover object-center"
+        class="w-full h-full object-cover lg:object-fill"
         :onerror="`this.src='https://placehold.co/1600x400/0057b8/ffffff?text=Ukraine2Work'`"   
       />
       <div class="absolute inset-0 bg-ukraine-blue bg-opacity-60"></div>

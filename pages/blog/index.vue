@@ -100,7 +100,7 @@ const blogPosts = [
     excerpt: 'Met trots delen we dat Ukraine2Work vanaf vandaag te vinden is op de officiële site van de Sociaal-Economische Raad (SER).',
     category: 'Nieuws',
     date: '2025-01-15',
-    image: '/images/ser.jpg',
+    image: '/images/Ser_image.jpg',
     tags: ['Ukraine2Work', 'SER', 'WerkVoorOekraïne', 'SkillBasedMatching', 'InclusieveArbeidsmarkt']
   },
   {
