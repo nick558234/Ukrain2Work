@@ -5,7 +5,7 @@
       <img 
         :src="bgImage" 
         alt="Background image"
-        class="w-full h-full object-cover lg:object-fill"
+        class="w-full h-full object-cover 2xl:object-fill"
         :onerror="`this.src='https://placehold.co/1600x400/0057b8/ffffff?text=Ukraine2Work'`"   
       />
       <div class="absolute inset-0 bg-ukraine-blue bg-opacity-60"></div>

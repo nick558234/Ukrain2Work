@@ -28,7 +28,7 @@ export default defineNuxtConfig({
     }
   },
 
-  modules: ['@nuxtjs/tailwindcss', '@pinia/nuxt', '@nuxtjs/i18n', '@nuxt/image', 'nuxt-swiper', '@nuxtjs/sitemap'],
+  modules: ['@nuxtjs/tailwindcss', '@pinia/nuxt', '@nuxtjs/i18n', '@nuxt/image', 'nuxt-swiper', '@nuxtjs/sitemap', 'nuxt-posthog'],
 
   pinia: {
     storesDirs: ['./stores/**']
@@ -176,5 +176,10 @@ export default defineNuxtConfig({
     }
   },
   
-  compatibilityDate: '2025-04-07'
+  compatibilityDate: '2025-04-07',
+
+  posthog: {
+    publicKey: process.env.POSTHOG_PUBLIC_KEY,
+    host: process.env.POSTHOG_HOST || 'https://eu.i.posthog.com'
+  }
 })
